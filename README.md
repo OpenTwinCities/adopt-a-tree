@@ -19,6 +19,12 @@ A version is deployed online at <http://stormy-tundra-2903.herokuapp.com/>
 ## Installation
 This application requires [Postgres](http://www.postgresql.org/) to be installed
 
+You'll also need libffi:
+
+```
+apt-get install libffi-dev
+```
+
 Refer to the [Adopt-a-Tree Wiki](https://github.com/codeforamerica/adopt-a-hydrant/wiki/Adopta-Install-Notes) for detailed instructions on installation.
 
     git clone git://github.com/ballPointPenguin/adopt-a-tree.git
