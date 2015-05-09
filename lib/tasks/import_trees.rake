@@ -30,16 +30,16 @@ namespace :db do
       end
       
       trees_data.each do |tree|
-        Thing.find_or_create_by!(mpls_id: tree[8]) do |t|
+        Thing.find_or_create_by!(mpls_id: tree[args.mpls_id_col.to_i]) do |t|
           t.properties = {}
           tree_fields.map.with_index do |f, index|
             t.properties[tree_fields[index]] = tree[index]
           end
       
-          t.mpls_unique = tree[9]
-          t.lng         = tree[64]
-          t.lat         = tree[65]
-          t.species     = tree[66]
+          t.mpls_unique = tree[args.mpls_uniq_col.to_i]
+          t.lng         = tree[args.lng_col.to_i]
+          t.lat         = tree[args.lat_col.to_i]
+          t.species     = tree[args.species_col.to_i]
         end
       end
     end
@@ -50,6 +50,18 @@ namespace :db do
       # 2.) Get a list of all trees in the DB that are not in the provided file
       # 3.) Delete all trees from 2 that are not adopted
       # 4.) Do :import
+    end
+
+    desc "List Minneapolis IDs of Trees currently in the DB that are not in the file to be imported"
+    task :db_only, [:file_path, :mpls_id_col] => :environment do |task, args|
+      trees_meta, trees_data = parse_tree_json(args.file_path)
+      file_tree_ids = trees_data.map{|tree| tree[args.mpls_id_col.to_i].to_i}
+      db_only_ids = Thing.pluck(:mpls_id) - file_tree_ids
+      db_only_ids.each do |tree_id| 
+        tree = Thing.find_by(mpls_id: tree_id)
+        puts tree.mpls_id
+        puts '\t Adopted' if tree.adopted?
+      end
     end
   end
 end
