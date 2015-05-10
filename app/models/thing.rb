@@ -28,7 +28,6 @@ class Thing < ActiveRecord::Base
                  :street_number, :zip
 
   validates :mpls_id,     uniqueness: true, allow_nil: true
-  validates :mpls_unique, uniqueness: true, allow_nil: true
   validates :lat,         presence:   true
   validates :lng,         presence:   true
 

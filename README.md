@@ -13,7 +13,7 @@ Beautify your street by watering a tree.
 ![Adopt-a-Hydrant](screenshot.png "Adopt-a-Tree")
 
 ## See It Online
-A version is deployed online at <http://stormy-tundra-2903.herokuapp.com/>
+A version is deployed online at <http://adoptatree.brewingabetterforest.com/>
 
 ## Installation
 This application requires [Postgres](http://www.postgresql.org/) to be installed
@@ -38,6 +38,44 @@ Refer to the [Adopt-a-Tree Wiki](https://github.com/codeforamerica/adopt-a-hydra
 
 ## Seed Data
     bundle exec rake db:seed
+
+## Importing More Trees
+
+Three rake tasks are available to help you import additional trees to the 
+database, or to replace all tree data, from a GeoJSON file provided by Socrata.
+
+To view a list of the names and indices of all fields in a file, run `rake db:trees:list_fields[PATH_TO_GEOJSON]`.
+PATH_TO_GEOJSON can be relative or absolute.
+
+```
+$ rake db:trees:list_fields[db/trees.json]
+0 - :sid
+1 - :id
+2 - :position
+.
+.
+.
+64 - x
+65 - y
+66 - species
+```
+
+For the import and replace tasks, you're going to need to know the column indices
+for the 'id' (**not** :id), 'uniqueid', 'x', 'y', and 'species' columns.
+
+To import additional trees into the database from a GeoJSON files, run `rake db:trees:import[PATH_TO_GEOJSON,ID_INDEX,UNIQUEID_INDEX,X_INDEX,Y_INDEX,SPECIES_INDEX]`:
+
+```
+rake db:trees:import[db/trees.json,8,9,64,65,66]
+```
+
+To completely replace the trees currently in the databse with the trees contained
+in a GeoJSON file, run `rake db:trees:replace[PATH_TO_GEOJSON,ID_INDEX,UNIQUEID_INDEX,X_INDEX,Y_INDEX,SPECIES_INDEX]`:
+
+
+```
+rake db:trees:replace[db/trees.json,8,9,64,65,66]
+```
 
 ## Accessing Admin View
 
