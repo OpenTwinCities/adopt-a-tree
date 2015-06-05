@@ -10,9 +10,10 @@
 Beautify your street by watering a tree.
 
 ## Screenshot
-![Adopt-a-Hydrant](screenshot.png "Adopt-a-Tree")
+![Adopt-a-Tree](screenshot.png "Adopt-a-Tree")
 
 ## See It Online
+
 A version is deployed online at <http://adoptatree.brewingabetterforest.com/>
 
 ## Installation
@@ -90,78 +91,112 @@ rake db:trees:replace[db/trees.json,8,9,64,65,66]
 7. Save your user - `a.save`
 8. Go back to your browser, and visit localhost:3000/admin
 
-## Deploying to Heroku
-A successful deployment to Heroku requires a few setup steps:
+## How to Contribute Code
 
-1. Generate a new secret token:
+So you want to help out on Adopt-A-Tree? You're awesome, and we're happy to 
+help you be as awesome as possible.
 
-    ```
-    rake secret
-    ```
-
-2. Set the token on Heroku:
-
-    ```
-    heroku config:set SECRET_TOKEN=the_token_you_generated
-    ```
-
-3. [Precompile your assets](https://devcenter.heroku.com/articles/rails3x-asset-pipeline-cedar)
-
-    ```
-    RAILS_ENV=production bundle exec rake assets:precompile
-
-    git add public/assets
-
-    git commit -m "vendor compiled assets"
-    ```
-
-4. Add a production database to config/database.yml
-
-5. Seed the production db:
-
-    `heroku run bundle exec rake db:seed`
-
-Keep in mind that the Heroku free Postgres plan only allows up to 10,000 rows,
-so if your city has more than 10,000 fire hydrants (or other thing to be
-adopted), you will need to upgrade to the $9/month plan.
-
-### Google Analytics
-If you have a Google Analytics account you want to use to track visits to your
-deployment of this app, just set your ID and your domain name as environment
-variables:
-
-    heroku config:set GOOGLE_ANALYTICS_ID=your_id
-    heroku config:set GOOGLE_ANALYTICS_DOMAIN=your_domain_name
-
-An example ID is `UA-12345678-9`, and an example domain is `adoptahydrant.org`.
-
-## Contributing
 In the spirit of [free software][free-sw], **everyone** is encouraged to help
-improve this project.
+improve this project. So ways to contribute code include:
 
-[free-sw]: http://www.fsf.org/licensing/essays/free-sw.html
-
-Here are some ways *you* can contribute:
-
-* by using alpha, beta, and prerelease versions
-* by reporting bugs
-* by suggesting new features
-* by [translating to a new language][locales]
-* by writing or editing documentation
-* by writing specifications
+* by writing specifications/tests
 * by writing code (**no patch is too small**: fix typos, add comments, clean up
   inconsistent whitespace)
 * by forking and sending pull requests
 * by refactoring code
+
+[free-sw]: http://www.fsf.org/licensing/essays/free-sw.html
+
+<a name="contrib_code_basics"></a>
+### The Basics
+
+First things first, there are a few things you should be familiar with:
+
+ - The Command Line. Depending on your computer and the tools you use, you 
+   might use the command line a little or a lot. Either way, it helps to know 
+   how to use it a bit. 
+    - Never used the Command Line before? Check out [this tutorial from Open Hatch to get started](http://openhatch.org/missions/shell/about).
+    - Using Windows? Open Hatch also has [a tutorial focused on the Windows command line](http://openhatch.org/missions/windows-setup/).
+ - Git and GitHub. Adopt-A-Tree uses these tools to manage our collaborative 
+   coding. If you've never used git or GitHub before, you can search the 
+   Internet and find a lot of good resources. You can also checkout these 
+   couple of tutorials to get started:
+    - [Install and Setup Git](https://help.github.com/articles/set-up-git/)
+    - [GitHub's Hello World](https://guides.github.com/activities/hello-world/),
+      which covers the on the standard flow for contributing code to projects on GitHub. 
+  - Most of Adopt-A-Tree is written in [Ruby](https://www.ruby-lang.org/en/) and 
+    [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), 
+    using [Rails](http://rubyonrails.org/) and [jQuery](http://jquery.com/). 
+    Familiarity with other frameworks and libraries, such as [Sinatra](http://www.sinatrarb.com/) 
+    (Ruby) and [Ember](http://emberjs.com/) (JavaScript) might also be helpful.
+    And of course, [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) and 
+    [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS).
+
+Don't worry if you're not comfortable with all of these things. Working on a 
+project like Adopt-A-Tree is a great way to learn.
+
+<a name="contrib_code_process"></a>
+### The Process
+
+Are you ready to contribute? Well, here's how:
+
+1. [Fork the repository.][fork]
+2. [Clone your fork to your computer](https://help.github.com/articles/fork-a-repo/#step-2-create-a-local-clone-of-your-fork)
+3. Get it running on your computer. There are a couple of tutorials for 
+   installing on Linux (https://github.com/codeforamerica/adopt-a-hydrant/wiki/Adopta-Install-Notes), 
+   and the process is pretty similar for OS X.
+4. Find an issue and start working on it at https://github.com/ballPointPenguin/adopt-a-tree/issues
+   - Be sure to make comments and ask questions on the issues.
+   - We've prioritized issues into milestones, so please checkout the 
+     milestones to see what should get done next.
+5. [Create a topic branch.][branch]
+6. Add specs for your unimplemented feature or bug fix.
+7. Run `bundle exec rake test`. If your specs pass, return to step 3.
+8. Implement your feature or bug fix.
+9. Run `bundle exec rake test`. If your specs fail, return to step 5.
+10. Run `open coverage/index.html`. If your changes are not completely covered
+   by your tests, return to step 3.
+11. Add, commit, and push your changes.
+12. [Submit a pull request.][pr]
+
+[fork]: http://help.github.com/fork-a-repo/
+[branch]: http://learn.github.com/p/branching.html
+[pr]: http://help.github.com/send-pull-requests/
+
+<a href="contrib_code_meetups"></a>
+### Meetups and Getting Help
+
+Open Twin Cities holds [lots of event that everybody is welcome to](http://opentwincities.org/events/). 
+Our monthly meetups in Minneapolis and St. Paul are great places to come 
+discuss Adopt-A-Tree, ask questions, and get some help.
+
+We also have online ways to discuss and ask questions about Adopt-A-Tree. Join 
+the [Open Twin Cities Google Group](https://groups.google.com/forum/#!forum/twin-cities-brigade) 
+to discuss Adopt-A-Tree with civic technologists all around the Twin Cities. 
+You can also pose questions and submit problems and ideas though the 
+[issues on GitHub](https://github.com/ballPointPenguin/adopt-a-tree/issues). 
+And feel free to email questions and ideas to <contact@opentwincities.org>.
+
+## Additional Ways to Contribute
+Here are some non-coding ways *you* can contribute:
+
+* by using alpha, beta, and prerelease versions
+* by [reporting bugs][submit_tickets]
+* by [suggesting new features][submit_tickets]
+* by [translating to a new language][locales]
+* by writing or editing documentation
 * by closing [issues][]
 * by reviewing patches
 * [financially][]
 
 [locales]: https://github.com/codeforamerica/adopt-a-hydrant/tree/master/config/locales
 [issues]: https://github.com/ballPointPenguin/adopt-a-tree/issues
-[financially]: https://secure.codeforamerica.org/page/contribute
+[financially]: https://givemn.org/project/Open-Twin-Cities
 
-## Submitting an Issue
+
+<a name="submit_tickets"></a>
+[submit_tickets]: #submit_tickets
+## Submitting an Issue or Bug
 We use the [GitHub issue tracker][issues] to track bugs and features. Before
 submitting a bug report or feature request, check to make sure it hasn't
 already been submitted. When submitting a bug report, please include a [Gist][]
@@ -171,21 +206,15 @@ Ideally, a bug report should include a pull request with failing specs.
 
 [gist]: https://gist.github.com/
 
-## Submitting a Pull Request
-1. [Fork the repository.][fork]
-2. [Create a topic branch.][branch]
-3. Add specs for your unimplemented feature or bug fix.
-4. Run `bundle exec rake test`. If your specs pass, return to step 3.
-5. Implement your feature or bug fix.
-6. Run `bundle exec rake test`. If your specs fail, return to step 5.
-7. Run `open coverage/index.html`. If your changes are not completely covered
-   by your tests, return to step 3.
-8. Add, commit, and push your changes.
-9. [Submit a pull request.][pr]
+## Google Analytics
+If you have a Google Analytics account you want to use to track visits to your
+deployment of this app, just set your ID and your domain name as environment
+variables:
 
-[fork]: http://help.github.com/fork-a-repo/
-[branch]: http://learn.github.com/p/branching.html
-[pr]: http://help.github.com/send-pull-requests/
+    heroku config:set GOOGLE_ANALYTICS_ID=your_id
+    heroku config:set GOOGLE_ANALYTICS_DOMAIN=your_domain_name
+
+An example ID is `UA-12345678-9`, and an example domain is `adoptahydrant.org`.
 
 ## Supported Ruby Version
 This library aims to support and is [tested against][travis] Ruby version 2.1.0.
