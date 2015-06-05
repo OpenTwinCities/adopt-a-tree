@@ -151,11 +151,11 @@ Are you ready to contribute? Well, here's how:
      milestones to see what should get done next.
 5. [Create a topic branch.][branch]
 6. Add specs for your unimplemented feature or bug fix.
-7. Run `bundle exec rake test`. If your specs pass, return to step 3.
+7. Run `bundle exec rake test`. If your specs pass, return to step 6.
 8. Implement your feature or bug fix.
-9. Run `bundle exec rake test`. If your specs fail, return to step 5.
+9. Run `bundle exec rake test`. If your specs fail, return to step 8.
 10. Run `open coverage/index.html`. If your changes are not completely covered
-   by your tests, return to step 3.
+   by your tests, return to step 6.
 11. Add, commit, and push your changes.
 12. [Submit a pull request.][pr]
 
