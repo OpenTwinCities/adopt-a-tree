@@ -17,28 +17,110 @@ Beautify your street by watering a tree.
 A version is deployed online at <http://adoptatree.brewingabetterforest.com/>
 
 ## Installation
-This application requires [Postgres](http://www.postgresql.org/) to be installed
 
-You'll also need libffi:
+### System Dependencies
+
+- [Git](http://www.git-scm.com/)
+- [Postgres](http://www.postgresql.org/) plus development header files
+- [Node.js](https://nodejs.org/)
+- [PhaontomJS](http://phantomjs.org/) for tests
+- [libffi](https://en.wikipedia.org/wiki/Libffi)
+
+#### One Line System Dependencies Installation
+
+**Ubuntu/Debian**
 
 ```
-apt-get install libffi-dev
+sudo apt-get install git postgresql libpq-dev nodejs phantomjs libffi-dev
 ```
 
-Refer to the [Adopt-a-Tree Wiki](https://github.com/codeforamerica/adopt-a-hydrant/wiki/Adopta-Install-Notes) for detailed instructions on installation.
+#### Prep the Database
 
-    git clone git://github.com/ballPointPenguin/adopt-a-tree.git
-    cd adopt-a-tree
-    bundle install
+```
+sudo -u postgres createuser -d adopta
+```
 
-    bundle exec rake db:create
-    bundle exec rake db:schema:load
+Edit as superuser `/etc/postgresql/{version number}/main/pg_hba.conf`. Find the
+line 
+
+```
+local   all             postgres                                peer
+```
+
+and add the following line right above it:
+
+```
+local   all             adopta                                  trust
+```
+
+Now, save and restart Postgres:
+
+```
+sudo service postgresql restart
+```
+
+### rbenv
+
+rbenv and it's pluggins are installed via Git. Below are commands to run in
+OS X or Linux for installing rbenv and a couple of useful plugins.
+
+(Note that some systems use `~/.bash_profile` instead of `~/.bashrc`. Running
+`ls -a ~ | egrep '(.bash_profile|.bashrc)'` should tell you which one to use.)
+
+```
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+source ~/.bashrc
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
+```
+
+### Get the Repo
+
+```
+git clone https://github.com/ballPointPenguin/adopt-a-tree.git
+cd adopt-a-tree
+```
+
+### Install the Ruby
+
+First, find out what version of Ruby Adopt-a-Tree runs in
+
+```
+rbenv version
+```
+
+Then, install whatever version of Ruby the above command just returned. This
+part might take some time. 
+
+```
+rbenv install <version number> -k
+```
+
+### Install Gems and Create the Adopt-A-Tree Database
+
+```
+gem install bundler
+bundle install
+bundle exec rake db:create
+bundle exec rake db:schema:load
+bundle exec rake db:seed
+```
+
+### Additional Installation Resources
+
+In case you have trouble with the above installation steps, you might want to
+refer to the [Adopt-a-Hydrant Wiki](https://github.com/codeforamerica/adopt-a-hydrant/wiki/Adopta-Install-Notes) 
+for detailed instructions on installation. You can also post a question to the
+[Open Twin Cities Google Group](https://groups.google.com/forum/#!forum/twin-cities-brigade).
+
 
 ## Usage
-    rails server
 
-## Seed Data
-    bundle exec rake db:seed
+```
+rails server
+```
 
 ## Importing More Trees
 
