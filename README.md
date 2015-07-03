@@ -30,7 +30,7 @@ A version is deployed online at <http://adoptatree.brewingabetterforest.com/>
 **Ubuntu/Debian**
 
 ```
-sudo apt-get install git postgresql libpq-dev nodejs npm libffi-dev
+sudo apt-get install git postgresql libpq-dev nodejs nodejs-legacy npm libffi-dev
 ```
 
 **Fedora/RHEL/CentOS**
