@@ -56,10 +56,11 @@ As superuser, edit:
 - `/etc/postgresql/{version number}/main/pg_hba.conf` in Ubuntu/Debian, or 
 - `/var/lib/pgsql/data/pg_hba.conf` in Fedora
 
-Find the line:
+Find one of these lines:
 
 ```
 local   all             postgres                                peer
+local   all             all                                     peer
 ```
 
 and add the following line right above it:
