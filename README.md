@@ -23,7 +23,6 @@ A version is deployed online at <http://adoptatree.brewingabetterforest.com/>
 - [Git](http://www.git-scm.com/)
 - [Postgres](http://www.postgresql.org/) plus development header files
 - [Node.js](https://nodejs.org/)
-- [PhaontomJS](http://phantomjs.org/) for tests
 - [libffi](https://en.wikipedia.org/wiki/Libffi)
 
 #### One Line System Dependencies Installation
@@ -31,7 +30,19 @@ A version is deployed online at <http://adoptatree.brewingabetterforest.com/>
 **Ubuntu/Debian**
 
 ```
-sudo apt-get install git postgresql libpq-dev nodejs phantomjs libffi-dev
+sudo apt-get install git postgresql libpq-dev nodejs libffi-dev
+```
+
+**Fedora/RHEL/CentOS**
+
+```
+sudo yum install git postgresql-server postgresql-devel nodejs npm libffi-devel patch 
+```
+
+You'll also need to run the following to complete the Postgres installation:
+
+```
+sudo postgresql-setup initdb && sudo systemctl enable postgresql.service && sudo service postgresql start
 ```
 
 #### Prep the Database
@@ -40,8 +51,12 @@ sudo apt-get install git postgresql libpq-dev nodejs phantomjs libffi-dev
 sudo -u postgres createuser -d adopta
 ```
 
-Edit as superuser `/etc/postgresql/{version number}/main/pg_hba.conf`. Find the
-line 
+As superuser, edit:
+
+- `/etc/postgresql/{version number}/main/pg_hba.conf` in Ubuntu/Debian, or 
+- `/var/lib/pgsql/data/pg_hba.conf` in Fedora
+
+Find the line:
 
 ```
 local   all             postgres                                peer
@@ -57,6 +72,14 @@ Now, save and restart Postgres:
 
 ```
 sudo service postgresql restart
+```
+
+### PhantomJS
+
+[PhantomJS](http://phantomjs.org/) is used by tests
+
+```
+sudo npm install -g phantomjs
 ```
 
 ### rbenv
