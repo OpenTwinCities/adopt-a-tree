@@ -55,7 +55,7 @@ sudo postgresql-setup initdb && sudo systemctl enable postgresql.service && sudo
 First, open another terminal and start the database:
 
 ```
-postgres -D /user/local/var/postgres
+postgres -D /usr/local/var/postgres
 ```
 
 Then, create the adopta database user
