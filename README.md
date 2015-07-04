@@ -25,7 +25,15 @@ A version is deployed online at <http://adoptatree.brewingabetterforest.com/>
 - [Node.js](https://nodejs.org/)
 - [libffi](https://en.wikipedia.org/wiki/Libffi)
 
-#### One Line System Dependencies Installation
+**Mac OS X**
+
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install git postgres node 
+```
+
+Note in the above we are fetching [Homebrew](http://brew.sh/) to handle system
+dependencies.
 
 **Ubuntu/Debian**
 
@@ -37,15 +45,26 @@ sudo apt-get install git postgresql libpq-dev nodejs nodejs-legacy npm libffi-de
 
 ```
 sudo yum install git postgresql-server postgresql-devel nodejs npm libffi-devel patch 
-```
-
-You'll also need to run the following to complete the Postgres installation:
-
-```
 sudo postgresql-setup initdb && sudo systemctl enable postgresql.service && sudo service postgresql start
 ```
 
 #### Prep the Database
+
+**Mac OS X**
+
+First, open another terminal and start the database:
+
+```
+postgres -D /user/local/var/postgres
+```
+
+Then, create the adopta database user
+
+```
+createuser -d adopta
+```
+
+**Linux**
 
 ```
 sudo -u postgres createuser -d adopta
@@ -80,7 +99,7 @@ sudo service postgresql restart
 [PhantomJS](http://phantomjs.org/) is used by tests
 
 ```
-sudo npm install -g phantomjs
+npm install -g phantomjs
 ```
 
 ### rbenv
