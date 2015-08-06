@@ -291,7 +291,7 @@ Are you ready to contribute? Well, here's how:
 <a href="contrib_code_meetups"></a>
 ### Meetups and Getting Help
 
-Open Twin Cities holds [lots of event that everybody is welcome to](http://opentwincities.org/events/). 
+Open Twin Cities holds [lots of events that everybody is welcome to](http://opentwincities.org/events/). 
 Our monthly meetups in Minneapolis and St. Paul are great places to come 
 discuss Adopt-A-Tree, ask questions, and get some help.
 
