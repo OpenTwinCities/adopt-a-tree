@@ -87,6 +87,7 @@ GEM
     formatador (0.2.5)
     geokit (1.9.0)
       multi_json (>= 1.3.2)
+    growl (1.0.3)
     guard (2.8.2)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -112,8 +113,6 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
-    libnotify (0.8.4)
-      ffi (>= 1.0.11)
     listen (2.7.11)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -274,11 +273,11 @@ DEPENDENCIES
   factory_girl_rails
   faker
   geokit
+  growl
   guard-rspec
   haml
   jquery-rails
   launchy
-  libnotify
   pg
   poltergeist
   pry-rails
@@ -292,3 +291,6 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   validates_formatting_of
+
+BUNDLED WITH
+   1.10.6
