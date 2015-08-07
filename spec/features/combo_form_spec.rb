@@ -26,7 +26,7 @@ describe 'Combo Form' do
         fill_in 'user_email', with: 'invalid@aol'
         fill_in 'user_username', with: user.username
         fill_in 'user_password_confirmation', with: user.password
-        click_button 'Sign up'
+        find(:button, 'Sign up').trigger('click')
 
         expect(page).to have_button 'Sign up'
         expect(page).to have_selector '.control-group.error #user_email'
@@ -38,7 +38,7 @@ describe 'Combo Form' do
         fill_in 'user_email', with: user.email
         fill_in 'user_username', with: user.username
         fill_in 'user_password_confirmation', with: 'derp'
-        click_button 'Sign up'
+        find(:button, 'Sign up').trigger('click')
 
         expect(page).to have_button 'Sign up'
         expect(page).to have_selector(
@@ -50,7 +50,7 @@ describe 'Combo Form' do
       within '#combo-form' do
         fill_in 'user_email', with: user.email
         fill_in 'user_password_confirmation', with: user.password
-        click_button 'Sign up'
+        find(:button, 'Sign up').trigger('click')
 
         expect(page).to have_button 'Sign up'
         expect(page).to have_selector '.control-group.error #user_username'

@@ -29,6 +29,8 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+Capybara.ignore_hidden_elements = false
+Capybara.default_wait_time = 4
 Capybara.javascript_driver = :poltergeist
 #Capybara.javascript_driver = :selenium
 
