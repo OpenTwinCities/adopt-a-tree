@@ -739,43 +739,5 @@ $(function() {
     return false;
   });
 
-  $('#reminder_form').live('submit', function() {
-    var submitButton = $("#reminder_form input[type='submit']");
-    $(submitButton).attr("disabled", true);
-    $.ajax({
-      type: 'POST',
-      url: '/reminders.json',
-      data: {
-        'utf8': '✓',
-        'authenticity_token': $('#reminder_form input[name="authenticity_token"]').val(),
-        'reminder': {
-          'to_user_id': $('#reminder_to_user_id').val(),
-          'thing_id': activeThingId
-        }
-      },
-      error: function(jqXHR) {
-        $(submitButton).attr("disabled", false);
-      },
-      success: function(data) {
-        $.ajax({
-          type: 'GET',
-          url: '/info_window',
-          data: {
-            'thing_id': activeThingId,
-            'flash': {
-              'notice': "<%= I18n.t("notices.reminder_sent") %>"
-            }
-          },
-          success: function(data) {
-            activeInfoWindow.close();
-            activeInfoWindow.setContent(data);
-            activeInfoWindow.open(map, activeMarker);
-          }
-        });
-      }
-    });
-    return false;
-  });
-
   $('.alert-message').alert();
 });
