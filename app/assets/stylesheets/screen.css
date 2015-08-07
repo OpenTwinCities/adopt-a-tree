@@ -5,7 +5,7 @@ html {
 body {
   height: 100vh;
   margin: 0;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 h1, h2 {
@@ -144,7 +144,8 @@ a.btn {
 
 .map-container {
   width: auto;
-  margin-left: 250px;
+  position: relative;
+  left: 250px;
 }
 
 #map {

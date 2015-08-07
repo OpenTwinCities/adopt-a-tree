@@ -20,7 +20,7 @@ module LoginMacros
     find(:select, 'user_state').find(:xpath, "option[contains(text(), '#{user.state}')]").select_option
     find(:select, 'user_zip').find(:xpath, "option[@value='#{user.zip}']").select_option
     fill_in 'user_password_confirmation', with: user.password
-    click_button 'Sign up'
+    find(:button, 'Sign up').trigger('click')
   end
 
   def sign_out

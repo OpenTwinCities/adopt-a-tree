@@ -10,7 +10,7 @@ describe 'Adoption Form', js: true do
   context 'Not signed in user clicks a thing' do
     before do
       visit root_path
-      find('.thing', match: :first).click
+      find('.thing', match: :first).trigger('click')
     end
 
     it 'Displays the "Sign in to adopt" message' do
@@ -33,7 +33,7 @@ describe 'Adoption Form', js: true do
 
     context 'Submits the form with no name' do
       before do
-        find_button('Adopt!').click
+        find_button('Adopt!').trigger('click')
       end
 
       it 'Displays the "Thank you" message' do
