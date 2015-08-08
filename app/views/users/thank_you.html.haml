@@ -1,4 +1,7 @@
 %h2
   = t("titles.thank_you", :thing => t("defaults.thing"))
   %p Brew A Better Forest would like to thank you for Adopting A Tree by buying you a beer! Please <strong>Edit Your Profile</strong> and fill in your <strong>Shipping Information</strong> to receive your gift.
+  = link_to image_tag('logos/TwitterLogo_55acee.png', alt: 'tweet it!'), "https://twitter.com/intent/tweet?text=I%20just%20adopted%20a%20tree%20at%20http%3A%2F%2Fadoptatree.brewingabetterforest.com/%20%21"
+  = "            "
+  = link_to image_tag('logos/FB-f-Logo__blue_29.png', alt: 'share it!'), "https://www.facebook.com/sharer/sharer.php?u=adoptatree.brewingabetterforest.com"
 = render :partial => 'things/abandon'
