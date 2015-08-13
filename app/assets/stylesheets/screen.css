@@ -138,6 +138,11 @@ a.btn {
   margin: 5px 0;
 }
 
+.sidebar #built-by{
+  margin-top: 10%;
+  vertical-align: bottom;
+}
+
 .sidebar #feedback {
   margin-top: 5px;
 }

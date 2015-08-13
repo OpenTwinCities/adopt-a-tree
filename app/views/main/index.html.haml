@@ -27,6 +27,8 @@
         %p
           %a{:href => URI.escape("mailto:info@brewingabetterforest.com?subject=#{t("titles.main", :thing => t("defaults.thing").titleize)} - #{t("links.feedback").titleize}")}
             = t("links.feedback")
+      #built-by
+        = link_to "Who built this?", "https://github.com/ballPointPenguin/adopt-a-tree/graphs/contributors"
     .table-cell.map-container
       #map
         &nbsp;
