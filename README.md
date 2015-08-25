@@ -16,6 +16,15 @@ Beautify your street by watering a tree.
 
 A version is deployed online at <http://adoptatree.brewingabetterforest.com/>
 
+## Code of Conduct
+
+As an Open Twin Cities project, the [Open Twin Cities Code of Conduct](http://opentwincities.org/about/code-of-conduct/) 
+is in effect regarding online and offline project activities.
+
+Open Twin Cities is dedicated to a harassment-free community for everyone. Be 
+kind to one another. Do not insult or put down other community members. Behave 
+civilly.
+
 ## Installation
 
 ### System Dependencies
