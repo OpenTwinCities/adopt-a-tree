@@ -176,6 +176,28 @@ rails server
 
 ## Importing More Trees
 
+Once or twice a year, the Minneapolis Park Board sends us a shapefile full of
+trees to upload to Adopt-A-Tree. Here is the process for putting those on the
+site:
+
+1. Upload the shapefile to Open Twin Cities' Open Data Portal
+2. Download a JSON version of the file from Open Twin Cities' Open Data Portal
+3. Copy the JSON file to the Adopt-A-Tree server, using user `ubuntu`. Bill has
+   keys.
+4. Log into the Adopt-A-Tree server using user `ubuntu`
+5. Back up the database using `pg_dump adopta_production > SOMEFILENAME`. You'll
+   need to change users.
+6. Open a rails console for production.
+7. Delete all trees that have not been adopted `Thing.where(user_id: nil).destroy_all`
+8. Exit the console, run rake db:trees:list_fields on the JSON file (see below)
+9. run rake db:trees:import. Be sure RAILS_ENV=production.
+10. Open a production rails console again and verify the trees have been imported.
+11. Restart Adopt-A-Tree if the process died during the import.
+
+When running `rails` or `rake`, you'll need to prepend `RAILS_ENV=production bundle exec`
+
+### Rake Tasks
+
 Three rake tasks are available to help you import additional trees to the 
 database, or to replace all tree data, from a GeoJSON file provided by Socrata.
 
