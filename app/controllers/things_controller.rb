@@ -6,7 +6,7 @@ class ThingsController < ApplicationController
     if @things.blank?
       render(json: {errors: {address: [t('errors.not_found', thing: t('defaults.thing'))]}}, status: 404)
     else
-      respond_with @things
+      respond_with @things, except: [:mpls_id, :mpls_unique, :species, :properties]
     end
   end
 
