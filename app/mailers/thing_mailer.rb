@@ -13,9 +13,16 @@ class ThingMailer < ActionMailer::Base
   end
 
   def adopt(thing)
+    @thing = thing
+    @user = thing.user
+    mail(to: @user.email, subject: ['Thank you for adopting', thing.name].compact.join(' '))
   end
 
-  def abandon(thing)
+  def abandon(thing, user_id, name)
+    @thing = thing
+    @user = User.find user_id
+    @name = name
+    mail(to: @user.email, subject: 'Thank you for letting us know you can no longer care for your tree')
   end
 
 end
