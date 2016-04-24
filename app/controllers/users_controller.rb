@@ -43,6 +43,7 @@ class UsersController < Devise::RegistrationsController
     if resource.save
       yield resource if block_given?
       sign_in(resource_name, resource)
+      ThingMailer.sign_up(resource)
       render(json: resource)
     else
       clean_up_passwords(resource)
