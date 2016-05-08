@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806234209) do
+ActiveRecord::Schema.define(version: 20160423211618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: true do |t|
+    t.integer  "event_type", null: false
+    t.integer  "thing_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "promo_codes", force: true do |t|
     t.datetime "created_at"
@@ -56,7 +64,7 @@ ActiveRecord::Schema.define(version: 20150806234209) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "username",                                        null: false
+    t.string   "username",                                                    null: false
     t.string   "organization"
     t.string   "voice_number"
     t.string   "sms_number"
@@ -65,13 +73,13 @@ ActiveRecord::Schema.define(version: 20150806234209) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
-    t.boolean  "admin",                           default: false
-    t.string   "email",                           default: "",    null: false
-    t.string   "encrypted_password",              default: "",    null: false
+    t.boolean  "admin",                                       default: false
+    t.string   "email",                                       default: "",    null: false
+    t.string   "encrypted_password",                          default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                   default: 0,     null: false
+    t.integer  "sign_in_count",                               default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -80,13 +88,13 @@ ActiveRecord::Schema.define(version: 20150806234209) do
     t.datetime "updated_at"
     t.integer  "yob"
     t.string   "gender"
-    t.string   "ethnicity",                                                    array: true
+    t.string   "ethnicity",                       limit: nil,                              array: true
     t.integer  "yearsInMinneapolis"
     t.string   "rentOrOwn"
     t.boolean  "previousTreeWateringExperience"
     t.boolean  "previousEnvironmentalActivities"
     t.integer  "valueForestryWork"
-    t.string   "heardOfAdoptATreeVia",                                         array: true
+    t.string   "heardOfAdoptATreeVia",            limit: nil,                              array: true
     t.string   "awareness_code"
     t.string   "first_name"
     t.string   "last_name"
