@@ -13,6 +13,7 @@ class ThingsController < ApplicationController
   def update
     @thing = Thing.find(params[:id])
     @previous_user_id = @thing.user_id
+    @previous_name = @thing.name
     if @thing.update_attributes(thing_params)
       create_event
       respond_with @thing
@@ -30,6 +31,9 @@ class ThingsController < ApplicationController
   def create_event
     event_type = (@thing.user_id.nil? ? :abandon : :adopt)
     user_id = (@thing.user_id.nil? ? @previous_user_id : @thing.user_id)
+    name = (@thing.user_id.nil? ? @previous_name : @thing.name)
     Event.new(event_type: event_type, thing_id: @thing.id, user_id: user_id).save!
+    ThingMailer.abandon(@thing, user_id, name).deliver if @thing.user_id.nil? && !@previous_user_id.nil?
+    ThingMailer.adopt(@thing).deliver if !@thing.user_id.nil? && @previous_user_id.nil?
   end
 end

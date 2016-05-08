@@ -33,20 +33,4 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :redirect
     assert_redirected_to controller: 'sidebar', action: 'search'
   end
-
-  test 'should return error if password is incorrect' do
-    sign_in @user
-    put :update, user: {name: 'New Name', current_password: 'incorrect'}
-    assert_response :error
-  end
-
-  test 'should create user if information is valid' do
-    post :create, user: {email: 'user@example.com', name: 'User', password: 'correct', password_confirmation: 'correct'}
-    assert_response :success
-  end
-
-  test 'should return error if information is invalid' do
-    post :create, user: {email: 'user@example.com', name: 'User', password: 'correct', password_confirmation: 'incorrect'}
-    assert_response :error
-  end
 end

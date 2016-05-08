@@ -16,6 +16,7 @@ RSpec.describe ThingsController, :type => :controller do
 
   it 'should update tree' do
     expect(thing.name).not_to eq('Birdsill')
+    expect(ThingMailer).not_to receive(:abandon)
 
     put :update, format: 'json', id: thing.id, thing: {name: 'Birdsill'}
 
@@ -25,10 +26,14 @@ RSpec.describe ThingsController, :type => :controller do
     expect(response).to have_http_status(:success)
   end
 
-  it 'should log abandonment' do
+  it 'should log abandonment' do      
     thing.user_id = 88
+    thing.name = 'Ash'
     thing.save!
     Event.delete_all
+    mailer = double('mailer')
+    expect(mailer).to receive('deliver')
+    expect(ThingMailer).to receive(:abandon).with(thing, 88, 'Ash').and_return(mailer)
 
     expect{put :update, format: 'json', id: thing.id, thing: {user_id: nil}}.to change(Event, :count).by(1)
 
@@ -41,6 +46,9 @@ RSpec.describe ThingsController, :type => :controller do
 
   it 'should log adoption' do
     Event.delete_all
+    mailer = double('mailer')
+    expect(mailer).to receive('deliver')
+    expect(ThingMailer).to receive(:adopt).with(thing).and_return(mailer)
 
     expect{put :update, format: 'json', id: thing.id, thing: {user_id: 100000}}.to change(Event, :count).by(1)
 
