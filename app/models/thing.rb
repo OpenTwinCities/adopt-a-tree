@@ -22,6 +22,7 @@ class Thing < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
 
   belongs_to  :user
+  has_many    :events
   has_many    :reminders
   def_delegators :reverse_geocode, :city, :country, :country_code,
                  :full_address, :state, :street_address, :street_name,
