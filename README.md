@@ -150,6 +150,15 @@ part might take some time.
 rbenv install <version number> -k
 ```
 
+### Setup config/database.yml and config/secrets.yml
+
+For testing and dev, you can simply copy the examples
+
+```
+cp config/database.yml.example config/database.yml
+cp config/secrets.yml.example config/secrets.yml
+```
+
 ### Install Gems and Create the Adopt-A-Tree Database
 
 ```
