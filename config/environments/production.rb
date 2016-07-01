@@ -50,12 +50,12 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
 
-  # Setup Mandrill email service.
+  # Setup AWS SES email service.
   config.action_mailer.smtp_settings = {
     address:        'email-smtp.us-east-1.amazonaws.com',
     port:           '587',
-    user_name:      ENV['SES_USERNAME'],
-    password:       ENV['SES_PASSWORD'],
+    user_name:      AppConfig.email.smtp.username,
+    password:       AppConfig.email.smtp.password,
     authentication: :login,
     enable_starttls_auto: true
   }

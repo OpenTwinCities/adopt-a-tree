@@ -1,0 +1,8 @@
+devise:
+  pepper: 'pairsWithSalt'
+  secret: 'devise_secret'
+email:
+  smtp:
+    host: 'email-smtp.us-east-1.amazonaws.com'
+  system:
+    address: 'info@brewingabetterforest.com'
