@@ -26,6 +26,13 @@ group :development do
 end
 
 group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-rbenv-install'
+  gem 'capistrano3-nginx'
+  gem 'capistrano3-puma'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'pry-rails'

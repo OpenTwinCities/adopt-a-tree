@@ -28,6 +28,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
+    airbrussh (1.0.2)
+      sshkit (>= 1.6.1, != 1.7.0)
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -38,6 +40,30 @@ GEM
     bootstrap-sass (3.3.0.1)
       sass (~> 3.2)
     builder (3.2.2)
+    capistrano (3.5.0)
+      airbrussh (>= 1.0.0)
+      capistrano-harrow
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
+    capistrano-bundler (1.1.4)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
+    capistrano-harrow (0.5.2)
+    capistrano-rails (1.1.7)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+    capistrano-rbenv (2.0.4)
+      capistrano (~> 3.1)
+      sshkit (~> 1.3)
+    capistrano-rbenv-install (1.2.0)
+      capistrano (>= 3.0)
+      capistrano-rbenv (>= 2.0)
+    capistrano3-nginx (2.1.5)
+      capistrano (>= 3.0.0)
+    capistrano3-puma (1.2.1)
+      capistrano (~> 3.0)
+      puma (>= 2.6)
     capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -87,7 +113,6 @@ GEM
     formatador (0.2.5)
     geokit (1.9.0)
       multi_json (>= 1.3.2)
-    growl (1.0.3)
     guard (2.8.2)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -113,6 +138,8 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    libnotify (0.9.1)
+      ffi (>= 1.0.11)
     listen (2.7.11)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -126,6 +153,9 @@ GEM
     minitest (5.4.2)
     multi_json (1.11.2)
     nested_form (0.3.2)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (3.2.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
@@ -241,6 +271,9 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    sshkit (1.11.1)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -267,6 +300,13 @@ DEPENDENCIES
   autoprefixer-rails
   bcrypt
   bootstrap-sass
+  capistrano
+  capistrano-bundler
+  capistrano-rails
+  capistrano-rbenv
+  capistrano-rbenv-install
+  capistrano3-nginx
+  capistrano3-puma
   capybara
   codeclimate-test-reporter
   database_cleaner
@@ -275,11 +315,11 @@ DEPENDENCIES
   factory_girl_rails
   faker
   geokit
-  growl
   guard-rspec
   haml
   jquery-rails
   launchy
+  libnotify
   pg
   poltergeist
   pry-rails
@@ -294,5 +334,8 @@ DEPENDENCIES
   spring-commands-rspec
   validates_formatting_of
 
+RUBY VERSION
+   ruby 2.2.0p0
+
 BUNDLED WITH
-   1.10.6
+   1.12.3
