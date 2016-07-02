@@ -48,17 +48,16 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # TODO Re-enable this once email sending works again
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
-  # Setup Mandrill email service.
+  # Setup AWS SES email service.
   config.action_mailer.smtp_settings = {
-    port:           '587',
-    address:        'smtp.mandrillapp.com',
-    user_name:      ENV['MANDRILL_USERNAME'],
-    password:       ENV['MANDRILL_APIKEY'],
-    domain:         'heroku.com',
-    authentication: :plain
+    address:        'email-smtp.us-east-1.amazonaws.com',
+    port:           '465',
+    user_name:      AppConfig.email.smtp.username,
+    password:       AppConfig.email.smtp.password,
+    authentication: :login,
+    ssl:            true
   }
   config.action_mailer.default_url_options = { host: 'adoptatree.brewingabetterforest.com' }
 
