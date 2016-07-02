@@ -5,4 +5,4 @@ email:
   smtp:
     host: 'email-smtp.us-east-1.amazonaws.com'
   system:
-    address: 'info@brewingabetterforest.com'
+    address: 'adoptatree.mpls@opentwincities.org'

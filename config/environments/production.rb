@@ -53,11 +53,11 @@ Rails.application.configure do
   # Setup AWS SES email service.
   config.action_mailer.smtp_settings = {
     address:        'email-smtp.us-east-1.amazonaws.com',
-    port:           '587',
+    port:           '465',
     user_name:      AppConfig.email.smtp.username,
     password:       AppConfig.email.smtp.password,
     authentication: :login,
-    enable_starttls_auto: true
+    ssl:            true
   }
   config.action_mailer.default_url_options = { host: 'adoptatree.brewingabetterforest.com' }
 
