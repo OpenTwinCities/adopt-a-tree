@@ -19,6 +19,10 @@ FactoryGirl.define do
   factory :thing do
     lat { rand_lat }
     lng { rand_lng }
+
+    trait :named do
+      name { Faker::Name.first_name }
+    end
   end
 end
 

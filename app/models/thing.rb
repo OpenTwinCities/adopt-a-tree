@@ -49,4 +49,8 @@ class Thing < ActiveRecord::Base
   def adopted?
     !user.nil?
   end
+
+  def title
+    name.present? ? "#{id} (#{name})" : id
+  end
 end
