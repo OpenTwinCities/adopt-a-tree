@@ -18,23 +18,37 @@
 require 'rails_helper'
 
 RSpec.describe Thing, :type => :model do
-  it "is valid with a lat, and lng" do
-    thing = build(:thing)
 
-    expect(thing).to be_valid
+  context 'with a valid lat and lng' do
+    subject {build(:thing)}
+
+    it 'is valid' do
+      expect(subject).to be_valid
+    end
   end
 
-  it "is invalid without a lat" do
-    thing = build(:thing, lat: nil)
+  context 'without a valid lat and lng' do
+    subject {build(:thing, lat: nil, lng: nil) }
 
-    expect(thing).to_not be_valid
-    expect(thing.errors[:lat].count).to eq 1
+    it 'is invalid without a lat and lng' do
+      expect(subject).to have_invalid_attribute(:lat)
+      expect(subject).to have_invalid_attribute(:lng)
+    end
   end
 
-  it "is invalid without a lng" do
-    thing = build(:thing, lng: nil)
+  context 'with a name' do
+    subject { create(:thing, :named)}
 
-    expect(thing).to_not be_valid
-    expect(thing.errors[:lng].count).to eq 1
+    it "uses it's id and name as it's title" do
+      expect(subject.title).to eq("#{subject.id} (#{subject.name})")
+    end
+  end
+
+  context 'without a name' do
+    subject {create(:thing)}
+
+    it "uses it's id as it's title" do
+      expect(subject.title).to eq(subject.id)
+    end
   end
 end

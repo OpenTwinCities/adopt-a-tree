@@ -65,6 +65,8 @@ class User < ActiveRecord::Base
   validates_formatting_of :voice_number,  using: :us_phone, allow_blank: true
   validates_formatting_of :zip,           using: :us_zip
 
+  alias_attribute :title, :username
+
   def full_name
     "#{self.first_name} #{self.last_name}"
   end

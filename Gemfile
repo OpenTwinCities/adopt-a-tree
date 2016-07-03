@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'puma'
 gem 'rails_admin'
+gem 'rails_admin_enum4'
 gem 'sass-rails'
 gem 'validates_formatting_of'
 
