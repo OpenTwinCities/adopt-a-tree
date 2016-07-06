@@ -1,4 +1,4 @@
-# Adopt-a-Tree
+ Adopt-a-Tree
 
 [![Build Status](https://travis-ci.org/ballPointPenguin/adopt-a-tree.svg?branch=master)](https://travis-ci.org/ballPointPenguin/adopt-a-tree)
 [![Code Climate](https://codeclimate.com/github/ballPointPenguin/adopt-a-tree/badges/gpa.svg)](https://codeclimate.com/github/ballPointPenguin/adopt-a-tree)
@@ -14,7 +14,9 @@ Beautify your street by watering a tree.
 
 ## See It Online
 
-A version is deployed online at <http://adoptatree.brewingabetterforest.com/>
+Production is at <http://adoptatree.brewingabetterforest.com/>
+
+Stage is at <http://adoptatree-mpls-stage.opentwincities.org/>
 
 ## Code of Conduct
 
@@ -242,6 +244,13 @@ in a GeoJSON file, run `rake db:trees:replace[PATH_TO_GEOJSON,ID_INDEX,UNIQUEID_
 ```
 rake db:trees:replace[db/trees.json,8,9,64,65,66]
 ```
+
+## Deploying
+
+Assuming you have SSH keys setup properly, deploy via:
+
+    cap stage deploy
+    cap production deploy
 
 ## Accessing Admin View
 
