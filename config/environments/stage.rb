@@ -59,7 +59,7 @@ Rails.application.configure do
     authentication: :login,
     ssl:            true
   }
-  config.action_mailer.default_url_options = { host: '54.209.187.211' }
+  config.action_mailer.default_url_options = { host: 'rdoptatree-mpls-stage.opentwincities.org' }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
