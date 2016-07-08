@@ -31,6 +31,8 @@ server 'adoptatree.brewingabetterforest.com', user: 'adopta', port: 9222, roles:
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
+set :branch, 'master'
+
 
 
 # Custom SSH Options
