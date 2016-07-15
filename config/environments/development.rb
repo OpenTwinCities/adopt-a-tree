@@ -29,4 +29,9 @@ Rails.application.configure do
   # From http://mailcatcher.me/
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { address: 'localhost', port: 1025 }
+
+  #######################
+  # React Configuraiton
+  #######################
+  config.react.variant = :development
 end

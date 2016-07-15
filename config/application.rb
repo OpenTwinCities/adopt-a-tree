@@ -28,5 +28,10 @@ module AdoptAThing
     # config.i18n.default_locale = :de
     
     ::AppConfig = Hashie::Mash.new(YAML.load(ERB.new(File.read(Rails.root.join('config/config.yml'))).result))
+
+    #######################
+    # React Configuraiton
+    #######################
+    config.react.addons = true
   end
 end
