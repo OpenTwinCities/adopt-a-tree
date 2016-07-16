@@ -40,5 +40,5 @@ Rails.application.configure do
   #######################
   # React Configuraiton
   #######################
-  config.react.variant = :production
+  config.react.variant = :development
 end
