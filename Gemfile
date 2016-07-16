@@ -38,6 +38,7 @@ group :development, :test do
   gem 'capistrano3-puma'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
+  gem 'jasmine-rails'
   gem 'pry-rails'
   gem 'rspec-rails'
 end
