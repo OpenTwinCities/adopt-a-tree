@@ -13,5 +13,7 @@
 //= require jquery-ui
 //= require react
 //= require react_ujs
+//= require i18n
+//= require i18n/translations
 //= require components
 //= require_tree .
