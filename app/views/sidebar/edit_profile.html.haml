@@ -2,7 +2,6 @@
   = f.hidden_field "id"
   = render :partial => "user_email", locals: {f: f}
   = render :partial => "user_username", locals: {f: f}
-  = react_component 'Field', name: 'foobar', type: 'text', label: 'Hi'
   %h2
     = t("labels.shipping_info_heading")
   = render :partial => "user_realnames", locals: {f: f}

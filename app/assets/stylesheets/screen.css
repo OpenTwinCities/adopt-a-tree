@@ -178,9 +178,20 @@ a.btn {
   list-style-type: lower-roman;
 }
 
+/* Field indicators */
+
 img.lock {
   height: 9px;
   width: 7px;
   opacity: 0.8;
   filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+span.required::after {
+  content: "*";
+  color: red;
+  vertical-align: bottom;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: .2em .3em;
 }
