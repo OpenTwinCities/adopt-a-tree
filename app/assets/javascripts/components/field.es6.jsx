@@ -1,4 +1,13 @@
 class Field extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {value: null};
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  /* Properties */
+
   id(){
     return this.props.name;
   }
@@ -11,9 +20,15 @@ class Field extends React.Component {
     }
   }
 
+  value(){
+    return this.state.value;
+  }
+
   optionId(option){
     return this.props.name + '_' + option['value'];
   }
+
+  /* Markup Methods */
 
   requiredMarkup(){
     if (this.props.required === true){
@@ -35,7 +50,7 @@ class Field extends React.Component {
     var self = this;
     switch (this.props.type){
       case 'text':
-        return <input type='text' id={this.id()} name={this.name()}/>
+        return <input type='text' id={this.id()} name={this.name()} ref="input" onKeyUp={this.handleChange}/>
       case 'password':
         return <input type='password' id={this.id()} name={this.name()}/>
       case 'checkbox':
@@ -53,6 +68,11 @@ class Field extends React.Component {
           })
         }</select>
     }
+  }
+
+  handleChange(){
+    var input = $(this.refs.input);
+    this.setState({value: input.val()});
   }
 
   render () {
