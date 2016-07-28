@@ -3,6 +3,7 @@ class CheckboxField extends React.Component{
   constructor(props) {
     super(props);
     this.state = {value: []};
+    this.handleChange = this.handleChange.bind(this);
   }
 
   optionId(option){
@@ -17,16 +18,28 @@ class CheckboxField extends React.Component{
     return this.state.value;
   }
 
+  handleChange(e){
+    var value = this.state.value;
+    var index = $.inArray(e.target.value, value);
+    if (e.target.checked){
+      if (index === -1){
+        value.push(e.target.value);
+      } 
+    } else {
+      value.splice(index, 1)
+    } 
+  }
+
   optionsMarkup(){
     var self = this;
     return this.props.options.map(function(option){
-      return <label><input type='checkbox' id={self.optionId(option)} name={self.name()}/>{option['label'] || option['value']}</label>
+      return <label><input type='checkbox' id={self.optionId(option)} name={self.name()} value={option['value']} onChange={self.handleChange}/>{option['label'] || option['value']}</label>
     });
   }
 
   render(){
     return (
-      <LabeledField name={this.props.name} label={this.props.label}>
+      <LabeledField name={this.name()} label={this.props.label}>
         {this.optionsMarkup()}
       </LabeledField>
     );

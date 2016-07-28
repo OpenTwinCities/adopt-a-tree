@@ -1,5 +1,5 @@
 describe('SelectField', function(){
-  var options;
+  var options, field, fieldNode, select;
   beforeEach(function(){
     options = [
       {'value':'one', 'label':'One'},
@@ -10,6 +10,7 @@ describe('SelectField', function(){
       <SelectField type="select" name="myField" options={options}/>
     );
     fieldNode = ReactDOM.findDOMNode(field);
+    select = field.refs.input;
   });
 
   it("has a label", function(){
@@ -41,5 +42,10 @@ describe('SelectField', function(){
     );
     fieldNode = ReactDOM.findDOMNode(field);
     expect($(fieldNode).find('option').text()).toEqual('foobar');
+  });
+
+  it("updates it's value when a selection occurs", function(){
+    TestUtils.Simulate.change(select, {'target': {'value': 'two'}});
+    expect(field.value()).toContain('two');
   });
 });

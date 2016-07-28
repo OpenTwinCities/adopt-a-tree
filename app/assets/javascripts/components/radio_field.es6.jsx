@@ -3,6 +3,7 @@ class RadioField extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: null};
+    this.handleChange = this.handleChange.bind(this);
   }
 
   value(){
@@ -13,17 +14,22 @@ class RadioField extends React.Component {
     return this.props.name + '_' + option['value'];
   }
 
-  render(){
+  handleChange(e){
+    this.setState({value: e.target.value})
+  }
+
+  optionsMarkup(){
     var self = this;
+    return this.props.options.map(function(option){
+      return <label><input type='radio' id={self.optionId(option)} name={self.props.name} value={option['value']} onChange={self.handleChange}/>{option['label'] || option['value']}</label>
+    });
+  }
+
+  render(){
     return(
       <LabeledField name={this.props.name} label={this.props.label}>
-        {
-          this.props.options.map(function(option){
-            return <label><input type='radio' id={self.optionId(option)} name={self.props.name}/>{option['label'] || option['value']}</label>
-          })
-        }
+        {this.optionsMarkup()}
       </LabeledField>
-
     );
   }
 }

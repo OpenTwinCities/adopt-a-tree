@@ -14,7 +14,7 @@ class LabeledField extends React.Component {
   }
 
   labelMarkup() {
-    return <label htmlFor={this.props.name}>{this.props.label} {this.requiredMarkup()} {this.privateMarkup()} </label>
+    return <label htmlFor={this.props.name}>{this.props.label}{this.requiredMarkup()}{this.privateMarkup()}</label>
   }
 
   render () {
