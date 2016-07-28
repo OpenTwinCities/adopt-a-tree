@@ -10,15 +10,14 @@ class PasswordField extends React.Component{
     return this.state.value;
   }
 
-  handleChange(){
-    var input = $(this.refs.input);
-    this.setState({value: input.val()});
+  handleChange(e){
+    this.setState({value: e.target.value});
   }
 
   render(){
     return (
       <LabeledField name={this.props.name} label={this.props.label}>
-        <input type="password" id={this.props.name} name={this.props.name} ref="input" onKeyUp={this.handleChange}/>
+        <input type="password" id={this.props.name} name={this.props.name} ref="input" onChange={this.handleChange}/>
       </LabeledField>
     );
   }

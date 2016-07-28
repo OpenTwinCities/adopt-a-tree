@@ -42,4 +42,11 @@ describe('RadioField', function(){
     fieldNode = ReactDOM.findDOMNode(field);
     expect($(fieldNode).find('label').text()).toContain('foobar');
   });
+
+  it("updates it's value when radio is selected", function(){
+    var $input = $(fieldNode).find('input').first();
+    var input = $input[0];
+    TestUtils.Simulate.change(input, {target: {checked: true, value: $input.val()}});
+    expect(field.value()).toContain($input.val());
+  });
 });

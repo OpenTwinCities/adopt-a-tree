@@ -25,8 +25,7 @@ describe('TextField', function(){
   });
 
   it("updates it's value when text is entered", function(){
-    $input.val('foo');
-    TestUtils.Simulate.keyUp(input);
+    TestUtils.Simulate.change(input, {target: {value: 'foo'}});
     expect(field.value()).toEqual('foo');
   });
 });
