@@ -28,4 +28,19 @@ describe('PasswordField', function(){
     TestUtils.Simulate.change(input, {target: {value: 'foo'}});
     expect(field.value()).toEqual('foo');
   });
+
+  describe('with a provided value', function(){
+    beforeEach(function(){
+      field = TestUtils.renderIntoDocument(
+        <PasswordField name="myField" label="Useful Label" value="Something" private={true} required={true}/>
+      );
+      fieldNode = ReactDOM.findDOMNode(field);
+      input = field.refs.input;
+      $input = $(input);
+    });
+
+    it("does not set it's value", function(){
+      expect(field.value()).toEqual(null);
+    });
+  });
 });

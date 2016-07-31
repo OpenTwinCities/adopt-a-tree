@@ -2,7 +2,7 @@ class SelectField extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: null};
+    this.state = {value: (props.value || null)};
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -23,10 +23,10 @@ class SelectField extends React.Component {
     var self = this;
     return (
       <LabeledField name={this.props.name} label={this.props.label}>
-        <select id={this.props.name} name={this.props.name} ref='input' onChange={this.handleChange}>
+        <select id={this.props.name} name={this.props.name} ref='input' value={this.value() || ''} onChange={this.handleChange}>
           {
             this.props.options.map(function(option){
-              return <option id={self.optionId(option)}>{option['label'] || option['value']}</option>
+              return <option id={self.optionId(option)} value={option['value']}>{option['label'] || option['value']}</option>
             })
           }
         </select>

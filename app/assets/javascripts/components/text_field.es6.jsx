@@ -2,7 +2,7 @@ class TextField extends React.Component{
 
   constructor(props) {
     super(props);
-    this.state = {value: null};
+    this.state = {value: (props.value || null)}
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -17,7 +17,7 @@ class TextField extends React.Component{
   render(){
     return (
       <LabeledField name={this.props.name} label={this.props.label}>
-        <input type="text" id={this.props.name} name={this.props.name} ref="input" onChange={this.handleChange}/>
+        <input type="text" id={this.props.name} name={this.props.name} ref="input" value={this.value() || ''} onChange={this.handleChange}/>
       </LabeledField>
     );
   }

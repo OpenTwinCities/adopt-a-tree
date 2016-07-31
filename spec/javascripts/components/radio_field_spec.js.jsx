@@ -49,4 +49,31 @@ describe('RadioField', function(){
     TestUtils.Simulate.change(input, {target: {checked: true, value: $input.val()}});
     expect(field.value()).toContain($input.val());
   });
+
+  describe('with a provided value', function(){
+    var checked_value = 'one'
+    beforeEach(function(){
+      field = TestUtils.renderIntoDocument(
+        <RadioField name="myField" options={options} value={checked_value} />
+      );
+      fieldNode = ReactDOM.findDOMNode(field);
+    });
+
+    it("sets it's value", function(){
+      expect(field.value()).toEqual(checked_value);
+    });
+
+    it('sets the appropriate input as checked', function(){
+      var $checked = $(fieldNode).find('input:checked');
+      expect($checked.length).toEqual(1);
+      expect($checked.val()).toEqual(checked_value);
+    });
+
+    it("can have it's value change", function(){
+      var $input = $(fieldNode).find('input[value="three"]').first();
+      var input = $input[0];
+      TestUtils.Simulate.change(input, {target: {checked: true, value: $input.val()}});
+      expect(field.value()).toEqual('three');
+    });
+  });
 });
