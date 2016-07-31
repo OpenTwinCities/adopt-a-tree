@@ -2,7 +2,7 @@ class CheckboxField extends React.Component{
 
   constructor(props) {
     super(props);
-    this.state = {value: []};
+    this.state = {value: (props.value ? props.value.slice(0) : [])};
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -33,7 +33,7 @@ class CheckboxField extends React.Component{
   optionsMarkup(){
     var self = this;
     return this.props.options.map(function(option){
-      return <label><input type='checkbox' id={self.optionId(option)} name={self.name()} value={option['value']} onChange={self.handleChange}/>{option['label'] || option['value']}</label>
+      return <label><input type='checkbox' id={self.optionId(option)} name={self.name()} value={option['value']} checked={self.value().indexOf(option['value']) > -1} onChange={self.handleChange}/>{option['label'] || option['value']}</label>
     });
   }
 

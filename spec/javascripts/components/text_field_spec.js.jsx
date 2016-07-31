@@ -28,4 +28,28 @@ describe('TextField', function(){
     TestUtils.Simulate.change(input, {target: {value: 'foo'}});
     expect(field.value()).toEqual('foo');
   });
+
+  describe('with a provided value', function(){
+    beforeEach(function(){
+      field = TestUtils.renderIntoDocument(
+        <TextField name="myField" label="Useful Label" value="Something" private={true} required={true}/>
+      );
+      fieldNode = ReactDOM.findDOMNode(field);
+      input = field.refs.input;
+      $input = $(input);
+    });
+
+    it("sets it's value", function(){
+      expect(field.value()).toEqual('Something');
+    });
+
+    it('sets the value of the input field', function(){
+      expect($input.val()).toEqual('Something');
+    });
+
+    it("can have it's value change", function(){
+      TestUtils.Simulate.change(input, {target: {value: 'foo'}});
+      expect(field.value()).toEqual('foo');
+    });
+  });
 });

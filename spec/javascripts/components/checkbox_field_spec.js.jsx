@@ -56,4 +56,33 @@ describe('CheckboxField', function(){
     TestUtils.Simulate.change(input, {target: {checked: true, value: $input.val()}});
     expect(field.value()).toContain($input.val());
   });
+
+  describe('with a provided value', function(){
+    var checked_values = ['one', 'two']
+    beforeEach(function(){
+      field = TestUtils.renderIntoDocument(
+        <CheckboxField name="myField" options={options} value={checked_values} />
+      );
+      fieldNode = ReactDOM.findDOMNode(field);
+    });
+
+    it("sets it's value", function(){
+      expect(field.value()).toEqual(checked_values);
+    });
+
+    it('sets the appropriate inputs as checked', function(){
+      var $checked = $(fieldNode).find('input:checked');
+      expect($checked.length).toEqual(checked_values.length);
+      checked_values.forEach(function(checked_value){
+        expect($checked.filter('[value="' + checked_value+'"]').length).toEqual(1);
+      });
+    });
+
+    it("can have it's value change", function(){
+      var $input = $(fieldNode).find('input[value="' + checked_values[0] + '"]').first();
+      var input = $input[0];
+      TestUtils.Simulate.change(input, {target: {checked: false, value: $input.val()}});
+      expect(field.value()).toEqual(checked_values.slice(1));
+    });
+  });
 });

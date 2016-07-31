@@ -7,7 +7,7 @@ describe('SelectField', function(){
       {'value':'three', 'label':'III'}
     ]
     field = TestUtils.renderIntoDocument(
-      <SelectField type="select" name="myField" options={options}/>
+      <SelectField name="myField" options={options}/>
     );
     fieldNode = ReactDOM.findDOMNode(field);
     select = field.refs.input;
@@ -47,5 +47,31 @@ describe('SelectField', function(){
   it("updates it's value when a selection occurs", function(){
     TestUtils.Simulate.change(select, {'target': {'value': 'two'}});
     expect(field.value()).toContain('two');
+  });
+
+  describe('with a provided value', function(){
+    var selected_value = 'two';
+    var $select;
+    beforeEach(function(){
+      field = TestUtils.renderIntoDocument(
+        <SelectField name="myField" options={options} value={selected_value} />
+      );
+      fieldNode = ReactDOM.findDOMNode(field);
+      select = field.refs.input;
+      $select = $(select);
+    });
+
+    it("sets it's value", function(){
+      expect(field.value()).toEqual(selected_value);
+    });
+
+    it('sets the value of the select field', function(){
+      expect($select.find(':selected').val()).toEqual(selected_value);
+    });
+
+    it("can have it's value change", function(){
+      TestUtils.Simulate.change(select, {'target': {'value': 'two'}});
+      expect(field.value()).toContain('two');
+    });
   });
 });
