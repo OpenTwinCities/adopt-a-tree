@@ -39,7 +39,7 @@ class CheckboxField extends React.Component{
 
   render(){
     return (
-      <LabeledField name={this.name()} label={this.props.label}>
+      <LabeledField name={this.name()} label={this.props.label} errors={this.props.errors}>
         {this.optionsMarkup()}
       </LabeledField>
     );
@@ -51,5 +51,6 @@ CheckboxField.propTypes = {
   label: React.PropTypes.string,
   required: React.PropTypes.bool,
   private: React.PropTypes.bool,
-  options: React.PropTypes.array
+  options: React.PropTypes.array,
+  errors: React.PropTypes.array
 };

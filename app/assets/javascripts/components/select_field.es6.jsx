@@ -22,7 +22,7 @@ class SelectField extends React.Component {
   render(){
     var self = this;
     return (
-      <LabeledField name={this.props.name} label={this.props.label}>
+      <LabeledField name={this.props.name} label={this.props.label} errors={this.props.errors}>
         <select id={this.props.name} name={this.props.name} ref='input' value={this.value() || ''} onChange={this.handleChange}>
           {
             this.props.options.map(function(option){
@@ -40,5 +40,6 @@ SelectField.propTypes = {
   label: React.PropTypes.string,
   required: React.PropTypes.bool,
   private: React.PropTypes.bool,
-  options: React.PropTypes.array
+  options: React.PropTypes.array,
+  errors: React.PropTypes.array
 };

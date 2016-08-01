@@ -74,4 +74,19 @@ describe('SelectField', function(){
       expect(field.value()).toContain('two');
     });
   });
+
+  describe('with errors', function(){
+    var errors;
+    beforeEach(function(){
+      errors = ['error messages'];
+      field = TestUtils.renderIntoDocument(
+        <SelectField name="myField" options={options} errors={errors}/>
+      );
+      fieldNode = ReactDOM.findDOMNode(field);
+    });
+
+    it('prints the errors', function(){
+      expect($(fieldNode).text()).toContain('error messages');
+    });
+  });
 });
