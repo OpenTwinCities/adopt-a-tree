@@ -52,4 +52,19 @@ describe('TextField', function(){
       expect(field.value()).toEqual('foo');
     });
   });
+
+  describe('with errors', function(){
+    var errors;
+    beforeEach(function(){
+      errors = ['error messages'];
+      field = TestUtils.renderIntoDocument(
+        <TextField name="myField" errors={errors}/>
+      );
+      fieldNode = ReactDOM.findDOMNode(field);
+    });
+
+    it('prints the errors', function(){
+      expect($(fieldNode).text()).toContain('error messages');
+    });
+  });
 });

@@ -54,5 +54,25 @@ describe('LabeledField', function(){
       var input = $(fieldNode).find('input');
       expect(input.attr('id')).toEqual('myInput');
     });
-  })
+  });
+
+  describe('with errors', function(){
+    beforeEach(function(){
+      field = TestUtils.renderIntoDocument(
+        <LabeledField name="myField" errors={['error message', 'another message']}>
+          <input id="myInput"/>
+        </LabeledField>
+      );
+      fieldNode = ReactDOM.findDOMNode(field);
+    });
+
+    it('adds an error class', function(){
+      expect($(fieldNode).filter('.error').length).toEqual(1);
+    });
+
+    it('prints out the provided errors', function(){
+      expect($(fieldNode).text()).toContain('error message');
+      expect($(fieldNode).text()).toContain('another message');
+    });
+  });
 });

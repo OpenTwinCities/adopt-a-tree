@@ -17,10 +17,23 @@ class LabeledField extends React.Component {
     return <label htmlFor={this.props.name}>{this.props.label}{this.requiredMarkup()}{this.privateMarkup()}</label>
   }
 
+  errorsMarkup(){
+    if (Array.isArray(this.props.errors)){
+      return (
+        <ul className='errorMessages'>
+          {this.props.errors.map(function(error){
+            return <li>{error}</li>
+          })}
+        </ul>
+      );
+    }
+  }
+
   render () {
     return (
-      <fieldset className="control-group">
+      <fieldset className={"control-group " + (this.props.errors ? 'error' : '')}>
         {this.labelMarkup()}
+        {this.errorsMarkup()}
         {this.props.children}
       </fieldset>
     );
@@ -31,5 +44,6 @@ LabeledField.propTypes = {
   name: React.PropTypes.string,
   label: React.PropTypes.string,
   required: React.PropTypes.bool,
-  private: React.PropTypes.bool
+  private: React.PropTypes.bool,
+  errors: React.PropTypes.array
 };
