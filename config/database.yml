@@ -11,7 +11,7 @@ development:
 test:
   <<: *default
   database: adopta_test
-
+  username: <%= ENV['TEST_DATABASE_USERNAME'] || 'adopta' %> 
 stage:
   <<: *default
   database: adopta_stage
