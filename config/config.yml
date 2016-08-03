@@ -8,3 +8,6 @@ email:
     password: <%= ENV['SMTP_PASSWORD'] %>
   system:
     address: 'info@brewingabetterforest.com'
+google_analytics:
+  id: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
+  domain: <%= ENV['GOOGLE_ANALYTICS_DOMAIN'] %>
