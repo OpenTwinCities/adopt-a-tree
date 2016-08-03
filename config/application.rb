@@ -26,12 +26,7 @@ module AdoptAThing
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
-    ::AppConfig = ConfigSpartan.create do
-      file "#{Rails.root}/config/config.yml"
-      if File.exists?("#{Rails.root}/config/config.local.yml")
-        file "#{Rails.root}/config/config.local.yml"
-      end
-    end
+    
+    ::AppConfig = Hashie::Mash.new(YAML.load_file(Rails.root.join('config/config.yml')))
   end
 end

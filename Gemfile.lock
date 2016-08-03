@@ -85,8 +85,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-    config_spartan (1.0.1)
-      hashie
     database_cleaner (1.3.0)
     devise (3.4.1)
       bcrypt (~> 3.0)
@@ -314,7 +312,6 @@ DEPENDENCIES
   capistrano3-puma
   capybara
   codeclimate-test-reporter
-  config_spartan
   database_cleaner
   devise
   dotenv-rails
@@ -323,6 +320,7 @@ DEPENDENCIES
   geokit
   guard-rspec
   haml
+  hashie
   jquery-rails
   launchy
   libnotify
