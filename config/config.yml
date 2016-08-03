@@ -1,8 +1,10 @@
 devise:
-  pepper: 'pairsWithSalt'
-  secret: 'devise_secret'
+  pepper: <%= ENV['DEVISE_PEPPER'] %> || 'pairsWithSalt'
+  secret: <%= ENV['DEVISE_SECRET'] %> || 'devise_secret'
 email:
   smtp:
     host: 'email-smtp.us-east-1.amazonaws.com'
+    username: <%= ENV['SMTP_USERNAME'] %>
+    password: <%= ENV['SMTP_PASSWORD'] %>
   system:
     address: 'info@brewingabetterforest.com'

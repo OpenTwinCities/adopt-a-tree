@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: adopta
+  pool: 5
+
+development:
+  <<: *default
+  database: adopta_development
+
+test:
+  <<: *default
+  database: adopta_test
+
+stage:
+  <<: *default
+  database: adopta_stage
+  username: <%= ENV['STAGE_DATABASE_USERNAME'] %>
+  database: <%= ENV['STAGE_DATABASE_PASSWORD'] %>
+
+production:
+  <<: *default
+  database: adopta_production
+  username: <%= ENV['PROD_DATABASE_USERNAME'] %>
+  database: <%= ENV['PROD_DATABASE_PASSWORD'] %>
