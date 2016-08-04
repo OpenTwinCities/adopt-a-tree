@@ -16,10 +16,10 @@ stage:
   <<: *default
   database: adopta_stage
   username: <%= ENV['STAGE_DATABASE_USERNAME'] %>
-  database: <%= ENV['STAGE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['STAGE_DATABASE_PASSWORD'] %>
 
 production:
   <<: *default
   database: adopta_production
   username: <%= ENV['PROD_DATABASE_USERNAME'] %>
-  database: <%= ENV['PROD_DATABASE_PASSWORD'] %>
+  password: <%= ENV['PROD_DATABASE_PASSWORD'] %>

@@ -27,6 +27,6 @@ module AdoptAThing
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     
-    ::AppConfig = Hashie::Mash.new(YAML.load_file(Rails.root.join('config/config.yml')))
+    ::AppConfig = Hashie::Mash.new(YAML.load(ERB.new(File.read(Rails.root.join('config/config.yml'))).result))
   end
 end
