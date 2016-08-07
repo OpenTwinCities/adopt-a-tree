@@ -1,28 +1,17 @@
-class ShippingInformation extends React.Component{
-
-  cityOptions(){
-    return this.constructor.cityOptions;
-  }
-
-  stateOptions(){
-    return this.constructor.stateOptions;
-  }
-
-  zipOptions(){
-    return this.constructor.zipOptions;
-  }
-
+class ShippingInformation extends FormPartial{
   render(){
+    var fetch = AdoptAUtils.fetch;
+    var klass = ShippingInformation;
     return (
       <div>
         <h2>Shipping Information</h2>
-        <TextField name='first_name' label="First Name" private={true}/>
-        <TextField name='last_name' label="Last Name" private={true}/>
-        <TextField name='address_1' label="Address Line 1" private={true}/>
-        <TextField name='address_2' label="Address Line 2" private={true}/>
-        <SelectField name='city' label="City" options={this.cityOptions()} private={true}/>
-        <SelectField name='state' label="State" options={this.stateOptions()} private={true}/>
-        <SelectField name='zip' label="ZIP" options={this.zipOptions()} private={true}/>
+        <TextField ref='first_name' name='first_name' label="First Name" private={true} value={fetch(this.props.value, 'first_name')} errors={fetch(this.props.errors, 'first_name')}/>
+        <TextField ref='last_name' name='last_name' label="Last Name" private={true} value={fetch(this.props.value, 'last_name')} errors={fetch(this.props.errors, 'last_name')}/>
+        <TextField ref='address_1' name='address_1' label="Address Line 1" private={true} value={fetch(this.props.value, 'address_1')} errors={fetch(this.props.errors, 'address_1')} />
+        <TextField ref='address_2' name='address_2' label="Address Line 2" private={true} value={fetch(this.props.value, 'address_2')} errors={fetch(this.props.errors, 'address_2')}/>
+        <SelectField ref='city' name='city' label="City" options={klass.cityOptions} private={true} value={fetch(this.props.value, 'city')} errors={fetch(this.props.errors, 'city')}/>
+        <SelectField ref='state' name='state' label="State" options={klass.stateOptions} private={true} value={fetch(this.props.value, 'state')} errors={fetch(this.props.errors, 'state')}/>
+        <SelectField ref='zip' name='zip' label="ZIP" options={klass.zipOptions} private={true} value={fetch(this.props.value, 'zip')} errors={fetch(this.props.errors, 'zip')}/>
       </div>
     );
   }

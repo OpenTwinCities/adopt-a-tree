@@ -33,13 +33,20 @@ class CheckboxField extends React.Component{
   optionsMarkup(){
     var self = this;
     return this.props.options.map(function(option){
-      return <label><input type='checkbox' id={self.optionId(option)} name={self.name()} value={option['value']} checked={self.value().indexOf(option['value']) > -1} onChange={self.handleChange}/>{option['label'] || option['value']}</label>
+      return (
+        <div className="checkbox">
+          <label className="checkbox">
+            <input type='checkbox' id={self.optionId(option)} name={self.name()} value={option['value']} checked={self.value().indexOf(option['value']) > -1} onChange={self.handleChange}/>
+            {option['label'] || option['value']}
+          </label>
+        </div>
+      );
     });
   }
 
   render(){
     return (
-      <LabeledField name={this.name()} label={this.props.label} errors={this.props.errors}>
+      <LabeledField name={this.name()} label={this.props.label} private={this.props.private} required={this.props.required} errors={this.props.errors}>
         {this.optionsMarkup()}
       </LabeledField>
     );

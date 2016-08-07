@@ -21,14 +21,16 @@ class RadioField extends React.Component {
   optionsMarkup(){
     var self = this;
     return this.props.options.map(function(option){
-      return <label><input type='radio' id={self.optionId(option)} name={self.props.name} value={option['value']} checked={self.value() === option['value']} onChange={self.handleChange}/>{option['label'] || option['value']}</label>
+      return <label className="radio"><input type='radio' id={self.optionId(option)} name={self.props.name} value={option['value']} checked={self.value() === option['value']} onChange={self.handleChange}/>{option['label'] || option['value']}</label>
     });
   }
 
   render(){
     return(
-      <LabeledField name={this.props.name} label={this.props.label} errors={this.props.errors}>
-        {this.optionsMarkup()}
+      <LabeledField name={this.props.name} label={this.props.label} private={this.props.private} required={this.props.required} errors={this.props.errors}>
+        <div className="radio">
+          {this.optionsMarkup()}
+        </div>
       </LabeledField>
     );
   }
