@@ -184,6 +184,7 @@ img.lock {
   height: 9px;
   width: 7px;
   opacity: 0.8;
+  margin-left: 0.25em;
   filter: alpha(opacity=80); /* For IE8 and earlier */
 }
 
