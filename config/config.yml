@@ -1,5 +1,5 @@
 devise:
-  pepper: <%= ENV['DEVISE_PEPPER'] || 'pairsWithSalt' %> 
+  pepper: <%= ENV['DEVISE_PEPPER'] || 'pairsWithSalt' %>
   secret: <%= ENV['DEVISE_SECRET'] || 'devise_secret' %>
 email:
   smtp:
@@ -11,3 +11,5 @@ email:
 google_analytics:
   id: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
   domain: <%= ENV['GOOGLE_ANALYTICS_DOMAIN'] %>
+google_maps:
+  api_key: <%= ENV['GOOGLE_MAPS_API_KEY'] %>
