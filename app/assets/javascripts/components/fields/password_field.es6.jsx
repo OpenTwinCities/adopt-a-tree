@@ -17,7 +17,7 @@ class PasswordField extends React.Component{
   render(){
     return (
       <LabeledField name={this.props.name} label={this.props.label} private={this.props.private} required={this.props.required} errors={this.props.errors}>
-        <input type="password" id={this.props.name} name={this.props.name} ref="input" onChange={this.handleChange}/>
+        <input type="password" id={this.props.name} name={this.props.name} className={this.props.className} ref="input" onChange={this.handleChange}/>
       </LabeledField>
     );
   }
