@@ -1,4 +1,4 @@
-function itBehavesLikeAFormPartial(view_component, values, errors){
+function itBehavesLikeAForm(view_component, values, errors){
   describe('With values', function(){
     beforeEach(function(){
       field = TestUtils.renderIntoDocument(React.createElement(view_component, {value: values}));

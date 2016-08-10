@@ -1,31 +1,31 @@
-class ShippingInformation extends FormPartial{
+class ShippingInformationPartial extends Form{
   render(){
     var fetch = AdoptAUtils.fetch;
-    var klass = ShippingInformation;
+    var klass = ShippingInformationPartial;
     return (
       <div>
         <h2>Shipping Information</h2>
-        <TextField ref='first_name' name='first_name' label="First Name" private={true} value={fetch(this.props.value, 'first_name')} errors={fetch(this.props.errors, 'first_name')}/>
-        <TextField ref='last_name' name='last_name' label="Last Name" private={true} value={fetch(this.props.value, 'last_name')} errors={fetch(this.props.errors, 'last_name')}/>
-        <TextField ref='address_1' name='address_1' label="Address Line 1" private={true} value={fetch(this.props.value, 'address_1')} errors={fetch(this.props.errors, 'address_1')} />
-        <TextField ref='address_2' name='address_2' label="Address Line 2" private={true} value={fetch(this.props.value, 'address_2')} errors={fetch(this.props.errors, 'address_2')}/>
-        <SelectField ref='city' name='city' label="City" options={klass.cityOptions} private={true} value={fetch(this.props.value, 'city')} errors={fetch(this.props.errors, 'city')}/>
-        <SelectField ref='state' name='state' label="State" options={klass.stateOptions} private={true} value={fetch(this.props.value, 'state')} errors={fetch(this.props.errors, 'state')}/>
-        <SelectField ref='zip' name='zip' label="ZIP" options={klass.zipOptions} private={true} value={fetch(this.props.value, 'zip')} errors={fetch(this.props.errors, 'zip')}/>
+        <TextField ref='first_name' name='first_name' label={I18n.t('labels.first_name')} private={true} value={fetch(this.props.value, 'first_name')} errors={fetch(this.props.errors, 'first_name')}/>
+        <TextField ref='last_name' name='last_name' label={I18n.t('labels.last_name')} private={true} value={fetch(this.props.value, 'last_name')} errors={fetch(this.props.errors, 'last_name')}/>
+        <TextField ref='address_1' name='address_1' label={I18n.t('labels.address_1')} private={true} value={fetch(this.props.value, 'address_1')} errors={fetch(this.props.errors, 'address_1')} />
+        <TextField ref='address_2' name='address_2' label={I18n.t('labels.address_2')} private={true} value={fetch(this.props.value, 'address_2')} errors={fetch(this.props.errors, 'address_2')}/>
+        <SelectField ref='city' name='city' label={I18n.t('labels.city')} options={klass.cityOptions} private={true} value={fetch(this.props.value, 'city')} errors={fetch(this.props.errors, 'city')}/>
+        <SelectField ref='state' name='state' label={I18n.t('labels.state')} options={klass.stateOptions} private={true} value={fetch(this.props.value, 'state')} errors={fetch(this.props.errors, 'state')}/>
+        <SelectField ref='zip' name='zip' label={I18n.t('labels.zip')} options={klass.zipOptions} private={true} value={fetch(this.props.value, 'zip')} errors={fetch(this.props.errors, 'zip')}/>
       </div>
     );
   }
 }
 
-ShippingInformation.cityOptions = [
+ShippingInformationPartial.cityOptions = [
   {value: 'Minneapolis'}
 ];
 
-ShippingInformation.stateOptions = [
+ShippingInformationPartial.stateOptions = [
   {value: 'MN', label: 'Minnesota'}
 ];
 
-ShippingInformation.zipOptions = [
+ShippingInformationPartial.zipOptions = [
   {value: '55401'}, {value: '55402'}, {value: '55403'}, {value: '55404'}, {value: '55405'}, {value: '55406'}, {value: '55407'}, {value: '55408'}, {value: '55409'}, {value: '55410'},
   {value: '55411'}, {value: '55412'}, {value: '55413'}, {value: '55414'}, {value: '55415'}, {value: '55416'}, {value: '55417'}, {value: '55418'}, {value: '55419'}, {value: '55420'},
   {value: '55421'}, {value: '55422'}, {value: '55423'}, {value: '55424'}, {value: '55425'}, {value: '55426'}, {value: '55427'}, {value: '55428'}, {value: '55429'}, {value: '55430'},

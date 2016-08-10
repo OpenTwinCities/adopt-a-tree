@@ -36,7 +36,7 @@ class CheckboxField extends React.Component{
       return (
         <div className="checkbox">
           <label className="checkbox">
-            <input type='checkbox' id={self.optionId(option)} name={self.name()} value={option['value']} checked={self.value().indexOf(option['value']) > -1} onChange={self.handleChange}/>
+            <input type='checkbox' id={self.optionId(option)} name={self.name()} className={self.props.className} value={option['value']} checked={self.value().indexOf(option['value']) > -1} onChange={self.handleChange}/>
             {option['label'] || option['value']}
           </label>
         </div>

@@ -1,4 +1,4 @@
-describe('ShippingInformation', function(){
+describe('ShippingInformationPartial', function(){
   var field, fieldNode, $field;
 
   var values = {
@@ -21,11 +21,11 @@ describe('ShippingInformation', function(){
     zip: ['stop']
   };
 
-  itBehavesLikeAFormPartial(ShippingInformation, values, errors);
+  itBehavesLikeAForm(ShippingInformationPartial, values, errors);
 
   beforeEach(function(){
     field = TestUtils.renderIntoDocument(
-      <ShippingInformation/>
+      <ShippingInformationPartial/>
     );
     fieldNode = ReactDOM.findDOMNode(field);
     $field = $(fieldNode);

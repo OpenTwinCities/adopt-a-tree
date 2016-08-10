@@ -1,4 +1,4 @@
-describe('Suvey', function(){
+describe('SuveyPartial', function(){
   var field, fieldNode, $field;
 
   var values = {
@@ -27,11 +27,11 @@ describe('Suvey', function(){
     valueForestryWork: ['stu']
   };
 
-  itBehavesLikeAFormPartial(Survey, values, errors);
+  itBehavesLikeAForm(SurveyPartial, values, errors);
 
   beforeEach(function(){
     field = TestUtils.renderIntoDocument(
-      <Survey/>
+      <SurveyPartial/>
     );
     fieldNode = ReactDOM.findDOMNode(field);
     $field = $(fieldNode);
