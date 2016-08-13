@@ -20,7 +20,7 @@ class LabeledField extends React.Component {
   errorsMarkup(){
     if (Array.isArray(this.props.errors)){
       return (
-        <ul className='errorMessages'>
+        <ul className='errormsg'>
           {this.props.errors.map(function(error){
             return <li>{error}</li>
           })}

@@ -1,45 +1,8 @@
 $(function() {
-  var center = new google.maps.LatLng(44.983333, -93.266667);
-  var mapOptions = {
-    center: center,
-    disableDoubleClickZoom: false,
-    keyboardShortcuts: false,
-    mapTypeControl: false,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-    maxZoom: 19,
-    minZoom: 10,
-    panControl: false,
-    rotateControl: false,
-    scaleControl: false,
-    scrollwheel: true,
-    streetViewControl: true,
-    zoom: 12,
-    zoomControl: true
-  };
-  var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-  var size = new google.maps.Size(27.0, 37.0);
-  var origin = new google.maps.Point(0, 0);
-  var anchor = new google.maps.Point(13.0, 18.0);
-  var greenMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/marker-green.png' %>',
-    size,
-    origin,
-    anchor
-  );
-  var redMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/marker-yellow.png' %>',
-    size,
-    origin,
-    anchor
-  );
-  var markerShadowImage = new google.maps.MarkerImage('<%= image_path 'markers/shadow.png' %>',
-    new google.maps.Size(46.0, 37.0),
-    origin,
-    anchor
-  );
   var activeThingId;
   var activeMarker;
   var activeInfoWindow;
   var isWindowOpen = false;
-  var thingIds = [];
 
   function insertFormErrors(form_name, form_prefix, data, errors){
     for (var attribute in data.errors){
@@ -58,158 +21,6 @@ $(function() {
     }, 500);
     //errors[0].focus();
   }
-
-  function addMarker(thingId, thingTitle, point, color) {
-    if(color === 'green') {
-      var image = greenMarkerImage;
-    } else if(color === 'red') {
-      var image = redMarkerImage;
-    }
-    var marker = new google.maps.Marker({
-      animation: google.maps.Animation.DROP,
-      icon: image,
-      map: map,
-      position: point,
-      shadow: markerShadowImage,
-      title: thingTitle,
-      optimized: false
-    });
-    google.maps.event.addListener(marker, 'click', function(a, b, c) {
-      if(activeInfoWindow) {
-        activeInfoWindow.close();
-      }
-      var infoWindow = new google.maps.InfoWindow({
-        maxWidth: 210
-      });
-      google.maps.event.addListener(infoWindow, 'closeclick', function() {
-        isWindowOpen = false;
-      });
-      activeInfoWindow = infoWindow;
-      activeThingId = thingId;
-      activeMarker = marker;
-      $.ajax({
-        type: 'GET',
-        url: '/info_window',
-        data: {
-          'thing_id': thingId
-        },
-        success: function(data) {
-          // Prevent race condition, which could lead to multiple windows being open at the same time.
-          if(infoWindow === activeInfoWindow) {
-            infoWindow.setContent(data);
-            infoWindow.open(map, marker);
-            isWindowOpen = true;
-          }
-        }
-      });
-    });
-    thingIds.push(thingId);
-  }
-
-  function addMarkersAround(lat, lng) {
-    var submitButton = $("#address_form input[type='submit']");
-    $.ajax({
-      type: 'GET',
-      url: '/things.json',
-      data: {
-        'utf8': '✓',
-        'lat': lat,
-        'lng': lng,
-        'limit': $('#address_form input[name="limit"]').val()
-      },
-      error: function(jqXHR) {
-        $(submitButton).attr("disabled", false);
-      },
-      success: function(data) {
-        $(submitButton).attr("disabled", false);
-        if(data.errors) {
-          $('#address').parent().addClass('error');
-          $('#address').focus();
-        } else {
-          $('#address').parent().removeClass('error');
-          var i = -1;
-          var thingTitles = [];
-          $(data).each(function(index, thing) {
-            var thingType = thing.species || 'Thing';
-            var thingTitle = thingType + '_' + thing.id;
-            thingTitles.push(thingTitle);
-            if($.inArray(thing.id, thingIds) === -1) {
-              i += 1;
-            } else {
-              // continue
-              return true;
-            }
-            setTimeout(function() {
-              var point = new google.maps.LatLng(thing.lat, thing.lng);
-              if(thing.user_id) {
-                var color = 'green';
-              } else {
-                var color = 'red';
-              }
-              addMarker(thing.id, thingTitle, point, color);
-              if(index === i) {
-                // at this point the things should exist in the DOM
-                addClassesAndIdsToThings(thingTitles);
-              }
-            }, i * 100);
-          });
-        }
-      }
-    });
-  };
-
-  // This helps with testing and other... manipulations
-  function addClassesAndIdsToThings(thingTitles) {
-    $(thingTitles).each(function(i, tt) {
-      var $thing = $('div[title="' + tt + '"]');
-      $thing.addClass('thing');
-      $thing.attr('id', tt);
-    });
-  };
-
-  google.maps.event.addListener(map, 'idle', function() {
-    var center = map.getCenter();
-    addMarkersAround(center.lat(), center.lng());
-  });
-
-  $('#address_form').on('submit', function() {
-    var submitButton = $("#address_form input[type='submit']");
-    $(submitButton).attr("disabled", true);
-    if($('#address').val() === '') {
-      $(submitButton).attr("disabled", false);
-      $('#address').parent().addClass('error');
-      $('#address').focus();
-    } else {
-      $.ajax({
-        type: 'GET',
-        url: '/address.json',
-        data: {
-          'utf8': '✓',
-          'city_state': $('#city_state').val(),
-          'address': $('#address').val()
-        },
-        error: function(jqXHR) {
-          $(submitButton).attr("disabled", false);
-          $('#address').parent().addClass('error');
-          $('#address').focus();
-        },
-        success: function(data) {
-          $(submitButton).attr("disabled", false);
-          if(data.errors) {
-            $('#address').parent().addClass('error');
-            $('#address').focus();
-          } else {
-            $('#address').parent().removeClass('error');
-            addMarkersAround(data[0], data[1]);
-            var center = new google.maps.LatLng(data[0], data[1]);
-            map.setCenter(center);
-            map.setZoom(19);
-          }
-        }
-      });
-    }
-    return false;
-  });
 
   // Focus on the first non-empty text input or password field
   function setComboFormFocus() {
@@ -236,7 +47,7 @@ $(function() {
         args.activeInfoWindow.close();
         args.activeInfoWindow.setContent(data);
         args.activeInfoWindow.open(map, args.activeMarker);
-        args.activeMarker.setIcon(greenMarkerImage);
+        args.activeMarker.setIcon(ThingMap.greenMarkerImage);
         args.activeMarker.setAnimation(google.maps.Animation.BOUNCE);
     	  $('#edit_profile_link').click();
       }
@@ -562,7 +373,7 @@ $(function() {
               activeInfoWindow.close();
               activeInfoWindow.setContent(data);
               activeInfoWindow.open(map, activeMarker);
-              activeMarker.setIcon(redMarkerImage);
+              activeMarker.setIcon(ThingMap.redMarkerImage);
               activeMarker.setAnimation(null);
             }
           });
@@ -740,4 +551,6 @@ $(function() {
   });
 
   $('.alert-message').alert();
+
+  ThingMap.initialize();
 });
