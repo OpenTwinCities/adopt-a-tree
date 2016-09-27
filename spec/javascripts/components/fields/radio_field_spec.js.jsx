@@ -91,4 +91,23 @@ describe('RadioField', function(){
       expect($(fieldNode).text()).toContain('error messages');
     });
   });
+
+  describe('with onStateChange', function(){
+    var stateChangeSypy, input, $input;
+    
+    beforeEach(function(){
+      stateChangeSpy = jasmine.createSpy('stateChangeCallback');
+      field = TestUtils.renderIntoDocument(
+        <CheckboxField name="myField" options={options} onStateChange={stateChangeSpy}/>
+      );
+      fieldNode = ReactDOM.findDOMNode(field);
+      var $input = $(fieldNode).find('input[value="three"]').first();
+      var input = $input[0];
+    });
+
+    it('calls the provided onStateChange', function(){
+      TestUtils.Simulate.change(input, {target: {checked: true, value: $input.val()}});
+      expect(stateChangeSpy).toHaveBeenCalled();
+    });
+  });
 });

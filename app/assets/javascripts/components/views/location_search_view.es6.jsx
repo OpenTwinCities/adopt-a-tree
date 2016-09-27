@@ -77,9 +77,8 @@ class LocationSearchView extends Form{
           <a id='sign_out_link' className='btn btn-danger'>{I18n.t('buttons.sign_out')}</a>
         </fieldset>
       </form>
-    )
+    );
   }
-
 }
 
 LocationSearchView.cityStateOptions = [

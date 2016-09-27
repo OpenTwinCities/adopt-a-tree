@@ -29,7 +29,9 @@ function itBehavesLikeAForm(view_component, values, errors){
   
     it('Applies errors to fields', function(){
       $.each(errors, function(key, message){
-        expect($field.find('.error:contains("'+ message +'")').length).toEqual(1, 'error message "' + message + '" could not be found');
+        if (message !== null){
+          expect($field.find('.error:contains("'+ message +'")').length).toEqual(1, 'error message "' + message + '" could not be found');
+        }
       });
     });
   });
