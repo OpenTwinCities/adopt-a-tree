@@ -5,8 +5,8 @@ class EditProfile extends React.Component{
       <form>
         <TextField name='email' label="Email Address" private={true}/>
         <TextField name='username' label="Username" private={false}/>
-        <ShippingInformation/>
-        <Survey/>
+        <ShippingInformationPartial/>
+        <SurveyPartial/>
         <h2>Change Password</h2>
         <PasswordField name='password' label='New Password' private={true}/>
         <PasswordField name='current_password' label='Current Password' private={true}/>

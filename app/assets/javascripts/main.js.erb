@@ -22,16 +22,6 @@ $(function() {
     //errors[0].focus();
   }
 
-  // Focus on the first non-empty text input or password field
-  function setComboFormFocus() {
-    $('#combo-form input[type="email"], #combo-form input[type="text"]:visible, #combo-form input[type="password"]:visible, #combo-form input[type="submit"]:visible, #combo-form input[type="tel"]:visible, #combo-form button:visible').each(function(index) {
-      if($(this).val() === "" || $(this).attr('type') === 'submit' || this.tagName.toLowerCase() === 'button') {
-        $(this).focus();
-        return false;
-      }
-    });
-  }
-
   function congratulateAdopter(args){
     $.ajax({
       type: 'GET',
@@ -70,38 +60,6 @@ $(function() {
     });
 
   }
-
-  $('#combo-form input[type="radio"]').on('click', function() {
-    var radioInput = $(this);
-    if('new' === radioInput.val()) {
-      $('#combo-form').data('state', 'user_sign_up');
-      $('#user_forgot_password_fields').slideUp();
-      $('#user_sign_in_fields').slideUp();
-      $('#user_sign_up_fields').slideDown(function() {
-        setComboFormFocus();
-      });
-    } else if('existing' === radioInput.val()) {
-      $('#user_sign_up_fields').slideUp();
-      $('#user_sign_in_fields').slideDown(function() {
-        $('#combo-form').data('state', 'user_sign_in');
-        setComboFormFocus();
-        $('#user_forgot_password_link').click(function() {
-          $('#combo-form').data('state', 'user_forgot_password');
-          $('#user_sign_in_fields').slideUp();
-          $('#user_forgot_password_fields').slideDown(function() {
-            setComboFormFocus();
-            $('#user_remembered_password_link').click(function() {
-              $('#combo-form').data('state', 'user_sign_in');
-              $('#user_forgot_password_fields').slideUp();
-              $('#user_sign_in_fields').slideDown(function() {
-                setComboFormFocus();
-              });
-            });
-          });
-        });
-      });
-    }
-  });
 
   $('#combo-form').on('submit', function() {
     var submitButton = $("#combo-form input[type='submit']");
