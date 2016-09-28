@@ -1,11 +1,11 @@
  Adopt-a-Tree
 
-[![Build Status](https://travis-ci.org/ballPointPenguin/adopt-a-tree.svg?branch=master)](https://travis-ci.org/ballPointPenguin/adopt-a-tree)
-[![Code Climate](https://codeclimate.com/github/ballPointPenguin/adopt-a-tree/badges/gpa.svg)](https://codeclimate.com/github/ballPointPenguin/adopt-a-tree)
-[![Test Coverage](https://codeclimate.com/github/ballPointPenguin/adopt-a-tree/badges/coverage.svg)](https://codeclimate.com/github/ballPointPenguin/adopt-a-tree)
+[![Build Status](https://travis-ci.org/OpenTwinCities/adopt-a-tree.svg?branch=master)](https://travis-ci.org/OpenTwinCities/adopt-a-tree)
+[![Code Climate](https://codeclimate.com/github/OpenTwinCities/adopt-a-tree/badges/gpa.svg)](https://codeclimate.com/github/OpenTwinCities/adopt-a-tree)
+[![Test Coverage](https://codeclimate.com/github/OpenTwinCities/adopt-a-tree/badges/coverage.svg)](https://codeclimate.com/github/OpenTwinCities/adopt-a-tree)
 
-[travis]: https://travis-ci.org/ballPointPenguin/adopt-a-tree
-[code-climate]: https://codeclimate.com/github/ballPointPenguin/adopt-a-tree
+[travis]: https://travis-ci.org/OpenTwinCities/adopt-a-tree
+[code-climate]: https://codeclimate.com/github/OpenTwinCities/adopt-a-tree
 
 Beautify your street by watering a tree.
 
