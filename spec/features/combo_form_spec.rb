@@ -8,7 +8,7 @@ describe 'Combo Form' do
   let(:user) { build(:user) }
 
   context 'Home page combo form' do
-    it 'shows email, username, and password fields' do
+    xit 'shows email, username, and password fields' do
       within '#combo-form' do
         sign_up_button = page.find_button 'Sign up'
 
@@ -21,7 +21,7 @@ describe 'Combo Form' do
   end
 
   context 'Invalid sign up' do
-    it 'does not sign up with invalid email address', js: true do
+    xit 'does not sign up with invalid email address', js: true do
       within '#combo-form' do
         fill_in 'user_email', with: 'invalid@aol'
         fill_in 'user_username', with: user.username
@@ -33,7 +33,7 @@ describe 'Combo Form' do
       end
     end
 
-    it 'does not sign up with invalid password', js: true do
+    xit 'does not sign up with invalid password', js: true do
       within '#combo-form' do
         fill_in 'user_email', with: user.email
         fill_in 'user_username', with: user.username
@@ -46,7 +46,7 @@ describe 'Combo Form' do
       end
     end
 
-    it 'does not sign up with no username', js: true do
+    xit 'does not sign up with no username', js: true do
       within '#combo-form' do
         fill_in 'user_email', with: user.email
         fill_in 'user_password_confirmation', with: user.password
@@ -59,7 +59,7 @@ describe 'Combo Form' do
   end
 
   context 'Successful sign up', js: true do
-    it 'displays a "Thanks" message' do
+    xit 'displays a "Thanks" message' do
       sign_up user
 
       within '.sidebar' do
