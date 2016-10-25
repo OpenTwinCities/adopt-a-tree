@@ -57,4 +57,5 @@ group :test do
   gem 'launchy'
   gem 'poltergeist'
   gem 'selenium-webdriver'
+  gem 'jasmine'
 end
