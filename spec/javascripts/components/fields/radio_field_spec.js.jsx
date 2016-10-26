@@ -101,8 +101,8 @@ describe('RadioField', function(){
         <CheckboxField name="myField" options={options} onStateChange={stateChangeSpy}/>
       );
       fieldNode = ReactDOM.findDOMNode(field);
-      var $input = $(fieldNode).find('input[value="three"]').first();
-      var input = $input[0];
+      $input = $(fieldNode).find('input[value="three"]').first();
+      input = $input[0];
     });
 
     it('calls the provided onStateChange', function(){
