@@ -28,3 +28,5 @@
 .DS_Store
 .idea
 .secret
+logfile
+Gemfile.lock
