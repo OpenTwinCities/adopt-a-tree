@@ -98,7 +98,7 @@ describe('RadioField', function(){
     beforeEach(function(){
       stateChangeSpy = jasmine.createSpy('stateChangeCallback');
       field = TestUtils.renderIntoDocument(
-        <CheckboxField name="myField" options={options} onStateChange={stateChangeSpy}/>
+        <RadioField name="myField" options={options} onStateChange={stateChangeSpy}/>
       );
       fieldNode = ReactDOM.findDOMNode(field);
       $input = $(fieldNode).find('input[value="three"]').first();
