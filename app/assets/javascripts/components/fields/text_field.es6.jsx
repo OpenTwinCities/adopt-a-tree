@@ -6,6 +6,12 @@ class TextField extends React.Component{
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillUpdate(){
+    if (this.props.onStateChange){
+      this.props.onStateChange();
+    }
+  }
+
   value(){
     return this.state.value;
   }
@@ -30,5 +36,6 @@ TextField.propTypes = {
   private: React.PropTypes.bool,
   value: React.PropTypes.string,
   placeholder: React.PropTypes.string,
-  errors: React.PropTypes.array
+  errors: React.PropTypes.array,
+  onStateChange: React.PropTypes.func
 };

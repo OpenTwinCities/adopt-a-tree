@@ -6,6 +6,12 @@ class SelectField extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillUpdate(){
+    if (this.props.onStateChange){
+      this.props.onStateChange();
+    }
+  }
+
   value(){
     return this.state.value;
   }
@@ -41,5 +47,6 @@ SelectField.propTypes = {
   required: React.PropTypes.bool,
   private: React.PropTypes.bool,
   options: React.PropTypes.array,
-  errors: React.PropTypes.array
+  errors: React.PropTypes.array,
+  onStateChange: React.PropTypes.func
 };

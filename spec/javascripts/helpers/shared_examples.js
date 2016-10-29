@@ -36,3 +36,22 @@ function itBehavesLikeAForm(view_component, values, errors){
     });
   });
 }
+
+function itBehavesLikeAFieldWithOnStateChangeSupport(field_component, field_props, get_$input, trigger_change){
+  describe('with onStateChange', function(){
+    var stateChangeSpy, input, $input;
+
+    beforeEach(function(){
+      stateChangeSpy = jasmine.createSpy('stateChangeCallback');
+      field_props.onStateChange = stateChangeSpy;
+      field = TestUtils.renderIntoDocument(React.createElement(field_component, field_props));
+      $input = get_$input(field);
+      input = $input[0];
+    });
+
+    it('calls the provided onStateChange', function(){
+      trigger_change($input, input);
+      expect(stateChangeSpy).toHaveBeenCalled();
+    });
+  });
+}

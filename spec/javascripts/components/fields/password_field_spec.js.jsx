@@ -58,4 +58,11 @@ describe('PasswordField', function(){
       expect($(fieldNode).text()).toContain('error messages');
     });
   });
+
+  itBehavesLikeAFieldWithOnStateChangeSupport(
+    PasswordField,
+    {name: 'myField'},
+    function(field) { return $(field.refs.input); },
+    function($input, input) { TestUtils.Simulate.change(input, {target: {value: 'foo'}}); }
+  );
 });
