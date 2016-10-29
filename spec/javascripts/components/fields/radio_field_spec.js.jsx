@@ -1,11 +1,8 @@
 describe('RadioField', function(){
-  var options, field, fieldNode;
+  var field, fieldNode;
+  var options = reset_options();
   beforeEach(function(){
-    options = [
-      {'value':'one', 'label':'One'},
-      {'value':'two', 'label':'2'},
-      {'value':'three', 'label':'III'}
-    ]
+    options = reset_options(); 
     field = TestUtils.renderIntoDocument(
       <RadioField type="radio" name="myField" options={options}/>
     );
@@ -92,22 +89,18 @@ describe('RadioField', function(){
     });
   });
 
-  describe('with onStateChange', function(){
-    var stateChangeSypy, input, $input;
-    
-    beforeEach(function(){
-      stateChangeSpy = jasmine.createSpy('stateChangeCallback');
-      field = TestUtils.renderIntoDocument(
-        <CheckboxField name="myField" options={options} onStateChange={stateChangeSpy}/>
-      );
-      fieldNode = ReactDOM.findDOMNode(field);
-      $input = $(fieldNode).find('input[value="three"]').first();
-      input = $input[0];
-    });
-
-    it('calls the provided onStateChange', function(){
-      TestUtils.Simulate.change(input, {target: {checked: true, value: $input.val()}});
-      expect(stateChangeSpy).toHaveBeenCalled();
-    });
-  });
+  itBehavesLikeAFieldWithOnStateChangeSupport(
+    RadioField,
+    {name: 'myField', options: options},
+    function(field) { return $(ReactDOM.findDOMNode(field)).find('input[value="three"]').first(); },
+    function($input, input){ TestUtils.Simulate.change(input, {target: {checked: true, value: $input.val()}}); }
+  );
 });
+
+function reset_options(){
+  return [
+    {'value':'one', 'label':'One'},
+    {'value':'two', 'label':'2'},
+    {'value':'three', 'label':'III'}
+  ];
+}

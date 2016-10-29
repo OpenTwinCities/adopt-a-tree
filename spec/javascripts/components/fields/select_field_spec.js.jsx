@@ -1,11 +1,8 @@
 describe('SelectField', function(){
-  var options, field, fieldNode, select;
+  var field, fieldNode, select;
+  var options = reset_options();
   beforeEach(function(){
-    options = [
-      {'value':'one', 'label':'One'},
-      {'value':'two', 'label':'2'},
-      {'value':'three', 'label':'III'}
-    ]
+    options = reset_options();
     field = TestUtils.renderIntoDocument(
       <SelectField name="myField" options={options}/>
     );
@@ -89,4 +86,19 @@ describe('SelectField', function(){
       expect($(fieldNode).text()).toContain('error messages');
     });
   });
+
+  itBehavesLikeAFieldWithOnStateChangeSupport(
+    SelectField,
+    {name: 'myField', options: options},
+    function(field) { return $(field.refs.input) },
+    function($input, input) { TestUtils.Simulate.change(input, {'target': {'value': 'two'}}); }
+  );
 });
+
+function reset_options(){
+  return [
+    {'value':'one', 'label':'One'},
+    {'value':'two', 'label':'2'},
+    {'value':'three', 'label':'III'}
+  ];
+}

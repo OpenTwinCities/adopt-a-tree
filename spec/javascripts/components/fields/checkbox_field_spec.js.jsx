@@ -1,11 +1,7 @@
 describe('CheckboxField', function(){
-  var options;
+  var options = reset_options();
   beforeEach(function(){
-    options = [
-      {'value': 'one', 'label':'One'},
-      {'value': 'two', 'label':'2'},
-      {'value': 'three', 'label':'III'}
-    ]
+    options = reset_options();
     field = TestUtils.renderIntoDocument(
       <CheckboxField name="myField" options={options}/>
     );
@@ -100,4 +96,19 @@ describe('CheckboxField', function(){
       expect($(fieldNode).text()).toContain('error messages');
     });
   });
+
+  itBehavesLikeAFieldWithOnStateChangeSupport(
+    CheckboxField,
+    {name: 'myField', options: options},
+    function(field) { return $(ReactDOM.findDOMNode(field)).find('input').first(); },
+    function($input, input) { TestUtils.Simulate.change(input, {target: {checked: true, value: $input.val()}}); }
+  );
 });
+
+function reset_options(){
+  return [
+    {'value': 'one', 'label':'One'},
+    {'value': 'two', 'label':'2'},
+    {'value': 'three', 'label':'III'}
+  ];
+}

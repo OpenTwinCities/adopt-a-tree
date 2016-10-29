@@ -41,6 +41,7 @@ describe 'Adoption Form', js: true do
         expect(page).to have_content('Thank you for adopting this tree!', wait: 20)
       end
 
+      xit 'Displays social media links' do
         expect(page).to have_css("img[src*='FB-f-Logo__blue_29.png']", wait: 20)
         expect(page).to have_css("img[src*='TwitterLogo_55acee.png']")
       end

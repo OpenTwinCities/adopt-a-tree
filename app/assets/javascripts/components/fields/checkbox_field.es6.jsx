@@ -6,6 +6,12 @@ class CheckboxField extends React.Component{
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillUpdate(){
+    if (this.props.onStateChange){
+      this.props.onStateChange();
+    }
+  }
+
   optionId(option){
     return this.props.name + '_' + option['value'];
   }
@@ -28,13 +34,14 @@ class CheckboxField extends React.Component{
     } else {
       value.splice(index, 1)
     } 
+    this.setState({value: value});
   }
 
   optionsMarkup(){
     var self = this;
     return this.props.options.map(function(option){
       return (
-        <div className="checkbox">
+        <div className="checkbox" key={self.optionId(option)}>
           <label className="checkbox">
             <input type='checkbox' id={self.optionId(option)} name={self.name()} className={self.props.className} value={option['value']} checked={self.value().indexOf(option['value']) > -1} onChange={self.handleChange}/>
             {option['label'] || option['value']}
@@ -54,10 +61,11 @@ class CheckboxField extends React.Component{
 }
 
 CheckboxField.propTypes = {
-  name: React.PropTypes.string,
+  name: React.PropTypes.string.isRequired,
   label: React.PropTypes.string,
   required: React.PropTypes.bool,
   private: React.PropTypes.bool,
   options: React.PropTypes.array,
-  errors: React.PropTypes.array
+  errors: React.PropTypes.array,
+  onStateChange: React.PropTypes.func
 };

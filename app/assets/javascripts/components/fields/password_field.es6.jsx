@@ -6,6 +6,12 @@ class PasswordField extends React.Component{
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillUpdate(){
+    if (this.props.onStateChange){
+      this.props.onStateChange();
+    }
+  }
+
   value(){
     return this.state.value;
   }
@@ -24,9 +30,10 @@ class PasswordField extends React.Component{
 }
 
 PasswordField.propTypes = {
-  name: React.PropTypes.string,
+  name: React.PropTypes.string.isRequired,
   label: React.PropTypes.string,
   required: React.PropTypes.bool,
   private: React.PropTypes.bool,
-  errors: React.PropTypes.array
+  errors: React.PropTypes.array,
+  onStateChange: React.PropTypes.func
 };
