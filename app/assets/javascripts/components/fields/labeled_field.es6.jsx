@@ -21,8 +21,8 @@ class LabeledField extends React.Component {
     if (Array.isArray(this.props.errors)){
       return (
         <ul className='errormsg'>
-          {this.props.errors.map(function(error){
-            return <li>{error}</li>
+          {this.props.errors.map(function(error, index){
+            return <li key={index}>{error}</li>
           })}
         </ul>
       );
@@ -41,7 +41,7 @@ class LabeledField extends React.Component {
 }
 
 LabeledField.propTypes = {
-  name: React.PropTypes.string,
+  name: React.PropTypes.string.isRequired,
   label: React.PropTypes.string,
   required: React.PropTypes.bool,
   private: React.PropTypes.bool,

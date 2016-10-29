@@ -32,7 +32,7 @@ class SelectField extends React.Component {
         <select id={this.props.name} name={this.props.name} className={this.props.className} ref='input' value={this.value() || ''} onChange={this.handleChange}>
           {
             this.props.options.map(function(option){
-              return <option id={self.optionId(option)} value={option['value']}>{option['label'] || option['value']}</option>
+              return <option key={self.optionId(option)} id={self.optionId(option)} value={option['value']}>{option['label'] || option['value']}</option>
             })
           }
         </select>
@@ -42,7 +42,7 @@ class SelectField extends React.Component {
 }
 
 SelectField.propTypes = {
-  name: React.PropTypes.string,
+  name: React.PropTypes.string.isRequired,
   label: React.PropTypes.string,
   required: React.PropTypes.bool,
   private: React.PropTypes.bool,

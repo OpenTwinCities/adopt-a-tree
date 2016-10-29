@@ -41,7 +41,7 @@ class CheckboxField extends React.Component{
     var self = this;
     return this.props.options.map(function(option){
       return (
-        <div className="checkbox">
+        <div className="checkbox" key={self.optionId(option)}>
           <label className="checkbox">
             <input type='checkbox' id={self.optionId(option)} name={self.name()} className={self.props.className} value={option['value']} checked={self.value().indexOf(option['value']) > -1} onChange={self.handleChange}/>
             {option['label'] || option['value']}
@@ -61,7 +61,7 @@ class CheckboxField extends React.Component{
 }
 
 CheckboxField.propTypes = {
-  name: React.PropTypes.string,
+  name: React.PropTypes.string.isRequired,
   label: React.PropTypes.string,
   required: React.PropTypes.bool,
   private: React.PropTypes.bool,

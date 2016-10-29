@@ -30,7 +30,7 @@ class PasswordField extends React.Component{
 }
 
 PasswordField.propTypes = {
-  name: React.PropTypes.string,
+  name: React.PropTypes.string.isRequired,
   label: React.PropTypes.string,
   required: React.PropTypes.bool,
   private: React.PropTypes.bool,
