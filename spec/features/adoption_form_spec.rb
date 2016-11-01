@@ -27,7 +27,7 @@ describe 'Adoption Form', js: true do
     end
 
     it 'Opens the "Adopt this Tree" form' do
-      expect(page).to have_selector '#adoption_form'
+      expect(page).to have_selector('#adoption_form', wait: 10)
       expect(page).to have_content 'Adopt this Tree'
     end
 
@@ -38,17 +38,17 @@ describe 'Adoption Form', js: true do
 
       it 'Displays the "Thank you" message' do
         expect(page).to_not have_content 'Adopt this Tree'
-        expect(page).to have_content 'Thank you for adopting this tree!'
+        expect(page).to have_content('Thank you for adopting this tree!', wait: 10)
       end
 
       it 'Displays social media links' do
-        expect(page).to have_css("img[src*='FB-f-Logo__blue_29.png']")
+        expect(page).to have_css("img[src*='FB-f-Logo__blue_29.png']", wait: 10)
         expect(page).to have_css("img[src*='TwitterLogo_55acee.png']")
       end
 
       it 'Displays the "Edit Profile" view in the sidebar' do
         within '.sidebar' do
-          expect(page).to have_selector 'form#edit_form.edit_user'
+          expect(page).to have_selector('form#edit_form.edit_user', wait: 10)
         end
       end
     end
