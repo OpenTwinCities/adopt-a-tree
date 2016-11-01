@@ -133,7 +133,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (5.0.2)
       railties (>= 3.2.16)
-    json (1.8.1)
+    json (1.8.3)
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -343,4 +343,4 @@ RUBY VERSION
    ruby 2.2.0p0
 
 BUNDLED WITH
-   1.12.5
+   1.13.6
