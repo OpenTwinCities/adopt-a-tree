@@ -99,6 +99,8 @@ Docker container.
 * To reset as well as re-enter the Docker container, run the reset.sh script.
 This returns the Docker container to the original conditions provided by the
 Docker image.
+* To set up Adopt-a-Tree in the rebuilt Docker container, use the build_fast.sh
+script again.
 
 ### Updating the Docker Image
 * Follow the above procedures for exiting the Docker container.

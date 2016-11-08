@@ -6,24 +6,6 @@
 # You can reinstall Ruby on Rails in seconds instead of hours.
 # You can have everything working on your machine in minutes instead of hours or days.
 
-# ENTERING THE CUSTOMIZED DOCKER IMAGE:
-# 1.  Have Docker or Docker Machine installed on your host OS.
-# 2.  Enter the following commands:
-#     git clone https://github.com/OpenTwinCities/docker-debian-jessie
-#     sh rbenv-adoptatree.sh # Use 32rbenv-adoptatree.sh instead if using a 32-bit system.
-#     cd rbenv-adoptatree
-#     sh download_new_image.sh
-# 3.  If your Internet connection is reasonably fast, you will be in the Docker
-#     development environment, where you can get started on this project.
-
-# GETTING STARTED
-# 1.  Use tmux for simultaneous operations
-# 2.  Enter the following commands:
-#     git clone https://github.com/OpenTwinCities/adopt-a-tree.git
-#     cd adopt-a-tree
-# 3.  Enter the command "sh build_fast.sh".  In a few minutes, your project should be
-#     fully set up, and all tests should pass.
-
 PG_VERSION="$(ls /etc/postgresql)"
 PG_HBA="/etc/postgresql/$PG_VERSION/main/pg_hba.conf"
 
