@@ -254,8 +254,13 @@ for detailed instructions on installation. You can also post a question to the
 
 ## Usage
 
+* Rails Server
 ```
-rails server
+sh server.sh
+```
+* Testing the App (after running build_fast.sh)
+```
+sh test_app.sh
 ```
 
 ## Importing More Trees
