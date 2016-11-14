@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.5'
 
-gem 'rails', '~> 4.1.7'
+gem 'rails', '~> 4.1.16'
 
 gem 'autoprefixer-rails'
 gem 'bcrypt'
