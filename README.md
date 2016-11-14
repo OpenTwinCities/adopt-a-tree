@@ -52,6 +52,15 @@ web site and follow the instructions.  If you have a 32-bit Linux host, go to
 [https://github.com/jhsu802701/docker-32bit-debian-jessie-install](https://github.com/jhsu802701/docker-32bit-debian-jessie-install)
 and follow the instructions.
 
+### Switching from the Dash shell to Bash shell
+* The scripts in the Docker repository (https://github.com/OpenTwinCities/docker-debian-jessie) used for accessing Docker require the use of Bash.  (The "sed" commands used in the setup.sh script do not work properly in Dash.)
+* To check your default shell, enter the command "ls -l /bin/sh".
+* To change your default shell to Bash, enter the following commands:
+```
+sudo rm /bin/sh
+sudo ln -s /bin/bash /bin/sh
+```
+
 ### Starting Docker
 * Create the directory OpenTwinCities on your computer.
 * Use the cd command to enter the OpenTwinCities directory, and enter the following commands:
