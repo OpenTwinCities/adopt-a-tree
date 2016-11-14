@@ -27,7 +27,98 @@ Open Twin Cities is dedicated to a harassment-free community for everyone. Be
 kind to one another. Do not insult or put down other community members. Behave 
 civilly.
 
-## Installation
+## Installation (Easy Way)
+The easy way of setting up Adopt-a-Tree is by using Docker to set up a virtual
+environment on your computer.
+
+### Windows Users
+Installing Ruby on Rails directly in Windows is extremely difficult, and very
+few people know how to do it.  It's best to install [VirtualBox](https://www.virtualbox.org/)
+and create a Linux virtual machine for your Ruby on Rails installation.
+Once you have done this, you can follow the instructions below for setting
+up Adopt-a-Tree in the Linux environment and bypass the need to learn the
+Windows way.
+
+### Install Git
+Install [Git](http://www.git-scm.com/) on your computer.  If you are using Linux,
+just use your routine package manager (such as Apt-Get for Debian and Ubuntu) to
+install Git.  If you are using OS X, just download Git from the [Git](http://www.git-scm.com/)
+web site and follow the normal software installation procedure.
+
+### Install Docker
+Install [Docker](https://www.docker.com/) on your computer.  If you have a
+64-bit host system (whether OS X or Linux), go to the [Docker](https://www.docker.com/)
+web site and follow the instructions.  If you have a 32-bit Linux host, go to
+[https://github.com/jhsu802701/docker-32bit-debian-jessie-install](https://github.com/jhsu802701/docker-32bit-debian-jessie-install)
+and follow the instructions.
+
+### Switching from the Dash shell to Bash shell
+* The scripts in the Docker repository (https://github.com/OpenTwinCities/docker-debian-jessie) used for accessing Docker require the use of Bash.  (The "sed" commands used in the setup.sh script do not work properly in Dash.)
+* To check your default shell, enter the command "ls -l /bin/sh".
+* To change your default shell to Bash, enter the following commands:
+```
+sudo rm /bin/sh
+sudo ln -s /bin/bash /bin/sh
+```
+
+### Starting Docker
+* Create the directory OpenTwinCities on your computer.
+* Use the cd command to enter the OpenTwinCities directory, and enter the following commands:
+```
+git clone https://github.com/OpenTwinCities/docker-debian-jessie.git
+cd docker-debian-jessie
+sh rbenv-adoptatree.sh # Use 32rbenv-adoptatree.sh instead if using a 32-bit system
+cd rbenv-adoptatree
+sh download_new_image.sh
+```
+* After the Docker image has been downloaded, you will be in your Docker container.
+Note that the contents of the shared directory are accessible through your Docker
+container AND through your host system.  You can enter commands in your Docker container
+and edit files in the shared directory through your preferred editor on your host system.
+* OPTIONAL: Run the test scripts in the shared directory to set up basic starter
+Rails apps.  These are the sanity checks used for making sure that the development
+environment in the Docker container is working properly.
+  
+### Starting Adopt-a-Tree
+* Go to the /home/winner/shared directory, and enter the following commands:
+```
+git clone https://github.com/OpenTwinCities/adopt-a-tree.git
+cd adopt-a-tree
+sh build_fast.sh
+```
+* The build_fast.sh script installs the gems, configures the PostgreSQL database,
+and runs the tests.  This process takes just a few minutes.  If all goes well, all
+of the tests will pass.
+* After you have set up Adopt-a-Tree, you are ready to start working on the project.
+Use the tmux command to open any additional windows you need for simultaneous tasks, 
+such as running the local server and running the Rails sandbox.  Press "Ctrl-B" and 
+then "c" to create a new tmux window.  Enter "Ctrl-B" and then "p" to switch to the 
+previous tmux window.  Press "Ctrl-B" and then "n" to switch to the next tmux window.
+To get rid of a tmux window, terminate any tasks running within it, and enter the 
+command "exit".
+
+### Exiting the Docker Container
+* In the Docker container, close all extra tmux windows.  After you have done this,
+enter "exit" again to leave tmux.  Then enter "exit" one more time to exit the
+Docker container.
+* To re-enter the Docker container, run the resume.sh script.
+
+### Resetting the Docker Container
+* Follow the above procedure for exiting the Docker container.
+* To reset as well as re-enter the Docker container, run the reset.sh script.
+This returns the Docker container to the original conditions provided by the
+Docker image.
+* To set up Adopt-a-Tree in the rebuilt Docker container, use the build_fast.sh
+script again.
+
+### Updating the Docker Image
+* Follow the above procedures for exiting the Docker container.
+* Use the download_new_image.sh script to erase the current Docker image and
+download the latest version to replace it.
+
+## Installation (Difficult Way)
+
+The difficult way is setting Adopt-a-Tree directly on your computer's host OS.
 
 ### System Dependencies
 
@@ -172,8 +263,13 @@ for detailed instructions on installation. You can also post a question to the
 
 ## Usage
 
+* Rails Server
 ```
-rails server
+sh server.sh
+```
+* Testing the App (after running build_fast.sh)
+```
+sh test_app.sh
 ```
 
 ## Importing More Trees
