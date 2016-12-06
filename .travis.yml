@@ -10,7 +10,7 @@ env:
   - TEST_DATABASE_USERNAME=postgres
 language: ruby
 rvm:
-  - 2.2.5
+  - 2.2.6
 addons:
   postgresql: "9.3"
   code_climate:
