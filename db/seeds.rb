@@ -1,4 +1,5 @@
 trees_file_path = Rails.root.join('db', 'trees.json')
+puts "Reading and parsing #{trees_file_path}"
 trees_file      = File.read(trees_file_path)
 trees_hash      = JSON.parse(trees_file)
 
@@ -10,6 +11,12 @@ trees_data = trees_hash["data"]
 tree_fields = trees_meta['view']['columns'].map do |column|
   column['fieldName']
 end
+
+puts 'Processing trees'
+
+num_trees = trees_data.length
+puts "Number of trees: #{num_trees}"
+i = 0
 
 trees_data.each do |tree|
   Thing.find_or_create_by!(mpls_id: tree[8]) do |t|
@@ -23,4 +30,8 @@ trees_data.each do |tree|
     t.lat         = tree[65]
     t.species     = tree[66]
   end
+  i += 1
+  print " #{i}/#{num_trees} " if (i % 100).zero?
 end
+
+puts "Finished processing #{num_trees} trees"

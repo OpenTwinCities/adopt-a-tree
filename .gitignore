@@ -25,3 +25,6 @@
 .DS_Store
 .idea
 .secret
+
+# Ignore log files
+log/*

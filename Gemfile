@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.5'
+ruby '2.2.6'
 
 gem 'rails', '~> 4.1.16'
 
@@ -54,3 +54,12 @@ group :test do
   gem 'poltergeist'
   gem 'selenium-webdriver'
 end
+
+# BEGIN: gems used in test_code.sh script
+group :development, :testing do
+  gem 'bundler-audit' # Checks for vulnerable versions of gems
+  gem 'brakeman' # Checks for security vulnerabilities
+  gem 'sandi_meter' # Checks for compliance with Sandi Metz' four rules
+  gem 'gemsurance' # Checks for outdated and insecure gems
+end
+# END: gems used in test_code.sh script
