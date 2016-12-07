@@ -31,7 +31,7 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 Capybara.ignore_hidden_elements = false
-Capybara.default_wait_time = 4
+Capybara.default_max_wait_time = 4
 Capybara.javascript_driver = :poltergeist
 #Capybara.javascript_driver = :selenium
 
@@ -60,5 +60,5 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.include LoginMacros
-  config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::Test::ControllerHelpers, :type => :controller
 end
