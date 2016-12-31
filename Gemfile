@@ -51,7 +51,7 @@ end
 
 group :test do
   gem 'capybara', '2.11.0'
-  gem 'codeclimate-test-reporter', '1.0.3', require: nil
+  gem 'codeclimate-test-reporter', '1.0.4', require: nil
   gem 'database_cleaner', '1.5.3'
   gem 'faker', '1.6.6'
   gem 'launchy', '2.4.3'
