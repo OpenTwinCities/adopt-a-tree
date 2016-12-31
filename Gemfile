@@ -56,7 +56,7 @@ group :test do
   gem 'faker', '1.7.1'
   gem 'launchy', '2.4.3'
   gem 'poltergeist', '1.12.0'
-  gem 'selenium-webdriver', '3.0.3'
+  gem 'selenium-webdriver', '3.0.5'
 end
 
 # BEGIN: gems used in test_code.sh script
