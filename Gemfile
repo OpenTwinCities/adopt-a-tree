@@ -40,7 +40,7 @@ group :development, :test do
   gem 'capistrano3-nginx', '2.1.5'
   gem 'capistrano3-puma', '1.2.1'
   gem 'dotenv-rails', '2.1.1'
-  gem 'factory_girl_rails', '4.7.0'
+  gem 'factory_girl_rails', '4.8.0'
   gem 'pry-rails', '0.3.4'
   gem 'rspec-rails', '3.5.2'
 end
@@ -53,7 +53,7 @@ group :test do
   gem 'capybara', '2.11.0'
   gem 'codeclimate-test-reporter', '1.0.4', require: nil
   gem 'database_cleaner', '1.5.3'
-  gem 'faker', '1.6.6'
+  gem 'faker', '1.7.1'
   gem 'launchy', '2.4.3'
   gem 'poltergeist', '1.12.0'
   gem 'selenium-webdriver', '3.0.3'
