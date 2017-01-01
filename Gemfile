@@ -23,7 +23,6 @@ gem 'sass-rails', '5.0.6'
 gem 'validates_formatting_of', '0.9.0'
 
 group :development do
-  gem 'annotate', '2.7.1'
   gem 'guard-rspec', '4.7.3'
   gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
   gem 'growl' if /darwin/ =~ RUBY_PLATFORM
@@ -67,3 +66,11 @@ group :development, :testing do
   gem 'gemsurance', '0.7.0' # Checks for outdated and insecure gems
 end
 # END: gems used in test_code.sh script
+
+# BEGIN: for outline.sh
+group :development do
+  gem 'annotate', '2.7.1' # Adds comments listing parameters and the output of "rails routes"
+  gem 'railroady', '1.5.2' # Generates block diagrams
+  gem 'rails-erd', '1.5.0' # Generates block diagrams
+end
+# END: for outline.sh
