@@ -4,8 +4,6 @@
 #
 #  id                              :integer          not null, primary key
 #  username                        :string(255)      not null
-#  first_name                      :string(255)      
-#  last_name                       :string(255)      
 #  organization                    :string(255)
 #  voice_number                    :string(255)
 #  sms_number                      :string(255)
@@ -29,14 +27,18 @@
 #  updated_at                      :datetime
 #  yob                             :integer
 #  gender                          :string(255)
-#  ethnicity                       :string           is an Array
+#  ethnicity                       :string(255)      is an Array
 #  yearsInMinneapolis              :integer
 #  rentOrOwn                       :string(255)
 #  previousTreeWateringExperience  :boolean
 #  previousEnvironmentalActivities :boolean
 #  valueForestryWork               :integer
-#  heardOfAdoptATreeVia            :string           is an Array
+#  heardOfAdoptATreeVia            :string(255)      is an Array
 #  awareness_code                  :string(255)
+#  first_name                      :string(255)
+#  last_name                       :string(255)
+#  emailed_at                      :datetime
+#  mailed_token_at                 :datetime
 #
 
 require 'rails_helper'
