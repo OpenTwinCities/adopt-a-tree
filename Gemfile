@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
-ruby '2.2.6'
+ruby '2.3.3'
 
 # These gems take a long time to install.
 # Thus, the "gem install" command is used in the Docker image creation
 # process to preinstall these versions of these gems
 # Version numbers are rigidly pinned to avoid a long wait after
 # entering "bundle update".
-gem 'nokogiri', '1.6.8.1'
+gem 'nokogiri', '1.7.0.1'
 gem 'pg', '0.19.0'
 gem 'rails', '4.1.16'
 
