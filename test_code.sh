@@ -28,7 +28,7 @@ echo '------------------------'
 echo 'bundle exec bundle-audit'
 bundle exec bundle-audit
 
-echo '----------------------------------------------'
-echo 'gemsurance --output log/gemsurance_report.html'
-gemsurance --output log/gemsurance_report.html
+echo '----------------------------------------------------------'
+echo 'bundle exec gemsurance --output log/gemsurance_report.html'
+bundle exec gemsurance --output log/gemsurance_report.html
 echo 'The Gemsurance Report is at log/gemsurance_report.html .'
