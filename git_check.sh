@@ -2,9 +2,9 @@
 
 sh test_app.sh
 
-echo '----------------'
-echo 'brakeman -Aq -w2'
-brakeman -Aq -w2
+echo '----------------------------'
+echo 'bundle exec brakeman -Aq -w2'
+bundle exec brakeman -Aq -w2
 
 echo '----------'
 echo 'git status'

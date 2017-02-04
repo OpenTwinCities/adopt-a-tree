@@ -10,9 +10,9 @@ bundle install > /dev/null
 # -A: runs all checks
 # -q: output the report only; suppress information warnings
 # -w2: level 2 warnings (medium and high only)
-echo '----------------'
-echo 'brakeman -Aq -w2'
-brakeman -Aq -w2
+echo '----------------------------'
+echo 'bundle exec brakeman -Aq -w2'
+bundle exec brakeman -Aq -w2
 
 echo '-----------'
 echo 'sandi_meter'
