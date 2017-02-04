@@ -19,14 +19,14 @@ echo 'bundle exec sandi_meter'
 bundle exec sandi_meter
 
 # Update the local ruby-advisory-db advisory database
-echo '-------------------'
-echo 'bundle-audit update'
-bundle-audit update
+echo '-------------------------------'
+echo 'bundle exec bundle-audit update'
+bundle exec bundle-audit update
 
 # Audit the gems listed in Gemfile.lock
-echo '------------'
-echo 'bundle-audit'
-bundle-audit
+echo '------------------------'
+echo 'bundle exec bundle-audit'
+bundle exec bundle-audit
 
 echo '----------------------------------------------'
 echo 'gemsurance --output log/gemsurance_report.html'
