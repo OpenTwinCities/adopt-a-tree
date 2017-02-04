@@ -14,9 +14,9 @@ echo '----------------------------'
 echo 'bundle exec brakeman -Aq -w2'
 bundle exec brakeman -Aq -w2
 
-echo '-----------'
-echo 'sandi_meter'
-sandi_meter
+echo '-----------------------'
+echo 'bundle exec sandi_meter'
+bundle exec sandi_meter
 
 # Update the local ruby-advisory-db advisory database
 echo '-------------------'
