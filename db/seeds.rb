@@ -37,7 +37,74 @@ trees_data.each do |tree|
     end
   end
   i += 1
-  print " #{i}/#{num_trees} processed" if (i % 100).zero?
+  print " #{i} " if (i % 100).zero?
 end
 
 puts "Finished processing #{num_trees} trees"
+
+User.create!(last_name: 'Tarter', first_name: 'Jill',
+             username: 'jtarter',
+             email: 'jill_tarter@rubyonracetracks.com',
+             organization: 'SETI Institute',
+             address_1: Faker::Address.street_address,
+             city: Faker::Address.city,
+             state: Faker::Address.state_abbr,
+             zip: Faker::Address.zip_code,
+             admin: true,
+             password: 'Drake Equation',
+             password_confirmation: 'Drake Equation')
+
+puts "Users: #{User.count}/52"
+
+User.create!(last_name: 'Arroway', first_name: 'Ellie',
+             username: 'earroway',
+             email: 'ellie_arroway@rubyonracetracks.com',
+             organization: 'Project Argus',
+             address_1: Faker::Address.street_address,
+             city: Faker::Address.city,
+             state: Faker::Address.state_abbr,
+             zip: Faker::Address.zip_code,
+             admin: false,
+             password: '3.14159265',
+             password_confirmation: '3.14159265')
+
+puts "Users: #{User.count}/52"
+
+10.times do |n|
+  name_l = Faker::Name.last_name
+  name_f = Faker::Name.first_name
+  email_address = "user-#{n + 1}@rubyonracetracks.com"
+
+  User.create!(last_name: name_l, first_name: name_f,
+               username: "user#{n + 1}",
+               email: email_address,
+               organization: "#{Faker::Company.name} #{Faker::Company.suffix}",
+               address_1: Faker::Address.street_address,
+               city: Faker::Address.city,
+               state: Faker::Address.state_abbr,
+               zip: Faker::Address.zip_code,
+               admin: false,
+               password: 'Daytona 500',
+               password_confirmation: 'Daytona 500')
+  print  " #{User.count} " if (User.count % 10).zero?
+end
+
+40.times do |n|
+  name_l = Faker::Name.last_name
+  name_f = Faker::Name.first_name
+  email_address = Faker::Internet.email(name_f)
+
+  User.create!(last_name: name_l, first_name: name_f,
+               username: "user-faker#{n + 1}", email: email_address,
+               organization: "#{Faker::Company.name} #{Faker::Company.suffix}",
+               address_1: Faker::Address.street_address,
+               city: Faker::Address.city,
+               state: Faker::Address.state_abbr,
+               zip: Faker::Address.zip_code,
+               admin: false,
+               password: 'Daytona 500',
+               password_confirmation: 'Daytona 500')
+  print " #{User.count} " if (User.count % 10).zero?
+end
+
+puts "Users: #{User.count}/52"
