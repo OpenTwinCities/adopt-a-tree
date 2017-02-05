@@ -51,7 +51,7 @@ group :production do
 end
 
 group :test do
-  gem 'capybara', '~> 2.11.0'
+  gem 'capybara', '~> 2.12.0'
   gem 'codeclimate-test-reporter', '~> 1.0.4', require: nil
   gem 'database_cleaner', '~> 1.5.3'
   gem 'faker', '~> 1.7.1'
@@ -63,7 +63,7 @@ end
 # BEGIN: gems used in test_code.sh script
 group :development, :testing do
   gem 'bundler-audit', '~> 0.5.0'  # Checks for vulnerable versions of gems
-  gem 'brakeman', '~> 3.4.1' # Checks for security vulnerabilities
+  gem 'brakeman', '~> 3.5.0' # Checks for security vulnerabilities
   gem 'sandi_meter', '~> 1.2.0' # Checks for compliance with Sandi Metz' four rules
   gem 'gemsurance', '~> 0.7.0' # Checks for outdated and insecure gems
 end
