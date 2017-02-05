@@ -141,7 +141,7 @@ GEM
       rspec (>= 2.99.0, < 4.0)
     haml (4.0.7)
       tilt
-    hashie (3.4.6)
+    hashie (3.5.1)
     i18n (0.8.0)
     jquery-rails (3.1.4)
       railties (>= 3.0, < 5.0)
@@ -351,7 +351,7 @@ DEPENDENCIES
   geokit (~> 1.10.0)
   guard-rspec (~> 4.7.3)
   haml (~> 4.0.7)
-  hashie (~> 3.4.6)
+  hashie (~> 3.5.1)
   jquery-rails (~> 3.1.4)
   launchy (~> 2.4.3)
   libnotify
