@@ -10,7 +10,7 @@ gem 'nokogiri', '1.7.0.1'
 gem 'pg', '0.19.0'
 gem 'rails', '4.1.16'
 
-gem 'autoprefixer-rails', '~> 6.6.0'
+gem 'autoprefixer-rails', '~> 6.7.2'
 gem 'bcrypt', '~> 3.1.11'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise', '~> 4.2.0'
