@@ -13,7 +13,7 @@ bundle update
 
 sh test_app.sh
 
-echo '----------------------------------------------'
-echo 'gemsurance --output log/gemsurance_report.html'
-gemsurance --output log/gemsurance_report.html
+echo '----------------------------------------------------------'
+echo 'bundle exec gemsurance --output log/gemsurance_report.html'
+bundle exec gemsurance --output log/gemsurance_report.html
 echo 'The Gemsurance Report is at log/gemsurance_report.html .'
