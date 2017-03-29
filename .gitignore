@@ -12,12 +12,16 @@
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
+logfile
 log/*
 /log/*.log
 /tmp
 
 # Ignore dotenv
 .env
+
+# Ignore generated javascript translations
+/public/javascripts/translations.js
 
 # Ignore other things
 *swp

@@ -59,6 +59,7 @@
 #
 
 Rails.application.routes.draw do
+  mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   devise_for :users, controllers: {
     passwords: 'passwords',
     registrations: 'users',
