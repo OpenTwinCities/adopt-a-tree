@@ -1,6 +1,3 @@
-# config valid only for current version of Capistrano
-lock '3.6.1'
-
 set :application, 'Adopt-A-Tree'
 set :repo_url, 'git@github.com:OpenTwinCities/adopt-a-tree.git'
 
@@ -9,9 +6,6 @@ ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/opt/#{fetch(:application).downcase}"
-
-# Default value for :scm is :git
-set :scm, :git
 
 # Default value for :format is :airbrussh.
 set :format, :airbrussh
