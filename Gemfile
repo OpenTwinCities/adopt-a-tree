@@ -7,7 +7,7 @@ ruby '2.3.3'
 # Version numbers are rigidly pinned to avoid a long wait after
 # entering "bundle update".
 gem 'nokogiri', '1.7.1'
-gem 'pg', '0.19.0'
+gem 'pg', '0.20.0'
 gem 'rails', '4.1.16'
 
 gem 'autoprefixer-rails', '~> 6.7.2'
