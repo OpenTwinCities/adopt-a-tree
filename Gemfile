@@ -56,8 +56,8 @@ group :test do
   gem 'codeclimate-test-reporter', '~> 1.0.4', require: nil
   gem 'database_cleaner', '~> 1.5.3'
   gem 'launchy', '~> 2.4.3'
-  gem 'poltergeist', '~> 1.13.0'
-  gem 'selenium-webdriver', '~> 3.0.5'
+  gem 'poltergeist', '~> 1.14.0'
+  gem 'selenium-webdriver', '~> 3.3.0'
 end
 
 # BEGIN: gems used in test_code.sh script
