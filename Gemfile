@@ -6,8 +6,8 @@ ruby '2.3.3'
 # process to preinstall these versions of these gems
 # Version numbers are rigidly pinned to avoid a long wait after
 # entering "bundle update".
-gem 'nokogiri', '1.7.0.1'
-gem 'pg', '0.19.0'
+gem 'nokogiri', '1.7.1'
+gem 'pg', '0.20.0'
 gem 'rails', '4.1.16'
 
 gem 'autoprefixer-rails', '~> 6.7.2'
@@ -56,16 +56,16 @@ group :test do
   gem 'codeclimate-test-reporter', '~> 1.0.4', require: nil
   gem 'database_cleaner', '~> 1.5.3'
   gem 'launchy', '~> 2.4.3'
-  gem 'poltergeist', '~> 1.13.0'
-  gem 'selenium-webdriver', '~> 3.0.5'
+  gem 'poltergeist', '~> 1.14.0'
+  gem 'selenium-webdriver', '~> 3.3.0'
 end
 
 # BEGIN: gems used in test_code.sh script
 group :development, :testing do
   gem 'bundler-audit', '~> 0.5.0'  # Checks for vulnerable versions of gems
-  gem 'brakeman', '~> 3.5.0' # Checks for security vulnerabilities
+  gem 'brakeman', '~> 3.6.1' # Checks for security vulnerabilities
   gem 'sandi_meter', '~> 1.2.0' # Checks for compliance with Sandi Metz' four rules
-  gem 'gemsurance', '~> 0.7.0' # Checks for outdated and insecure gems
+  gem 'gemsurance', '~> 0.8.0' # Checks for outdated and insecure gems
 end
 # END: gems used in test_code.sh script
 
