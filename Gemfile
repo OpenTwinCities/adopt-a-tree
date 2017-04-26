@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.3'
+ruby '2.3.4'
 
 # These gems take a long time to install.
 # Thus, the "gem install" command is used in the Docker image creation
@@ -14,11 +14,11 @@ gem 'autoprefixer-rails', '~> 6.7.2'
 gem 'bcrypt', '~> 3.1.11'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise', '~> 4.2.0'
-gem 'geokit', '~> 1.10.0'
+gem 'geokit', '~> 1.11.0'
 gem 'haml', '~> 4.0.7'
 gem 'hashie', '~> 3.5.1'
 gem 'jquery-rails', '~> 3.1.4'
-gem 'puma', '~> 3.7.0'
+gem 'puma', '~> 3.8.2'
 gem 'rails_admin', '~> 1.1.0'
 gem 'rails_admin_enum4', '~> 0.1.3'
 gem 'sass-rails', '~> 5.0.6'
@@ -33,7 +33,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'capistrano', '~> 3.7.1'
+  gem 'capistrano', '~> 3.8.1'
   gem 'capistrano-bundler', '~> 1.2.0'
   gem 'capistrano-rails', '~> 1.2.1'
   gem 'capistrano-rbenv', '~> 2.1.0'
@@ -52,12 +52,12 @@ group :production do
 end
 
 group :test do
-  gem 'capybara', '~> 2.12.0'
+  gem 'capybara', '~> 2.13.0'
   gem 'codeclimate-test-reporter', '~> 1.0.4', require: nil
   gem 'database_cleaner', '~> 1.5.3'
   gem 'launchy', '~> 2.4.3'
   gem 'poltergeist', '~> 1.14.0'
-  gem 'selenium-webdriver', '~> 3.3.0'
+  gem 'selenium-webdriver', '~> 3.4.0'
 end
 
 # BEGIN: gems used in test_code.sh script
