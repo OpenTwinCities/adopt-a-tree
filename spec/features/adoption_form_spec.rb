@@ -42,8 +42,8 @@ describe 'Adoption Form', js: true do
       end
 
       it 'Displays social media links' do
-        expect(page).to have_css("img[src*='FB-f-Logo__blue_29.png']", wait: 20)
-        expect(page).to have_css("img[src*='TwitterLogo_55acee.png']")
+        expect(page).to have_xpath("//img/@src[contains(., 'FB-f-Logo__blue_29')]", wait: 20)
+        expect(page).to have_xpath("//img/@src[contains(., 'TwitterLogo_55acee')]", wait: 20)
       end
 
       it 'Displays the "Edit Profile" view in the sidebar' do
