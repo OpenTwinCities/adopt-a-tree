@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20160423211618) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "events", force: true do |t|
+  create_table "events", force: :cascade do |t|
     t.integer  "event_type", null: false
     t.integer  "thing_id"
     t.integer  "user_id"
@@ -24,24 +24,24 @@ ActiveRecord::Schema.define(version: 20160423211618) do
     t.datetime "updated_at"
   end
 
-  create_table "promo_codes", force: true do |t|
+  create_table "promo_codes", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "promo_vendor_id"
-    t.string   "token"
+    t.string   "token",           limit: 255
     t.integer  "user_id"
   end
 
   add_index "promo_codes", ["promo_vendor_id"], name: "index_promo_codes_on_promo_vendor_id", using: :btree
   add_index "promo_codes", ["user_id"], name: "index_promo_codes_on_user_id", using: :btree
 
-  create_table "promo_vendors", force: true do |t|
-    t.string   "name"
+  create_table "promo_vendors", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "reminders", force: true do |t|
+  create_table "reminders", force: :cascade do |t|
     t.integer  "thing_id",                     null: false
     t.integer  "from_user_id",                 null: false
     t.integer  "to_user_id",                   null: false
@@ -50,36 +50,36 @@ ActiveRecord::Schema.define(version: 20160423211618) do
     t.datetime "updated_at"
   end
 
-  create_table "things", force: true do |t|
-    t.string   "name"
+  create_table "things", force: :cascade do |t|
+    t.string   "name",        limit: 255
     t.integer  "user_id"
     t.integer  "mpls_id"
-    t.string   "mpls_unique"
-    t.decimal  "lat",         precision: 32, scale: 29, null: false
-    t.decimal  "lng",         precision: 32, scale: 29, null: false
-    t.string   "species"
+    t.string   "mpls_unique", limit: 255
+    t.decimal  "lat",                     precision: 32, scale: 29, null: false
+    t.decimal  "lng",                     precision: 32, scale: 29, null: false
+    t.string   "species",     limit: 255
     t.json     "properties"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "username",                                        null: false
-    t.string   "organization"
-    t.string   "voice_number"
-    t.string   "sms_number"
-    t.string   "address_1"
-    t.string   "address_2"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
-    t.boolean  "admin",                           default: false
-    t.string   "email",                           default: "",    null: false
-    t.string   "encrypted_password",              default: "",    null: false
-    t.string   "reset_password_token"
+  create_table "users", force: :cascade do |t|
+    t.string   "username",                        limit: 255,                 null: false
+    t.string   "organization",                    limit: 255
+    t.string   "voice_number",                    limit: 255
+    t.string   "sms_number",                      limit: 255
+    t.string   "address_1",                       limit: 255
+    t.string   "address_2",                       limit: 255
+    t.string   "city",                            limit: 255
+    t.string   "state",                           limit: 255
+    t.string   "zip",                             limit: 255
+    t.boolean  "admin",                                       default: false
+    t.string   "email",                           limit: 255, default: "",    null: false
+    t.string   "encrypted_password",              limit: 255, default: "",    null: false
+    t.string   "reset_password_token",            limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                   default: 0,     null: false
+    t.integer  "sign_in_count",                               default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -87,17 +87,17 @@ ActiveRecord::Schema.define(version: 20160423211618) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "yob"
-    t.string   "gender"
-    t.string   "ethnicity",                                                    array: true
+    t.string   "gender",                          limit: 255
+    t.string   "ethnicity",                       limit: 255,                              array: true
     t.integer  "yearsInMinneapolis"
-    t.string   "rentOrOwn"
+    t.string   "rentOrOwn",                       limit: 255
     t.boolean  "previousTreeWateringExperience"
     t.boolean  "previousEnvironmentalActivities"
     t.integer  "valueForestryWork"
-    t.string   "heardOfAdoptATreeVia",                                         array: true
-    t.string   "awareness_code"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "heardOfAdoptATreeVia",            limit: 255,                              array: true
+    t.string   "awareness_code",                  limit: 255
+    t.string   "first_name",                      limit: 255
+    t.string   "last_name",                       limit: 255
     t.datetime "emailed_at"
     t.datetime "mailed_token_at"
   end

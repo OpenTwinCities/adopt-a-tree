@@ -54,14 +54,14 @@ RSpec.describe User, :type => :model do
     subject.voice_number = '555-555-5555'
 
     expect(subject).to be_valid
-    expect(subject.voice_number).to eq 5555555555
+    expect(subject.voice_number).to eq '5555555555'
   end
 
   it "removes non-digits from sms number" do
     subject.sms_number = '(555) 555-5555'
 
     expect(subject).to be_valid
-    expect(subject.sms_number).to eq 5555555555
+    expect(subject.sms_number).to eq '5555555555'
   end
 
   it 'uses username as title' do
