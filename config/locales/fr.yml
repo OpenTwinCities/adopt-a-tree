@@ -17,6 +17,7 @@ fr:
     update: "Mise à jour"
   captions:
     optional: "(optionnelle)"
+    password_requirements: "Le mot de passe doit comporter entre 6 et 20 caractères."
     private: "(privé)"
     public: "(visible pour les autres)"
     required: "(nécessaire)"

@@ -17,6 +17,7 @@ de:
     update: "Aktualisierung"
   captions:
     optional: "(optional)"
+    password_requirements: "Das Passwort muss zwischen 6 und 20 Zeichen lang sein."
     private: "(privat)"
     public: "(für Andere sichtbar)"
     required: "(erforderlich)"

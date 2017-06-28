@@ -17,6 +17,7 @@ es:
     update: "Actualización"
   captions:
     optional: "(opcional)"
+    password_requirements: "La contraseña debe tener entre 6 y 20 caracteres."
     private: "(privado)"
     public: "(visible para los demás)"
     required: "(necesario)"
