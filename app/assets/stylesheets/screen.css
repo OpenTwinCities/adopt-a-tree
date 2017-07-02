@@ -69,6 +69,11 @@ form input.search-query {
   margin: 0;
 }
 
+.sidebar p.requirements {
+  font-style: italic;
+  margin-right: 15px;
+}
+
 a.btn {
   width: 188px;
 }

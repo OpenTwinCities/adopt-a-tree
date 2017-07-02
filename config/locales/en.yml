@@ -20,6 +20,7 @@ en:
     update: "Update"
   captions:
     optional: "(optional)"
+    password_requirements: "Password must be between 6 and 20 characters in length."
     private: "(private)"
     public: "(visible to others)"
     required: "(required)"

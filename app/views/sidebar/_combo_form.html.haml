@@ -17,6 +17,8 @@
         %small
           = image_tag "lock.png", :class => "lock", :alt => t("captions.private"), :title => t("captions.private")
       = f.password_field "password_confirmation"
+      %p.requirements
+        = t("captions.password_requirements")
     %h2
       =t("labels.shipping_info_heading")
     = render :partial => "users/user_realnames", locals: {f: f}
