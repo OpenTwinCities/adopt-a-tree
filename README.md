@@ -143,6 +143,9 @@ dependencies.
 sudo apt-get install git postgresql libpq-dev nodejs nodejs-legacy npm libffi-dev
 ```
 
+Debian 9 Note: [Ruby 2.3.x is incompatible with the lastest version of libssl](https://github.com/rvm/rvm/issues/3862).
+To install on Debian 9/Stretch, run `sudo apt-get install libssl1.0-dev`
+
 **Fedora/RHEL/CentOS**
 
 ```
@@ -230,17 +233,12 @@ cd adopt-a-tree
 
 ### Install the Ruby
 
-First, find out what version of Ruby Adopt-a-Tree runs in
+
+Assuming you are in the Adopt-A-Tree repo, you can just run the following. This
+part might take some time.
 
 ```
-rbenv version
-```
-
-Then, install whatever version of Ruby the above command just returned. This
-part might take some time. 
-
-```
-rbenv install <version number> -k
+rbenv install
 ```
 
 ### Install Gems and Create the Adopt-A-Tree Database
