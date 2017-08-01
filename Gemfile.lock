@@ -193,7 +193,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
-    pg (0.20.0)
+    pg (0.21.0)
     poltergeist (1.14.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -381,7 +381,7 @@ DEPENDENCIES
   launchy (~> 2.4.3)
   libnotify
   nokogiri (= 1.8.0)
-  pg (= 0.20.0)
+  pg (= 0.21.0)
   poltergeist (~> 1.14.0)
   pry-rails (~> 0.3.4)
   puma (~> 3.8.2)
