@@ -6,17 +6,17 @@ test/helpers
 0 directories, 0 files
 
 spec/helpers
-└── promo_codes_helper_spec.rb
+`-- promo_codes_helper_spec.rb
 
 0 directories, 1 file
 
 app/helpers
-├── application_helper.rb
-├── promo_codes_helper.rb
-├── reminders_helper.rb
-├── sessions_helper.rb
-├── users_helper.rb
-└── welcome_helper.rb
+|-- application_helper.rb
+|-- promo_codes_helper.rb
+|-- reminders_helper.rb
+|-- sessions_helper.rb
+|-- users_helper.rb
+`-- welcome_helper.rb
 
 0 directories, 6 files
 
