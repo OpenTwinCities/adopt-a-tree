@@ -33,13 +33,13 @@ group :development do
 end
 
 group :development, :test do
-  gem 'capistrano', '~> 3.8.1'
+  gem 'capistrano', '~> 3.9.0'
   gem 'capistrano-bundler', '~> 1.2.0'
-  gem 'capistrano-rails', '~> 1.2.1'
+  gem 'capistrano-rails', '~> 1.3.0'
   gem 'capistrano-rbenv', '~> 2.1.0'
   gem 'capistrano-rbenv-install', '~> 1.2.0'
   gem 'capistrano3-nginx', '~> 2.1.5'
-  gem 'capistrano3-puma', '~> 1.2.1'
+  gem 'capistrano3-puma', '~> 3.1.1'
   gem 'dotenv-rails', '~> 2.2.0'
   gem 'faker', '~> 1.7.1'
   gem 'factory_girl_rails', '~> 4.8.0'
