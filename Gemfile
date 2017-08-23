@@ -78,3 +78,7 @@ group :development do
   gem 'rails-erd', '~> 1.5.0' # Generates block diagrams
 end
 # END: for outline.sh
+
+gem 'mini_racer', platforms: :ruby
+gem 'webpacker', git: "https://github.com/shakacode/webpacker.git",
+                 branch: "issue-464-merge-webpacker-lite-into-webpacker-v5"

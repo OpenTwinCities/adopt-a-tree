@@ -120,6 +120,7 @@ nvm is recommended to manage your Node versions. With nvm installed, you can:
 ```
 nvm install node
 nvm install -g yarn
+yarn
 ```
 
 [PhantomJS](http://phantomjs.org/) is used by tests

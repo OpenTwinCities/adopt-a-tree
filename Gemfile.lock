@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/shakacode/webpacker.git
+  revision: 5c48362dafad7df806f0efcffc72148d6a3dcb50
+  branch: issue-464-merge-webpacker-lite-into-webpacker-v5
+  specs:
+    webpacker (2.0)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -178,6 +188,7 @@ GEM
       addressable (~> 2.3)
     libnotify (0.9.3)
       ffi (>= 1.0.11)
+    libv8 (5.9.211.38.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -192,6 +203,8 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
+    mini_racer (0.1.12)
+      libv8 (~> 5.9)
     minitest (5.10.3)
     mixlib-cli (1.7.0)
     nenv (0.3.0)
@@ -222,6 +235,8 @@ GEM
     rack-pjax (1.0.0)
       nokogiri (~> 1.5)
       rack (>= 1.1)
+    rack-proxy (0.6.2)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     railroady (1.5.3)
@@ -401,6 +416,7 @@ DEPENDENCIES
   jquery-rails (~> 3.1.4)
   launchy (~> 2.4.3)
   libnotify
+  mini_racer
   nokogiri (= 1.8.0)
   pg (= 0.21.0)
   poltergeist (~> 1.14.0)
@@ -420,6 +436,7 @@ DEPENDENCIES
   spring (~> 1.7.2)
   spring-commands-rspec (~> 1.0.4)
   validates_formatting_of (~> 0.9.0)
+  webpacker!
 
 RUBY VERSION
    ruby 2.3.4p301
