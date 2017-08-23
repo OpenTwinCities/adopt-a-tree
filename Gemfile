@@ -21,6 +21,7 @@ gem 'jquery-rails', '~> 3.1.4'
 gem 'puma', '~> 3.9.1'
 gem 'rails_admin', '~> 1.2.0'
 gem 'rails_admin_enum4', '~> 0.1.3'
+gem 'react_on_rails', '~> 9.0-beta'
 gem 'sass-rails', '~> 5.0.6'
 gem 'validates_formatting_of', '~> 0.9.0'
 

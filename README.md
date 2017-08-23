@@ -113,7 +113,14 @@ Now, save and restart Postgres:
 sudo service postgresql restart
 ```
 
-### PhantomJS
+### JavaScript 
+
+nvm is recommended to manage your Node versions. With nvm installed, you can:
+
+```
+nvm install node
+nvm install -g yarn
+```
 
 [PhantomJS](http://phantomjs.org/) is used by tests
 
