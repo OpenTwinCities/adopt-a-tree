@@ -6,7 +6,7 @@ ruby '2.3.4'
 # process to preinstall these versions of these gems
 # Version numbers are rigidly pinned to avoid a long wait after
 # entering "bundle update".
-gem 'nokogiri', '1.8.0'
+gem 'nokogiri', '1.8.1'
 gem 'pg', '0.21.0'
 gem 'rails', '4.2.10'
 
