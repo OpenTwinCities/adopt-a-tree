@@ -34,7 +34,7 @@ end
 
 group :development, :test do
   gem 'capistrano', '~> 3.9.0'
-  gem 'capistrano-bundler', '~> 1.2.0'
+  gem 'capistrano-bundler', '~> 1.3.0'
   gem 'capistrano-rails', '~> 1.3.0'
   gem 'capistrano-rbenv', '~> 2.1.0'
   gem 'capistrano-rbenv-install', '~> 1.2.0'
@@ -63,7 +63,7 @@ end
 
 # BEGIN: gems used in test_code.sh script
 group :development, :testing do
-  gem 'bundler-audit', '~> 0.5.0'  # Checks for vulnerable versions of gems
+  gem 'bundler-audit', '~> 0.6.0'  # Checks for vulnerable versions of gems
   gem 'brakeman', '~> 3.6.1' # Checks for security vulnerabilities
   gem 'sandi_meter', '~> 1.2.0' # Checks for compliance with Sandi Metz' four rules
   gem 'gemsurance', '~> 0.9.0' # Checks for outdated and insecure gems
