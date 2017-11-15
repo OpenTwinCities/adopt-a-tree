@@ -39,10 +39,6 @@ wait
 
 export TEST_DATABASE_USERNAME=postgres
 
-echo '------------------'
-echo 'gem update bundler'
-gem update bundler
-
 echo '--------------'
 echo 'bundle install'
 bundle install
