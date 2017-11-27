@@ -33,10 +33,10 @@ group :development do
 end
 
 group :development, :test do
-  gem 'capistrano', '~> 3.9.0'
+  gem 'capistrano', '~> 3.10.0'
   gem 'capistrano-bundler', '~> 1.3.0'
-  gem 'capistrano-rails', '~> 1.3.0'
-  gem 'capistrano-rbenv', '~> 2.1.0'
+  gem 'capistrano-rails', '~> 1.3.1'
+  gem 'capistrano-rbenv', '~> 2.1.3'
   gem 'capistrano-rbenv-install', '~> 1.2.0'
   gem 'capistrano3-nginx', '~> 2.1.5'
   gem 'capistrano3-puma', '~> 3.1.1'
