@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.4'
+ruby '2.3.5'
 
 # These gems take a long time to install.
 # Thus, the "gem install" command is used in the Docker image creation
