@@ -58,7 +58,7 @@ group :test do
   gem 'database_cleaner', '~> 1.6.1'
   gem 'launchy', '~> 2.4.3'
   gem 'poltergeist', '~> 1.16.0'
-  gem 'selenium-webdriver', '~> 3.6.0'
+  gem 'selenium-webdriver', '~> 3.7.0'
 end
 
 # BEGIN: gems used in test_code.sh script
