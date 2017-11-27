@@ -52,7 +52,7 @@ group :production do
 end
 
 group :test do
-  gem 'capybara', '~> 2.15.2'
+  gem 'capybara', '~> 2.16.1'
   gem 'capybara-slow_finder_errors', '0.1.4'
   gem 'codeclimate-test-reporter', '~> 1.0.4', require: nil
   gem 'database_cleaner', '~> 1.6.1'
