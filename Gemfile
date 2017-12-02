@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.4'
+ruby '2.3.5'
 
 # These gems take a long time to install.
 # Thus, the "gem install" command is used in the Docker image creation
@@ -18,7 +18,7 @@ gem 'geokit', '~> 1.11.0'
 gem 'haml', '~> 5.0.4'
 gem 'hashie', '~> 3.5.1'
 gem 'jquery-rails', '~> 3.1.4'
-gem 'puma', '~> 3.10.0'
+gem 'puma', '~> 3.11.0'
 gem 'rails_admin', '~> 1.2.0'
 gem 'rails_admin_enum4', '~> 0.1.3'
 gem 'sass-rails', '~> 5.0.6'
@@ -33,18 +33,18 @@ group :development do
 end
 
 group :development, :test do
-  gem 'capistrano', '~> 3.9.0'
+  gem 'capistrano', '~> 3.10.0'
   gem 'capistrano-bundler', '~> 1.3.0'
-  gem 'capistrano-rails', '~> 1.3.0'
-  gem 'capistrano-rbenv', '~> 2.1.0'
+  gem 'capistrano-rails', '~> 1.3.1'
+  gem 'capistrano-rbenv', '~> 2.1.3'
   gem 'capistrano-rbenv-install', '~> 1.2.0'
   gem 'capistrano3-nginx', '~> 2.1.5'
   gem 'capistrano3-puma', '~> 3.1.1'
   gem 'dotenv-rails', '~> 2.2.0'
   gem 'faker', '~> 1.8.4'
-  gem 'factory_girl_rails', '~> 4.8.0'
+  gem 'factory_girl_rails', '~> 4.9.0'
   gem 'pry-rails', '~> 0.3.4'
-  gem 'rspec-rails', '~> 3.6.0'
+  gem 'rspec-rails', '~> 3.7.2'
 end
 
 group :production do
@@ -52,13 +52,13 @@ group :production do
 end
 
 group :test do
-  gem 'capybara', '~> 2.15.2'
+  gem 'capybara', '~> 2.16.1'
   gem 'capybara-slow_finder_errors', '0.1.4'
   gem 'codeclimate-test-reporter', '~> 1.0.4', require: nil
   gem 'database_cleaner', '~> 1.6.1'
   gem 'launchy', '~> 2.4.3'
   gem 'poltergeist', '~> 1.16.0'
-  gem 'selenium-webdriver', '~> 3.6.0'
+  gem 'selenium-webdriver', '~> 3.7.0'
 end
 
 # BEGIN: gems used in test_code.sh script
