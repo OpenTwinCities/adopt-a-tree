@@ -10,7 +10,7 @@
 #  updated_at :datetime
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :event do
     event_type 0
     thing_id 1

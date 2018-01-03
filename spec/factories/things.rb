@@ -15,7 +15,7 @@
 #  updated_at  :datetime
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :thing do
     lat { rand_lat }
     lng { rand_lng }

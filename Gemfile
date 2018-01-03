@@ -42,7 +42,7 @@ group :development, :test do
   gem 'capistrano3-puma', '~> 3.1.1'
   gem 'dotenv-rails', '~> 2.2.0'
   gem 'faker', '~> 1.8.4'
-  gem 'factory_girl_rails', '~> 4.9.0'
+  gem 'factory_bot_rails', '~> 4.8.2'
   gem 'pry-rails', '~> 0.3.4'
   gem 'rspec-rails', '~> 3.7.2'
 end
@@ -58,7 +58,7 @@ group :test do
   gem 'database_cleaner', '~> 1.6.1'
   gem 'launchy', '~> 2.4.3'
   gem 'poltergeist', '~> 1.16.0'
-  gem 'selenium-webdriver', '~> 3.7.0'
+  gem 'selenium-webdriver', '~> 3.8.0'
 end
 
 # BEGIN: gems used in test_code.sh script

@@ -10,7 +10,7 @@
 #  user_id         :integer
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :promo_code do
     token "MyString"
     promo_vendor

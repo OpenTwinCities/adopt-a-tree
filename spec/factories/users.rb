@@ -43,7 +43,7 @@
 
 require 'faker'
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :user, aliases: [:from_user, :to_user] do
     username  { Faker::Internet.user_name }
     email     { Faker::Internet.email }
