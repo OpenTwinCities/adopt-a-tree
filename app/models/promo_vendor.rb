@@ -9,5 +9,6 @@
 #
 
 class PromoVendor < ActiveRecord::Base
-    has_many :promo_codes
+  has_many :promo_codes
+  validates :name, presence: true, length: { maximum: 255 }
 end
