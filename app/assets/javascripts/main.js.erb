@@ -244,23 +244,6 @@ $(function() {
     });
   }
 
-  function askForToken(args, callback){
-    $.ajax({
-      type: 'GET',
-      url: '/promo_codes/use',
-      success: function(data) {
-        ask_for_token_content = $("<div>").html(data)
-        token_input_container = $("<div>").html(ask_for_token_content.find("#token_input_container"));
-        token_possession_container = $("<div>").html(ask_for_token_content.find("#token_possession_container"));
-        ask_for_token_content.find("#token_container").html(token_possession_container.html());
-        args.activeInfoWindow.close();
-        args.activeInfoWindow.setContent(ask_for_token_content.html());
-        args.activeInfoWindow.open(map, args.activeMarker);
-      }
-    });
-
-  }
-
   $('#combo-form input[type="radio"]').live('click', function() {
     var radioInput = $(this);
     if('new' === radioInput.val()) {
@@ -471,61 +454,6 @@ $(function() {
       }
     });
     return false;
-  });
-
-  $('#token_code_no').live('click', function(e){
-    e.preventDefault();
-    active_things = {
-      activeThingId: activeThingId,
-      activeInfoWindow: activeInfoWindow,
-      activeMarker: activeMarker
-    };
-    congratulateAdopter(active_things);
-  });
-
-  $('#token_code_yes').live('click', function(e){
-    e.preventDefault();
-    ask_for_token_content.find("#token_container").html(token_input_container.html())
-    activeInfoWindow.close();
-    activeInfoWindow.setContent(ask_for_token_content.html());
-    activeInfoWindow.open(map, activeMarker);
-  });
-
-  $("#promo_code_form").live('submit', function(e){
-    e.preventDefault();
-    $.ajax({
-      type: 'POST',
-      url: '/promo_codes',
-      data: {
-        '_method': 'patch',
-        'utf8': '✓',
-        'authenticity_token': $('#promo_code_form input[name="authenticity_token"]').val(),
-        'promo_code': {
-          'user_id': $('#promo_code_user_id').val(),
-          'token': $('#promo_code_token_code').val()
-        }
-      },
-      error: function(jqXHR) {
-        activeInfoWindow.close();
-        if(jqXHR.status == '404'){
-	  err_msg = 'Promo Code Not Found';
-        } else {
-          err_msg = jqXHR.responseText;
-        }
-        err_msg_el = $('<div><div class="alert alert-error fade in"><p></p></div></div>');
-        err_msg_el.find(".alert p").html(err_msg);
-        activeInfoWindow.setContent(err_msg_el.html());
-        activeInfoWindow.open(map, activeMarker);
-      },
-      success: function(data){
-        active_things = {
-          activeThingId: activeThingId,
-          activeInfoWindow: activeInfoWindow,
-          activeMarker: activeMarker
-        };
-        congratulateAdopter(active_things);
-      }
-    });
   });
 
   $('#abandon_form').live('submit', function() {

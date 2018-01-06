@@ -51,7 +51,6 @@ class User < ActiveRecord::Base
   has_many :reminders_to,   class_name: 'Reminder', foreign_key: 'to_user_id'
   has_many :things
   has_many :events
-  has_many :promo_codes
 
   before_validation :remove_non_digits_from_phone_numbers
 
@@ -76,10 +75,6 @@ class User < ActiveRecord::Base
   def complete_shipping_address?
     shipping_attrs = ["first_name", "last_name", "address_1", "city", "state", "zip"]
     shipping_attrs.none? {|attr_name| self.attributes[attr_name].blank?}
-  end
-
-  def used_code?
-    not self.promo_codes.empty?
   end
 
   def remove_non_digits_from_phone_numbers

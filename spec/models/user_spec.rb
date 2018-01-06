@@ -152,18 +152,4 @@ RSpec.describe User, :type => :model do
       end
     end
   end
-
-  context "used_code?" do
-
-    it "is true if the User has a Promo Code" do
-      promo_code = build(:promo_code)
-      subject.promo_codes << promo_code
-
-      expect(subject.used_code?).to be true
-    end
-
-    it "is false if the User does not have a Promo Code" do
-      expect(subject.used_code?).to be false
-    end
-  end
 end
