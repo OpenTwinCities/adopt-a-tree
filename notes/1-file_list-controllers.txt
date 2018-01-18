@@ -14,12 +14,11 @@ test/controllers
 0 directories, 8 files
 
 spec/controllers
-|-- promo_codes_controller_spec.rb
 |-- reminders_controller_spec.rb
 |-- things_controller_spec.rb
 `-- users_controller_spec.rb
 
-0 directories, 4 files
+0 directories, 3 files
 
 app/controllers
 |-- addresses_controller.rb
@@ -28,7 +27,6 @@ app/controllers
 |-- info_window_controller.rb
 |-- main_controller.rb
 |-- passwords_controller.rb
-|-- promo_codes_controller.rb
 |-- reminders_controller.rb
 |-- sessions_controller.rb
 |-- sidebar_controller.rb
@@ -36,4 +34,4 @@ app/controllers
 |-- things_controller.rb
 `-- users_controller.rb
 
-1 directory, 12 files
+1 directory, 11 files

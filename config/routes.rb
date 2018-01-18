@@ -39,9 +39,6 @@
 #                          PATCH  /things(.:format)                things#update
 #                          PUT    /things(.:format)                things#update
 #                          DELETE /things(.:format)                things#destroy
-#              promo_codes PATCH  /promo_codes(.:format)           promo_codes#update
-#                          PUT    /promo_codes(.:format)           promo_codes#update
-#          promo_codes_use GET    /promo_codes/use(.:format)       promo_codes#use
 #              rails_admin        /admin                           RailsAdmin::Engine
 #                     root GET    /                                main#index
 # 
@@ -82,8 +79,6 @@ Rails.application.routes.draw do
 
   resource :reminders
   resource :things
-  resource :promo_codes, only: [:update]
-  get '/promo_codes/use', to: 'promo_codes#use', as: 'promo_codes_use'
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   root to: 'main#index'
 end
