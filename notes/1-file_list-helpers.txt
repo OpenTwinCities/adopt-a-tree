@@ -5,18 +5,16 @@ test/helpers
 
 0 directories, 0 files
 
-spec/helpers
-`-- promo_codes_helper_spec.rb
+spec/helpers [error opening dir]
 
-0 directories, 1 file
+0 directories, 0 files
 
 app/helpers
 |-- application_helper.rb
-|-- promo_codes_helper.rb
 |-- reminders_helper.rb
 |-- sessions_helper.rb
 |-- users_helper.rb
 `-- welcome_helper.rb
 
-0 directories, 6 files
+0 directories, 5 files
 
