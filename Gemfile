@@ -8,16 +8,16 @@ ruby '2.3.5'
 # entering "bundle update".
 gem 'nokogiri', '1.8.1'
 gem 'pg', '0.21.0'
-gem 'rails', '4.2.10'
+gem 'rails', '5.0.6'
 
-gem 'autoprefixer-rails', '~> 6.7.2'
+gem 'autoprefixer-rails', '~> 7.2.5'
 gem 'bcrypt', '~> 3.1.11'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise', '~> 4.3.0'
 gem 'geokit', '~> 1.11.0'
 gem 'haml', '~> 5.0.4'
 gem 'hashie', '~> 3.5.1'
-gem 'jquery-rails', '~> 3.1.4'
+gem 'jquery-rails', '~> 4.3.1'
 gem 'puma', '~> 3.11.0'
 gem 'rails_admin', '~> 1.2.0'
 gem 'rails_admin_enum4', '~> 0.1.3'
@@ -58,6 +58,7 @@ group :test do
   gem 'database_cleaner', '~> 1.6.1'
   gem 'launchy', '~> 2.4.3'
   gem 'poltergeist', '~> 1.16.0'
+  gem 'rails-controller-testing', '~> 1.0.2'
   gem 'selenium-webdriver', '~> 3.8.0'
 end
 
