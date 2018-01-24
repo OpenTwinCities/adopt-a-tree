@@ -337,7 +337,8 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
-    spring (1.7.2)
+    spring (2.0.2)
+      activesupport (>= 4.2)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
     sprockets (3.7.1)
@@ -415,7 +416,7 @@ DEPENDENCIES
   sandi_meter (~> 1.2.0)
   sass-rails (~> 5.0.6)
   selenium-webdriver (~> 3.8.0)
-  spring (~> 1.7.2)
+  spring (~> 2.0.2)
   spring-commands-rspec (~> 1.0.4)
   validates_formatting_of (~> 0.9.0)
 

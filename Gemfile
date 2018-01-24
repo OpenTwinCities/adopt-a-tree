@@ -28,7 +28,7 @@ group :development do
   gem 'guard-rspec', '~> 4.7.3'
   gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
   gem 'growl' if /darwin/ =~ RUBY_PLATFORM
-  gem 'spring', '~> 1.7.2'
+  gem 'spring', '~> 2.0.2'
   gem 'spring-commands-rspec', '~> 1.0.4'
 end
 
