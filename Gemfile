@@ -8,19 +8,18 @@ ruby '2.3.5'
 # entering "bundle update".
 gem 'nokogiri', '1.8.1'
 gem 'pg', '0.21.0'
-gem 'rails', '4.2.10'
+gem 'rails', '5.0.6'
 
-gem 'autoprefixer-rails', '~> 6.7.2'
+gem 'autoprefixer-rails', '~> 7.2.5'
 gem 'bcrypt', '~> 3.1.11'
 gem 'bootstrap-sass', '~> 3.3.7'
-gem 'devise', '~> 4.3.0'
+gem 'devise', '~> 4.4.1'
 gem 'geokit', '~> 1.11.0'
 gem 'haml', '~> 5.0.4'
 gem 'hashie', '~> 3.5.1'
-gem 'jquery-rails', '~> 3.1.4'
+gem 'jquery-rails', '~> 4.3.1'
 gem 'puma', '~> 3.11.0'
 gem 'rails_admin', '~> 1.2.0'
-gem 'rails_admin_enum4', '~> 0.1.3'
 gem 'sass-rails', '~> 5.0.6'
 gem 'validates_formatting_of', '~> 0.9.0'
 
@@ -28,7 +27,7 @@ group :development do
   gem 'guard-rspec', '~> 4.7.3'
   gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
   gem 'growl' if /darwin/ =~ RUBY_PLATFORM
-  gem 'spring', '~> 1.7.2'
+  gem 'spring', '~> 2.0.2'
   gem 'spring-commands-rspec', '~> 1.0.4'
 end
 
@@ -52,19 +51,20 @@ group :production do
 end
 
 group :test do
-  gem 'capybara', '~> 2.16.1'
+  gem 'capybara', '~> 2.17.0'
   gem 'capybara-slow_finder_errors', '0.1.4'
   gem 'codeclimate-test-reporter', '~> 1.0.4', require: nil
   gem 'database_cleaner', '~> 1.6.1'
   gem 'launchy', '~> 2.4.3'
-  gem 'poltergeist', '~> 1.16.0'
+  gem 'poltergeist', '~> 1.17.0'
+  gem 'rails-controller-testing', '~> 1.0.2'
   gem 'selenium-webdriver', '~> 3.8.0'
 end
 
 # BEGIN: gems used in test_code.sh script
 group :development, :testing do
   gem 'bundler-audit', '~> 0.6.0'  # Checks for vulnerable versions of gems
-  gem 'brakeman', '~> 3.6.1' # Checks for security vulnerabilities
+  gem 'brakeman', '~> 4.1.1' # Checks for security vulnerabilities
   gem 'sandi_meter', '~> 1.2.0' # Checks for compliance with Sandi Metz' four rules
   gem 'gemsurance', '~> 0.9.0' # Checks for outdated and insecure gems
 end
