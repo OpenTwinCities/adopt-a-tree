@@ -20,7 +20,6 @@ gem 'hashie', '~> 3.5.1'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'puma', '~> 3.11.0'
 gem 'rails_admin', '~> 1.2.0'
-gem 'rails_admin_enum4', '~> 0.1.3'
 gem 'sass-rails', '~> 5.0.6'
 gem 'validates_formatting_of', '~> 0.9.0'
 
