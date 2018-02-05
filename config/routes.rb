@@ -4,18 +4,18 @@
 #         new_user_session GET    /users/sign_in(.:format)         sessions#new
 #             user_session POST   /users/sign_in(.:format)         sessions#create
 #     destroy_user_session DELETE /users/sign_out(.:format)        sessions#destroy
-#            user_password POST   /users/password(.:format)        passwords#create
 #        new_user_password GET    /users/password/new(.:format)    passwords#new
 #       edit_user_password GET    /users/password/edit(.:format)   passwords#edit
-#                          PATCH  /users/password(.:format)        passwords#update
+#            user_password PATCH  /users/password(.:format)        passwords#update
 #                          PUT    /users/password(.:format)        passwords#update
+#                          POST   /users/password(.:format)        passwords#create
 # cancel_user_registration GET    /users/cancel(.:format)          users#cancel
-#        user_registration POST   /users(.:format)                 users#create
 #    new_user_registration GET    /users/sign_up(.:format)         users#new
 #   edit_user_registration GET    /users/edit(.:format)            users#edit
-#                          PATCH  /users(.:format)                 users#update
+#        user_registration PATCH  /users(.:format)                 users#update
 #                          PUT    /users(.:format)                 users#update
 #                          DELETE /users(.:format)                 users#destroy
+#                          POST   /users(.:format)                 users#create
 #          mailing_address GET    /users/mailing_address(.:format) users#mailing_address
 #                   survey GET    /users/survey(.:format)          users#survey
 #   restricted_user_update PUT    /users/restricted(.:format)      users#restricted_update
@@ -25,20 +25,20 @@
 #                   search GET    /sidebar/search(.:format)        sidebar#search
 #               combo_form GET    /sidebar/combo_form(.:format)    sidebar#combo_form
 #             edit_profile GET    /sidebar/edit_profile(.:format)  sidebar#edit_profile
-#                reminders POST   /reminders(.:format)             reminders#create
 #            new_reminders GET    /reminders/new(.:format)         reminders#new
 #           edit_reminders GET    /reminders/edit(.:format)        reminders#edit
-#                          GET    /reminders(.:format)             reminders#show
+#                reminders GET    /reminders(.:format)             reminders#show
 #                          PATCH  /reminders(.:format)             reminders#update
 #                          PUT    /reminders(.:format)             reminders#update
 #                          DELETE /reminders(.:format)             reminders#destroy
-#                   things POST   /things(.:format)                things#create
+#                          POST   /reminders(.:format)             reminders#create
 #               new_things GET    /things/new(.:format)            things#new
 #              edit_things GET    /things/edit(.:format)           things#edit
-#                          GET    /things(.:format)                things#show
+#                   things GET    /things(.:format)                things#show
 #                          PATCH  /things(.:format)                things#update
 #                          PUT    /things(.:format)                things#update
 #                          DELETE /things(.:format)                things#destroy
+#                          POST   /things(.:format)                things#create
 #              rails_admin        /admin                           RailsAdmin::Engine
 #                     root GET    /                                main#index
 # 
