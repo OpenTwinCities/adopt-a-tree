@@ -8,7 +8,7 @@ RSpec.describe ThingsController, :type => :controller do
     thing.save!
     expect(Thing.count).to be > 0
 
-    get :show, format: 'json', lat: 42.358431, lng: -71.059773
+    get :show, params: {format: 'json', lat: 42.358431, lng: -71.059773}
 
     expect(assigns(:things)).not_to be_empty
     expect(response).to have_http_status(:success)
