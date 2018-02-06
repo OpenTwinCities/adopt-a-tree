@@ -18,7 +18,7 @@ RSpec.describe ThingsController, :type => :controller do
     expect(thing.name).not_to eq('Birdsill')
     expect(ThingMailer).not_to receive(:abandon)
 
-    put :update, format: 'json', id: thing.id, thing: {name: 'Birdsill'}
+    put :update, params: {format: 'json', id: thing.id, thing: {name: 'Birdsill'}}
 
     thing.reload
     expect(thing.name).to eq('Birdsill')
