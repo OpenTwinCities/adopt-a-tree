@@ -45,9 +45,9 @@ RSpec.describe UsersController, :type => :controller do
     end
 
     it 'should return error if passwords do not match' do
-      post :create, format: 'json', user: {email: 'user@example.com', first_name: 'Userf', last_name: 'Userl', 
+      post :create, params: {format: 'json', user: {email: 'user@example.com', first_name: 'Userf', last_name: 'Userl', 
         password: 'correcT*1', password_confirmation: 'incorrect', username: 'userfuserl',
-        address_1: '350 S 5th St', city: 'Minneapolis', state: 'MN', zip: 55415}
+        address_1: '350 S 5th St', city: 'Minneapolis', state: 'MN', zip: 55415}}
       assert_response :error
     end
 
