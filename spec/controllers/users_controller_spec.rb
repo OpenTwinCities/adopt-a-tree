@@ -20,7 +20,7 @@ RSpec.describe UsersController, :type => :controller do
     it 'should return error if password is incorrect' do
       sign_in user
       expect(user.first_name).not_to eql('New')
-      put :update, user: {first_name: 'New', current_password: 'badpassword'}
+      put :update, params: {user: {first_name: 'New', current_password: 'badpassword'}}
       expect(response).to have_http_status(:error)
       user.reload
       expect(user.first_name).not_to eql('New')
