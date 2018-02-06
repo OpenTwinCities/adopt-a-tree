@@ -8,7 +8,7 @@ ruby '2.4.3'
 # entering "bundle update".
 gem 'nokogiri', '1.8.2'
 gem 'pg', '0.21.0'
-gem 'rails', '5.0.6'
+gem 'rails', '5.1.4'
 
 gem 'autoprefixer-rails', '~> 7.2.5'
 gem 'bcrypt', '~> 3.1.11'
