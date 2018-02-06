@@ -38,9 +38,9 @@ RSpec.describe UsersController, :type => :controller do
 
       it 'should send welcome email' do
         expect(ThingMailer).to receive(:sign_up).with(kind_of(User))
-        post :create, format: 'json', user: {email: 'user@example.com', first_name: 'Userf', last_name: 'Userl', 
+        post :create, params: {format: 'json', user: {email: 'user@example.com', first_name: 'Userf', last_name: 'Userl', 
           password: 'correcT*1', password_confirmation: 'correcT*1', username: 'userfuserl',
-          address_1: '350 S 5th St', city: 'Minneapolis', state: 'MN', zip: 55415}
+          address_1: '350 S 5th St', city: 'Minneapolis', state: 'MN', zip: 55415}}
       end
     end
 
