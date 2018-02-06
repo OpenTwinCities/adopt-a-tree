@@ -27,7 +27,7 @@ class UsersControllerTest < ActionController::TestCase
   test 'should update user if password is correct' do
     sign_in @user
     assert_not_equal 'New Name', @user.name
-    put :update, user: {name: 'New Name', current_password: 'correct'}
+    put :update, params: {user: {name: 'New Name', current_password: 'correct'}}
     @user.reload
     assert_equal 'New Name', @user.name
     assert_response :redirect

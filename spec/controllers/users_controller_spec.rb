@@ -11,7 +11,7 @@ RSpec.describe UsersController, :type => :controller do
     it 'should update user if password is correct' do
       sign_in user
       expect(user.first_name).not_to eql('New')
-      put :update, user: {first_name: 'New', current_password: user.password}
+      put :update, params: {user: {first_name: 'New', current_password: user.password}}
       expect(response).to have_http_status(:redirect)
       user.reload
       expect(user.first_name).to eql('New')
