@@ -53,9 +53,9 @@ RSpec.describe UsersController, :type => :controller do
 
     it 'should return error if all requirements not met' do
       # no city
-      post :create, format: 'json', user: {email: 'user@example.com', first_name: 'Userf', last_name: 'Userl', 
+      post :create, params: {format: 'json', user: {email: 'user@example.com', first_name: 'Userf', last_name: 'Userl', 
         password: 'correcT*1', password_confirmation: 'correcT*1', username: 'userfuserl',
-        address_1: '350 S 5th St', state: 'MN', zip: 55415}
+        address_1: '350 S 5th St', state: 'MN', zip: 55415}}
       assert_response :error
     end
   end
