@@ -390,6 +390,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.2.0)
   factory_bot_rails (~> 4.8.2)
   faker (~> 1.8.4)
+  ffi (= 1.9.18)
   gemsurance (~> 0.9.0)
   geokit (~> 1.11.0)
   guard-rspec (~> 4.7.3)
