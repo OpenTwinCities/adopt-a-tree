@@ -8,7 +8,7 @@ RSpec.describe ThingsController, :type => :controller do
     thing.save!
     expect(Thing.count).to be > 0
 
-    get :show, format: 'json', lat: 42.358431, lng: -71.059773
+    get :show, params: {format: 'json', lat: 42.358431, lng: -71.059773}
 
     expect(assigns(:things)).not_to be_empty
     expect(response).to have_http_status(:success)
@@ -18,7 +18,7 @@ RSpec.describe ThingsController, :type => :controller do
     expect(thing.name).not_to eq('Birdsill')
     expect(ThingMailer).not_to receive(:abandon)
 
-    put :update, format: 'json', id: thing.id, thing: {name: 'Birdsill'}
+    put :update, params: {format: 'json', id: thing.id, thing: {name: 'Birdsill'}}
 
     thing.reload
     expect(thing.name).to eq('Birdsill')
@@ -35,7 +35,7 @@ RSpec.describe ThingsController, :type => :controller do
     expect(mailer).to receive('deliver')
     expect(ThingMailer).to receive(:abandon).with(thing, 88, 'Ash').and_return(mailer)
 
-    expect{put :update, format: 'json', id: thing.id, thing: {user_id: nil}}.to change(Event, :count).by(1)
+    expect{put :update, params: {format: 'json', id: thing.id, thing: {user_id: nil}}}.to change(Event, :count).by(1)
 
     expect(Event.count).to eq(1)
     event = Event.first
@@ -50,7 +50,7 @@ RSpec.describe ThingsController, :type => :controller do
     expect(mailer).to receive('deliver')
     expect(ThingMailer).to receive(:adopt).with(thing).and_return(mailer)
 
-    expect{put :update, format: 'json', id: thing.id, thing: {user_id: 100000}}.to change(Event, :count).by(1)
+    expect{put :update, params: {format: 'json', id: thing.id, thing: {user_id: 100000}}}.to change(Event, :count).by(1)
 
     expect(Event.count).to eq(1)
     event = Event.first

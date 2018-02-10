@@ -16,7 +16,7 @@ RSpec.describe RemindersController, :type => :controller do
     expect(mailer).to receive(:deliver)
     expect(ThingMailer).to receive(:reminder).with(kind_of(Thing)).and_return(mailer)
 
-    post :create, format: :json, reminder: {thing_id: thing.id, to_user_id: user.id}
+    post :create, params: {format: :json, reminder: {thing_id: thing.id, to_user_id: user.id}}
 
     expect(response).to have_http_status(:success)
   end

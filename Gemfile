@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
-ruby '2.3.5'
+ruby '2.5.0'
 
 # These gems take a long time to install.
 # Thus, the "gem install" command is used in the Docker image creation
 # process to preinstall these versions of these gems
 # Version numbers are rigidly pinned to avoid a long wait after
 # entering "bundle update".
-gem 'nokogiri', '1.8.1'
+gem 'ffi', '1.9.18'
+gem 'nokogiri', '1.8.2'
 gem 'pg', '0.21.0'
-gem 'rails', '5.0.6'
+gem 'rails', '5.1.4'
 
 gem 'autoprefixer-rails', '~> 7.2.5'
 gem 'bcrypt', '~> 3.1.11'
@@ -58,7 +59,7 @@ group :test do
   gem 'launchy', '~> 2.4.3'
   gem 'poltergeist', '~> 1.17.0'
   gem 'rails-controller-testing', '~> 1.0.2'
-  gem 'selenium-webdriver', '~> 3.8.0'
+  gem 'selenium-webdriver', '~> 3.9.0'
 end
 
 # BEGIN: gems used in test_code.sh script
