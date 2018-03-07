@@ -30,6 +30,7 @@ group :development do
   gem 'growl' if /darwin/ =~ RUBY_PLATFORM
   gem 'spring', '~> 2.0.2'
   gem 'spring-commands-rspec', '~> 1.0.4'
+  gem 'byebug'
 end
 
 group :development, :test do
