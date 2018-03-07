@@ -143,7 +143,7 @@ git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/r
 ### Get the Repo
 
 ```
-git clone https://github.com/ballPointPenguin/adopt-a-tree.git
+git clone https://github.com/OpenTwinCities/adopt-a-tree.git
 cd adopt-a-tree
 ```
 
@@ -174,6 +174,10 @@ refer to the [Adopt-a-Hydrant Wiki](https://github.com/codeforamerica/adopt-a-hy
 for detailed instructions on installation. You can also post a question to the
 [Open Twin Cities Google Group](https://groups.google.com/forum/#!forum/twin-cities-brigade).
 
+### Google Maps API key
+Google Maps API now requires a key to use its services. You can obtain a key at https://developers.google.com/maps/documentation/javascript/get-api-key.
+
+When starting the rails server make sure `GOOGLE_API_KEY` is set, either explicitly or via your favorite environment setup file (~/.bash_profile, etc.).
 
 ## Usage
 
@@ -320,15 +324,15 @@ Are you ready to contribute? Well, here's how:
 3. Get it running on your computer. There are a couple of tutorials for
    installing on Linux (https://github.com/codeforamerica/adopt-a-hydrant/wiki/Adopta-Install-Notes),
    and the process is pretty similar for OS X.
-4. Find an issue and start working on it at https://github.com/ballPointPenguin/adopt-a-tree/issues
+4. Find an issue and start working on it at https://github.com/OpenTwinCities/adopt-a-tree/issues
    - Be sure to make comments and ask questions on the issues.
    - We've prioritized issues into milestones, so please checkout the
      milestones to see what should get done next.
 5. [Create a topic branch.][branch]
 6. Add specs for your unimplemented feature or bug fix.
-7. Run `bundle exec rake test`. If your specs pass, return to step 6.
+7. Run `bundle exec rspec`. If your specs pass, return to step 6.
 8. Implement your feature or bug fix.
-9. Run `bundle exec rake test`. If your specs fail, return to step 8.
+9. Run `bundle exec rspec`. If your specs fail, return to step 8.
 10. Run `open coverage/index.html`. If your changes are not completely covered
    by your tests, return to step 6.
 11. Add, commit, and push your changes.
@@ -349,7 +353,7 @@ We also have online ways to discuss and ask questions about Adopt-A-Tree. Join
 the [Open Twin Cities Google Group](https://groups.google.com/forum/#!forum/twin-cities-brigade)
 to discuss Adopt-A-Tree with civic technologists all around the Twin Cities.
 You can also pose questions and submit problems and ideas though the
-[issues on GitHub](https://github.com/ballPointPenguin/adopt-a-tree/issues).
+[issues on GitHub](https://github.com/OpenTwinCities/adopt-a-tree/issues).
 And feel free to email questions and ideas to <contact@opentwincities.org>.
 
 ## Additional Ways to Contribute
@@ -365,7 +369,7 @@ Here are some non-coding ways *you* can contribute:
 * [financially][]
 
 [locales]: https://github.com/codeforamerica/adopt-a-hydrant/tree/master/config/locales
-[issues]: https://github.com/ballPointPenguin/adopt-a-tree/issues
+[issues]: https://github.com/OpenTwinCities/adopt-a-tree/issues
 [financially]: https://givemn.org/project/Open-Twin-Cities
 
 
