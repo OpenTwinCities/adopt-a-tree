@@ -1,15 +1,18 @@
-require 'simplecov'
-SimpleCov.start
+# frozen_string_literal: true
 
-ENV["RAILS_ENV"] ||= 'test'
+require 'simplecov'
+SimpleCov.start :rails
+
+ENV['RAILS_ENV'] ||= 'test'
 require 'spec_helper'
-require File.expand_path("../../config/environment", __FILE__)
+require File.expand_path('../config/environment', __dir__)
 require 'rspec/rails'
 require 'devise'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rspec'
 require 'selenium-webdriver'
 require 'capybara/poltergeist'
+require 'byebug' if ENV['RAILS_ENV'] == 'development'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -24,7 +27,7 @@ require 'capybara/poltergeist'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
@@ -33,7 +36,7 @@ ActiveRecord::Migration.maintain_test_schema!
 Capybara.ignore_hidden_elements = false
 Capybara.default_max_wait_time = 4
 Capybara.javascript_driver = :poltergeist
-#Capybara.javascript_driver = :selenium
+# Capybara.javascript_driver = :selenium
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
@@ -42,7 +45,7 @@ RSpec.configure do |config|
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  #config.use_transactional_fixtures = true
+  # config.use_transactional_fixtures = true
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
@@ -60,5 +63,5 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.include LoginMacros
-  config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end

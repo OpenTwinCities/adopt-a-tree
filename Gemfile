@@ -9,7 +9,7 @@ ruby '2.5.0'
 gem 'ffi', '1.9.18'
 gem 'nokogiri', '1.8.2'
 gem 'pg', '0.21.0'
-gem 'rails', '5.1.4'
+gem 'rails', '5.1.5'
 
 gem 'autoprefixer-rails', '~> 7.2.5'
 gem 'bcrypt', '~> 3.1.11'
@@ -20,7 +20,7 @@ gem 'haml', '~> 5.0.4'
 gem 'hashie', '~> 3.5.1'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'puma', '~> 3.11.0'
-gem 'rails_admin', '~> 1.2.0'
+gem 'rails_admin', '~> 1.3.0'
 gem 'sass-rails', '~> 5.0.6'
 gem 'validates_formatting_of', '~> 0.9.0'
 
@@ -30,6 +30,7 @@ group :development do
   gem 'growl' if /darwin/ =~ RUBY_PLATFORM
   gem 'spring', '~> 2.0.2'
   gem 'spring-commands-rspec', '~> 1.0.4'
+  gem 'byebug'
 end
 
 group :development, :test do

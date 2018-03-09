@@ -22,11 +22,11 @@ Stage is at <http://adoptatree-mpls-stage.opentwincities.org/>
 
 ## Code of Conduct
 
-As an Open Twin Cities project, the [Open Twin Cities Code of Conduct](http://opentwincities.org/about/code-of-conduct/) 
+As an Open Twin Cities project, the [Open Twin Cities Code of Conduct](http://opentwincities.org/about/code-of-conduct/)
 is in effect regarding online and offline project activities.
 
-Open Twin Cities is dedicated to a harassment-free community for everyone. Be 
-kind to one another. Do not insult or put down other community members. Behave 
+Open Twin Cities is dedicated to a harassment-free community for everyone. Be
+kind to one another. Do not insult or put down other community members. Behave
 civilly.
 
 ## Installation (Easy Way)
@@ -47,7 +47,7 @@ The difficult way is setting Adopt-a-Tree directly on your computer's host OS.
 
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install git postgres node 
+brew install git postgres node
 ```
 
 Note in the above we are fetching [Homebrew](http://brew.sh/) to handle system
@@ -65,7 +65,7 @@ To install on Debian 9/Stretch, run `sudo apt-get install libssl1.0-dev`
 **Fedora/RHEL/CentOS**
 
 ```
-sudo yum install git postgresql-server postgresql-devel nodejs npm libffi-devel patch 
+sudo yum install git postgresql-server postgresql-devel nodejs npm libffi-devel patch
 sudo postgresql-setup initdb && sudo systemctl enable postgresql.service && sudo service postgresql start
 ```
 
@@ -93,7 +93,7 @@ sudo -u postgres createuser -d adopta
 
 As superuser, edit:
 
-- `/etc/postgresql/{version number}/main/pg_hba.conf` in Ubuntu/Debian, or 
+- `/etc/postgresql/{version number}/main/pg_hba.conf` in Ubuntu/Debian, or
 - `/var/lib/pgsql/data/pg_hba.conf` in Fedora
 
 Find one of these lines:
@@ -143,7 +143,7 @@ git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/r
 ### Get the Repo
 
 ```
-git clone https://github.com/ballPointPenguin/adopt-a-tree.git
+git clone https://github.com/OpenTwinCities/adopt-a-tree.git
 cd adopt-a-tree
 ```
 
@@ -170,10 +170,14 @@ bundle exec rake db:seed
 ### Additional Installation Resources
 
 In case you have trouble with the above installation steps, you might want to
-refer to the [Adopt-a-Hydrant Wiki](https://github.com/codeforamerica/adopt-a-hydrant/wiki/Adopta-Install-Notes) 
+refer to the [Adopt-a-Hydrant Wiki](https://github.com/codeforamerica/adopt-a-hydrant/wiki/Adopta-Install-Notes)
 for detailed instructions on installation. You can also post a question to the
 [Open Twin Cities Google Group](https://groups.google.com/forum/#!forum/twin-cities-brigade).
 
+### Google Maps API key
+Google Maps API now requires a key to use its services. You can obtain a key at https://developers.google.com/maps/documentation/javascript/get-api-key.
+
+When starting the rails server make sure `GOOGLE_API_KEY` is set, either explicitly or via your favorite environment setup file (~/.bash_profile, etc.).
 
 ## Usage
 
@@ -210,7 +214,7 @@ When running `rails` or `rake`, you'll need to prepend `RAILS_ENV=production bun
 
 ### Rake Tasks
 
-Three rake tasks are available to help you import additional trees to the 
+Three rake tasks are available to help you import additional trees to the
 database, or to replace all tree data, from a GeoJSON file provided by Socrata.
 
 To view a list of the names and indices of all fields in a file, run `rake db:trees:list_fields[PATH_TO_GEOJSON]`.
@@ -268,7 +272,7 @@ Assuming you have SSH keys setup properly, deploy via:
 
 ## How to Contribute Code
 
-So you want to help out on Adopt-A-Tree? You're awesome, and we're happy to 
+So you want to help out on Adopt-A-Tree? You're awesome, and we're happy to
 help you be as awesome as possible.
 
 In the spirit of [free software][free-sw], **everyone** is encouraged to help
@@ -287,27 +291,27 @@ improve this project. So ways to contribute code include:
 
 First things first, there are a few things you should be familiar with:
 
- - The Command Line. Depending on your computer and the tools you use, you 
-   might use the command line a little or a lot. Either way, it helps to know 
-   how to use it a bit. 
+ - The Command Line. Depending on your computer and the tools you use, you
+   might use the command line a little or a lot. Either way, it helps to know
+   how to use it a bit.
     - Never used the Command Line before? Check out [this tutorial from Open Hatch to get started](http://openhatch.org/missions/shell/about).
     - Using Windows? Open Hatch also has [a tutorial focused on the Windows command line](http://openhatch.org/missions/windows-setup/).
- - Git and GitHub. Adopt-A-Tree uses these tools to manage our collaborative 
-   coding. If you've never used git or GitHub before, you can search the 
-   Internet and find a lot of good resources. You can also checkout these 
+ - Git and GitHub. Adopt-A-Tree uses these tools to manage our collaborative
+   coding. If you've never used git or GitHub before, you can search the
+   Internet and find a lot of good resources. You can also checkout these
    couple of tutorials to get started:
     - [Install and Setup Git](https://help.github.com/articles/set-up-git/)
     - [GitHub's Hello World](https://guides.github.com/activities/hello-world/),
-      which covers the on the standard flow for contributing code to projects on GitHub. 
-  - Most of Adopt-A-Tree is written in [Ruby](https://www.ruby-lang.org/en/) and 
-    [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), 
-    using [Rails](http://rubyonrails.org/) and [jQuery](http://jquery.com/). 
-    Familiarity with other frameworks and libraries, such as [Sinatra](http://www.sinatrarb.com/) 
+      which covers the on the standard flow for contributing code to projects on GitHub.
+  - Most of Adopt-A-Tree is written in [Ruby](https://www.ruby-lang.org/en/) and
+    [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript),
+    using [Rails](http://rubyonrails.org/) and [jQuery](http://jquery.com/).
+    Familiarity with other frameworks and libraries, such as [Sinatra](http://www.sinatrarb.com/)
     (Ruby) and [Ember](http://emberjs.com/) (JavaScript) might also be helpful.
-    And of course, [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) and 
+    And of course, [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) and
     [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS).
 
-Don't worry if you're not comfortable with all of these things. Working on a 
+Don't worry if you're not comfortable with all of these things. Working on a
 project like Adopt-A-Tree is a great way to learn.
 
 <a name="contrib_code_process"></a>
@@ -317,18 +321,18 @@ Are you ready to contribute? Well, here's how:
 
 1. [Fork the repository.][fork]
 2. [Clone your fork to your computer](https://help.github.com/articles/fork-a-repo/#step-2-create-a-local-clone-of-your-fork)
-3. Get it running on your computer. There are a couple of tutorials for 
-   installing on Linux (https://github.com/codeforamerica/adopt-a-hydrant/wiki/Adopta-Install-Notes), 
+3. Get it running on your computer. There are a couple of tutorials for
+   installing on Linux (https://github.com/codeforamerica/adopt-a-hydrant/wiki/Adopta-Install-Notes),
    and the process is pretty similar for OS X.
-4. Find an issue and start working on it at https://github.com/ballPointPenguin/adopt-a-tree/issues
+4. Find an issue and start working on it at https://github.com/OpenTwinCities/adopt-a-tree/issues
    - Be sure to make comments and ask questions on the issues.
-   - We've prioritized issues into milestones, so please checkout the 
+   - We've prioritized issues into milestones, so please checkout the
      milestones to see what should get done next.
 5. [Create a topic branch.][branch]
 6. Add specs for your unimplemented feature or bug fix.
-7. Run `bundle exec rake test`. If your specs pass, return to step 6.
+7. Run `bundle exec rspec`. If your specs pass, return to step 6.
 8. Implement your feature or bug fix.
-9. Run `bundle exec rake test`. If your specs fail, return to step 8.
+9. Run `bundle exec rspec`. If your specs fail, return to step 8.
 10. Run `open coverage/index.html`. If your changes are not completely covered
    by your tests, return to step 6.
 11. Add, commit, and push your changes.
@@ -341,15 +345,15 @@ Are you ready to contribute? Well, here's how:
 <a href="contrib_code_meetups"></a>
 ### Meetups and Getting Help
 
-Open Twin Cities holds [lots of events that everybody is welcome to](http://opentwincities.org/events/). 
-Our monthly meetups in Minneapolis and St. Paul are great places to come 
+Open Twin Cities holds [lots of events that everybody is welcome to](http://opentwincities.org/events/).
+Our monthly meetups in Minneapolis and St. Paul are great places to come
 discuss Adopt-A-Tree, ask questions, and get some help.
 
-We also have online ways to discuss and ask questions about Adopt-A-Tree. Join 
-the [Open Twin Cities Google Group](https://groups.google.com/forum/#!forum/twin-cities-brigade) 
-to discuss Adopt-A-Tree with civic technologists all around the Twin Cities. 
-You can also pose questions and submit problems and ideas though the 
-[issues on GitHub](https://github.com/ballPointPenguin/adopt-a-tree/issues). 
+We also have online ways to discuss and ask questions about Adopt-A-Tree. Join
+the [Open Twin Cities Google Group](https://groups.google.com/forum/#!forum/twin-cities-brigade)
+to discuss Adopt-A-Tree with civic technologists all around the Twin Cities.
+You can also pose questions and submit problems and ideas though the
+[issues on GitHub](https://github.com/OpenTwinCities/adopt-a-tree/issues).
 And feel free to email questions and ideas to <contact@opentwincities.org>.
 
 ## Additional Ways to Contribute
@@ -365,7 +369,7 @@ Here are some non-coding ways *you* can contribute:
 * [financially][]
 
 [locales]: https://github.com/codeforamerica/adopt-a-hydrant/tree/master/config/locales
-[issues]: https://github.com/ballPointPenguin/adopt-a-tree/issues
+[issues]: https://github.com/OpenTwinCities/adopt-a-tree/issues
 [financially]: https://givemn.org/project/Open-Twin-Cities
 
 
