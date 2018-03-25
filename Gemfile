@@ -6,7 +6,7 @@ ruby '2.5.0'
 # process to preinstall these versions of these gems
 # Version numbers are rigidly pinned to avoid a long wait after
 # entering "bundle update".
-gem 'ffi', '1.9.18'
+gem 'ffi', '1.9.23'
 gem 'nokogiri', '1.8.2'
 gem 'pg', '0.21.0'
 gem 'rails', '5.1.5'
