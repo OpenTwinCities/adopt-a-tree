@@ -60,7 +60,7 @@ group :test do
   gem 'launchy', '~> 2.4.3'
   gem 'poltergeist', '~> 1.17.0'
   gem 'rails-controller-testing', '~> 1.0.2'
-  gem 'selenium-webdriver', '~> 3.9.0'
+  gem 'selenium-webdriver', '~> 3.11.0'
 end
 
 # BEGIN: gems used in test_code.sh script
