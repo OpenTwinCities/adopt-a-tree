@@ -11,6 +11,7 @@ describe 'Adoption Form', js: true do
     before do
       visit root_path
       find('.thing', match: :first).trigger('click')
+      sleep 0.5
     end
 
     it 'Displays the "Sign in to adopt" message' do
@@ -24,6 +25,7 @@ describe 'Adoption Form', js: true do
       sign_out
       sign_in user
       find('.thing', match: :first).trigger('click')
+      sleep 0.5
     end
 
     it 'Opens the "Adopt this Tree" form' do
@@ -34,6 +36,7 @@ describe 'Adoption Form', js: true do
     context 'Submits the form with no name' do
       before do
         find_button('Adopt!').trigger('click')
+        sleep 0.5
       end
 
       it 'Displays the "Thank you" message' do

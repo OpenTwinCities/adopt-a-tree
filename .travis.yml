@@ -4,7 +4,10 @@ before_script:
   - psql -c 'create database adopta_test;' -U postgres
   - psql -U postgres -c "create extension postgis"
   - bundle exec rake db:schema:load
-after_script: bundle exec rubocop -R
+
+after_success:
+  - bundle exec codeclimate-test-reporter
+
 bundler_args: --without assets:development:production
 env:
   - TEST_DATABASE_USERNAME=postgres
@@ -16,5 +19,8 @@ addons:
   apt:
     packages:
     - postgresql-9.3-postgis-2.3
-  code_climate:
-    repo_token: ab3c692cf8f6dd9c41e6e77417096877a764ded0fec448a03cf5c70b06ea8e0e
+
+cache:
+  bundler: true
+  directories:
+    - vendor/cache

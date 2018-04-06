@@ -6,12 +6,12 @@ ruby '2.5.0'
 # process to preinstall these versions of these gems
 # Version numbers are rigidly pinned to avoid a long wait after
 # entering "bundle update".
-gem 'ffi', '1.9.18'
+gem 'ffi', '1.9.23'
 gem 'nokogiri', '1.8.2'
-gem 'pg', '0.21.0'
+gem 'pg', '1.0.0'
 gem 'rails', '5.1.5'
 
-gem 'autoprefixer-rails', '~> 7.2.5'
+gem 'autoprefixer-rails', '~> 8.2.0'
 gem 'bcrypt', '~> 3.1.11'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise', '~> 4.4.1'
@@ -53,20 +53,20 @@ group :production do
 end
 
 group :test do
-  gem 'capybara', '~> 2.17.0'
+  gem 'capybara', '~> 2.18.0'
   gem 'capybara-slow_finder_errors', '0.1.4'
   gem 'codeclimate-test-reporter', '~> 1.0.4', require: nil
   gem 'database_cleaner', '~> 1.6.1'
   gem 'launchy', '~> 2.4.3'
   gem 'poltergeist', '~> 1.17.0'
   gem 'rails-controller-testing', '~> 1.0.2'
-  gem 'selenium-webdriver', '~> 3.9.0'
+  gem 'selenium-webdriver', '~> 3.11.0'
 end
 
 # BEGIN: gems used in test_code.sh script
 group :development, :testing do
   gem 'bundler-audit', '~> 0.6.0'  # Checks for vulnerable versions of gems
-  gem 'brakeman', '~> 4.1.1' # Checks for security vulnerabilities
+  gem 'brakeman', '~> 4.2.1' # Checks for security vulnerabilities
   gem 'sandi_meter', '~> 1.2.0' # Checks for compliance with Sandi Metz' four rules
   gem 'gemsurance', '~> 0.9.0' # Checks for outdated and insecure gems
 end
