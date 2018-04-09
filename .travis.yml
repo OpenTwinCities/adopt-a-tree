@@ -8,7 +8,6 @@ before_script:
 after_success:
   - bundle exec codeclimate-test-reporter
 
-bundler_args: --without assets:development:production
 env:
   - TEST_DATABASE_USERNAME=postgres
 language: ruby

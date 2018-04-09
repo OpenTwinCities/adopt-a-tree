@@ -31,6 +31,7 @@ group :development do
   gem 'spring', '~> 2.0.2'
   gem 'spring-commands-rspec', '~> 1.0.4'
   gem 'byebug'
+  gem 'aws-sdk-ec2', '~> 1'
 end
 
 group :development, :test do
