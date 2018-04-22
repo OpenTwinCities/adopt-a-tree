@@ -57,7 +57,7 @@ group :test do
   gem 'capybara', '~> 2.18.0'
   gem 'capybara-slow_finder_errors', '0.1.4'
   gem 'codeclimate-test-reporter', '~> 1.0.4', require: nil
-  gem 'database_cleaner', '~> 1.6.1'
+  gem 'database_cleaner', '~> 1.7.0'
   gem 'launchy', '~> 2.4.3'
   gem 'poltergeist', '~> 1.17.0'
   gem 'rails-controller-testing', '~> 1.0.2'
