@@ -9,7 +9,7 @@ ruby '2.5.0'
 gem 'ffi', '1.9.23'
 gem 'nokogiri', '1.8.2'
 gem 'pg', '1.0.0'
-gem 'rails', '5.1.5'
+gem 'rails', '5.2.0'
 
 gem 'autoprefixer-rails', '~> 8.2.0'
 gem 'bcrypt', '~> 3.1.11'
