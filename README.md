@@ -30,7 +30,7 @@ kind to one another. Do not insult or put down other community members. Behave
 civilly.
 
 ## Installation (Easy Way)
-Follow the [Adopt-a-Tree Tutorial](https://gist.github.com/jhsu802701/615a7d3c3883ec36ac89ed12da253c14).
+Follow the [Adopt-a-Tree Tutorial](https://github.com/rubyonracetracks/tutorials-rails-short/blob/master/specific_projects/adoptatree.md).
 
 ## Installation (Difficult Way)
 
