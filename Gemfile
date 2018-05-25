@@ -11,11 +11,11 @@ gem 'nokogiri', '1.8.2'
 gem 'pg', '1.0.0'
 gem 'rails', '5.2.0'
 
-gem 'autoprefixer-rails', '~> 8.3.0'
+gem 'autoprefixer-rails', '~> 8.5.0'
 gem 'bcrypt', '~> 3.1.11'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise', '~> 4.4.1'
-gem 'geokit', '~> 1.11.0'
+gem 'geokit', '~> 1.12.0'
 gem 'haml', '~> 5.0.4'
 gem 'hashie', '~> 3.5.1'
 gem 'jquery-rails', '~> 4.3.1'
@@ -30,7 +30,7 @@ group :development do
   gem 'growl' if /darwin/ =~ RUBY_PLATFORM
   gem 'spring', '~> 2.0.2'
   gem 'spring-commands-rspec', '~> 1.0.4'
-  gem 'byebug'
+  gem 'byebug', '~> 10.0.2'
   gem 'aws-sdk-ec2', '~> 1'
 end
 
@@ -42,7 +42,7 @@ group :development, :test do
   gem 'capistrano-rbenv-install', '~> 1.2.0'
   gem 'capistrano3-nginx', '~> 2.1.5'
   gem 'capistrano3-puma', '~> 3.1.1'
-  gem 'dotenv-rails', '~> 2.3.0'
+  gem 'dotenv-rails', '~> 2.4.0'
   gem 'faker', '~> 1.8.4'
   gem 'factory_bot_rails', '~> 4.8.2'
   gem 'pry-rails', '~> 0.3.4'
@@ -59,15 +59,15 @@ group :test do
   gem 'codeclimate-test-reporter', '~> 1.0.4', require: nil
   gem 'database_cleaner', '~> 1.7.0'
   gem 'launchy', '~> 2.4.3'
-  gem 'poltergeist', '~> 1.17.0'
+  gem 'poltergeist', '~> 1.18.0'
   gem 'rails-controller-testing', '~> 1.0.2'
-  gem 'selenium-webdriver', '~> 3.11.0'
+  gem 'selenium-webdriver', '~> 3.12.0'
 end
 
 # BEGIN: gems used in test_code.sh script
 group :development, :testing do
   gem 'bundler-audit', '~> 0.6.0'  # Checks for vulnerable versions of gems
-  gem 'brakeman', '~> 4.2.1' # Checks for security vulnerabilities
+  gem 'brakeman', '~> 4.3.0' # Checks for security vulnerabilities
   gem 'sandi_meter', '~> 1.2.0' # Checks for compliance with Sandi Metz' four rules
   gem 'gemsurance', '~> 0.9.0' # Checks for outdated and insecure gems
 end
