@@ -224,7 +224,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (5.0.2)
     nio4r (2.3.1)
-    nokogiri (1.8.2)
+    nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
@@ -422,7 +422,7 @@ DEPENDENCIES
   jquery-rails (~> 4.3.1)
   launchy (~> 2.4.3)
   libnotify
-  nokogiri (= 1.8.2)
+  nokogiri (= 1.8.4)
   pg (= 1.0.0)
   poltergeist (~> 1.18.0)
   pry-rails (~> 0.3.4)
