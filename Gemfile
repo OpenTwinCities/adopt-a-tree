@@ -11,7 +11,7 @@ gem 'nokogiri', '1.8.4'
 gem 'pg', '1.1.3'
 gem 'rails', '5.2.1'
 
-gem 'autoprefixer-rails', '~> 9.1.4'
+gem 'autoprefixer-rails', '~> 9.3.0'
 gem 'aws-sdk-ec2', '~> 1'
 gem 'bcrypt', '~> 3.1.11'
 gem 'bootstrap-sass', '~> 3.3.7'
