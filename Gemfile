@@ -54,7 +54,7 @@ group :production do
 end
 
 group :test do
-  gem 'capybara', '~> 3.8.1'
+  gem 'capybara', '~> 3.10.0'
   gem 'capybara-slow_finder_errors', '0.1.5'
   gem 'codeclimate-test-reporter', '~> 1.0.4', require: nil
   gem 'database_cleaner', '~> 1.7.0'
