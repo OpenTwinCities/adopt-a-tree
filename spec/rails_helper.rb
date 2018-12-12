@@ -1,7 +1,21 @@
 # frozen_string_literal: true
 
+# BEGIN: SimpleCov
 require 'simplecov'
-SimpleCov.start :rails
+SimpleCov.start :rails do
+  add_filter '/test/'
+end
+# END: SimpleCov
+
+# BEGIN: Codecov
+# Run Codecov ONLY in continuous integration.
+# Running Codecov suppresses the display of the test coverage percentage
+# in the terminal screen output.
+if ENV.include? 'CODECOV_TOKEN'
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
+# END: Codecov
 
 ENV['RAILS_ENV'] ||= 'test'
 require 'spec_helper'

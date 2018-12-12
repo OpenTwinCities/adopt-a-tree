@@ -109,8 +109,10 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     choice (0.2.0)
     cliver (0.3.2)
-    codeclimate-test-reporter (1.0.9)
-      simplecov (<= 0.13)
+    codecov (0.1.14)
+      json
+      simplecov
+      url
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -376,6 +378,7 @@ GEM
     tilt (2.0.8)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    url (0.3.2)
     validates_formatting_of (0.9.0)
       activemodel
     warden (1.2.7)
@@ -407,7 +410,7 @@ DEPENDENCIES
   capistrano3-puma (~> 3.1.1)
   capybara (~> 3.8.1)
   capybara-slow_finder_errors (= 0.1.5)
-  codeclimate-test-reporter (~> 1.0.4)
+  codecov (= 0.1.14)
   database_cleaner (~> 1.7.0)
   devise (~> 4.5.0)
   dotenv-rails (~> 2.5.0)
@@ -437,6 +440,7 @@ DEPENDENCIES
   sandi_meter (~> 1.2.0)
   sass-rails (~> 5.0.6)
   selenium-webdriver (~> 3.14.0)
+  simplecov (= 0.13.0)
   spring (~> 2.0.2)
   spring-commands-rspec (~> 1.0.4)
   validates_formatting_of (~> 0.9.0)
@@ -445,4 +449,4 @@ RUBY VERSION
    ruby 2.5.0p0
 
 BUNDLED WITH
-   1.16.6
+   1.17.1
