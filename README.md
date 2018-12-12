@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/OpenTwinCities/adopt-a-tree.svg?branch=master)](https://travis-ci.org/OpenTwinCities/adopt-a-tree)
 [![security](https://hakiri.io/github/OpenTwinCities/adopt-a-tree/master.svg)](https://hakiri.io/github/OpenTwinCities/adopt-a-tree/master)
 [![Code Climate](https://codeclimate.com/github/OpenTwinCities/adopt-a-tree/badges/gpa.svg)](https://codeclimate.com/github/OpenTwinCities/adopt-a-tree)
-[![Test Coverage](https://codeclimate.com/github/OpenTwinCities/adopt-a-tree/badges/coverage.svg)](https://codeclimate.com/github/OpenTwinCities/adopt-a-tree)
+[![codecov](https://codecov.io/gh/OpenTwinCities/adopt-a-tree/branch/master/graph/badge.svg)](https://codecov.io/gh/OpenTwinCities/adopt-a-tree)
 
 [travis]: https://travis-ci.org/OpenTwinCities/adopt-a-tree
 [code-climate]: https://codeclimate.com/github/OpenTwinCities/adopt-a-tree
