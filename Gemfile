@@ -56,7 +56,6 @@ end
 group :test do
   gem 'capybara', '~> 3.8.1'
   gem 'capybara-slow_finder_errors', '0.1.5'
-  gem 'codeclimate-test-reporter', '~> 1.0.4', require: nil
   gem 'database_cleaner', '~> 1.7.0'
   gem 'launchy', '~> 2.4.3'
   gem 'poltergeist', '~> 1.18.0'
@@ -72,6 +71,11 @@ group :development, :testing do
   gem 'gemsurance', '~> 0.9.0' # Checks for outdated and insecure gems
 end
 # END: gems used in test_code.sh script
+
+# BEGIN: test coverage
+gem 'codecov', '0.1.14', require: false, group: :test
+gem 'simplecov', '0.13.0', require: false, group: :test
+# END: test coverage
 
 # BEGIN: for outline.sh
 group :development do
