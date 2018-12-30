@@ -43,12 +43,20 @@ describe 'User Login' do
     end
   end
 
-  context 'Successful login' do
-    it 'successful login given the correct username and password', js: true do
+  context 'Successful login and logout' do
+    it 'successful login and logout given the correct username and password', js: true do
       within '.sidebar' do
         login_process('elwood@rubyonracetracks.com', 'Mission from God')
         expect(page).to_not have_selector '#combo-form'
         expect(page).to have_text 'Signed in!'
+        click_on 'Sign out'
+
+        expect(page).to have_text 'Signed out.'
+        sign_up_button = page.find_button 'Sign up'
+        expect(page).to have_field 'user_email'
+        expect(page).to have_field 'user_username'
+        expect(page).to have_field 'user_password_confirmation'
+        expect(sign_up_button).to_not be_disabled
       end
     end
   end
