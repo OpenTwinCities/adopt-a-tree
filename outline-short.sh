@@ -1,11 +1,9 @@
 #!/bin/bash
 
-mkdir -p notes
-
-file_he='notes/1-file_list-helpers.txt'
-file_mo='notes/1-file_list-models.txt'
-file_co='notes/1-file_list-controllers.txt'
-file_vi='notes/1-file_list-views.txt'
+file_he='log/1-file_list-helpers.txt'
+file_mo='log/1-file_list-models.txt'
+file_co='log/1-file_list-controllers.txt'
+file_vi='log/1-file_list-views.txt'
 
 echo '-------------------------------'
 echo 'sudo service postgresql restart'
