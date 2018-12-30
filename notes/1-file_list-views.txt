@@ -95,9 +95,10 @@ test/integration
 spec/features
 |-- adoption_form_spec.rb
 |-- combo_form_spec.rb
-`-- edit_profile_spec.rb
+|-- edit_profile_spec.rb
+`-- user_login_spec.rb
 
-0 directories, 3 files
+0 directories, 4 files
 
 app/views
 |-- layouts
