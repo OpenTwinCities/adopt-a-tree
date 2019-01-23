@@ -6,10 +6,10 @@ ruby '2.5.0'
 # process to preinstall these versions of these gems
 # Version numbers are rigidly pinned to avoid a long wait after
 # entering "bundle update".
-gem 'ffi', '1.9.25'
-gem 'nokogiri', '1.8.5'
-gem 'pg', '1.1.3'
-gem 'rails', '5.2.1'
+gem 'ffi', '1.10.0'
+gem 'nokogiri', '1.10.1'
+gem 'pg', '1.1.4'
+gem 'rails', '5.2.2'
 
 gem 'autoprefixer-rails', '~> 9.3.0'
 gem 'aws-sdk-ec2', '~> 1'
