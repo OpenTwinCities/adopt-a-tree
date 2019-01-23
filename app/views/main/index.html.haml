@@ -29,6 +29,8 @@
             = t("links.feedback")
       #built-by
         = link_to "Who built this?", "https://github.com/OpenTwinCities/adopt-a-tree/graphs/contributors"
+      #debug
+        = debug(params) if Rails.env.development?
     .table-cell.map-container
       #map
         &nbsp;
