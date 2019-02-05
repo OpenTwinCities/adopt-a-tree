@@ -29,7 +29,7 @@ kind to one another. Do not insult or put down other community members. Behave
 civilly.
 
 ## Installation (Easy Way)
-Follow the [Adopt-a-Tree Tutorial](https://github.com/rubyonracetracks/tutorials-rails-short/blob/master/specific_projects/adoptatree.md).
+Follow the setup procedure at [Legacy Rails Apps](https://www.legacyrailsapps.com/docs/a-01.html).
 
 ## Installation (Difficult Way)
 
