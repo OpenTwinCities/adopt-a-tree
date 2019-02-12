@@ -43,7 +43,7 @@ group :development, :test do
   gem 'capistrano3-nginx', '~> 3.0.1'
   gem 'capistrano3-puma', '~> 3.1.1'
   gem 'dotenv-rails', '~> 2.6.0'
-  gem 'faker', '~> 1.9.1'
+  gem 'faker', '~> 1.9.2'
   gem 'factory_bot_rails', '~> 4.11.1'
   gem 'pry-rails', '~> 0.3.4'
   gem 'rspec-rails', '~> 3.8.1'
