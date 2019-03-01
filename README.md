@@ -29,7 +29,7 @@ kind to one another. Do not insult or put down other community members. Behave
 civilly.
 
 ## Installation (Easy Way)
-Follow the setup procedure at [Legacy Rails Apps](https://www.legacyrailsapps.com/docs/a-01.html).
+Follow the setup procedure at [Legacy Rails Apps](https://www.legacyrailsapps.com/docs/a-adoptatree.html).
 
 ## Installation (Difficult Way)
 
