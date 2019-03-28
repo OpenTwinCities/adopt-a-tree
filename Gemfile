@@ -9,7 +9,7 @@ ruby '2.6.0'
 gem 'ffi', '1.10.0'
 gem 'nokogiri', '1.10.1'
 gem 'pg', '1.1.4'
-gem 'rails', '5.2.2'
+gem 'rails', '5.2.3'
 
 gem 'autoprefixer-rails', '~> 9.4.9'
 gem 'aws-sdk-ec2', '~> 1'
