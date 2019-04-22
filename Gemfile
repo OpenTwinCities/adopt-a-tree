@@ -7,7 +7,7 @@ ruby '2.6.0'
 # Version numbers are rigidly pinned to avoid a long wait after
 # entering "bundle update".
 gem 'ffi', '1.10.0'
-gem 'nokogiri', '1.10.2'
+gem 'nokogiri', '1.10.3'
 gem 'pg', '1.1.4'
 gem 'rails', '5.2.3'
 
