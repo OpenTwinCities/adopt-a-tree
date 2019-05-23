@@ -27,7 +27,7 @@
     .form-actions
       = f.submit t("buttons.sign_up"), :class => "btn btn-primary"
     %p
-      = t("defaults.tos", :tos => link_to(t("titles.tos"), '#tos', :id => "tos_link", :"data-toggle" => "modal", 'data-target': '#tos')).html_safe
+      = t("defaults.tos", :tos => link_to(t("titles.tos"), "#tos", :id => "tos_link", :"data-toggle" => "modal", 'data-target': '#tos')).html_safe
   %fieldset#user_sign_in_fields{:style => "display: none;"}
     .control-group
       %label{:for => "user_password", :id => "user_password_label"}
