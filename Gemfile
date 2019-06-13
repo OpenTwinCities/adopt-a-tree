@@ -42,7 +42,7 @@ group :development, :test do
   gem 'capistrano-rbenv-install', '~> 1.2.0'
   gem 'capistrano3-nginx', '~> 3.0.1'
   gem 'capistrano3-puma', '~> 3.1.1'
-  gem 'dotenv-rails', '~> 2.6.0'
+  gem 'dotenv-rails', '~> 2.7.2'
   gem 'faker', '~> 1.9.3'
   gem 'factory_bot_rails', '~> 5.0.1'
   gem 'pry-rails', '~> 0.3.4'
