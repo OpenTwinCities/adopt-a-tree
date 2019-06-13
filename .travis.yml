@@ -15,7 +15,7 @@ env:
   - TEST_DATABASE_USERNAME=postgres
 language: ruby
 rvm:
-  - 2.6.0
+  - 2.6.3
 addons:
   postgresql: "9.3"
   apt:
