@@ -4,6 +4,8 @@ before_install:
  - gem install bundler
  
 before_script:
+  - sudo service postgresql restart
+  - bundle install
   - psql -c 'create database adopta_test;' -U postgres
   - psql -U postgres -c "create extension postgis"
   - bundle exec rake db:schema:load
