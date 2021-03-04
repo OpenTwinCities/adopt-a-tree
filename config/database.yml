@@ -1,6 +1,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: database
   username: adopta
   pool: 5
 

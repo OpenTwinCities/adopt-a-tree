@@ -5,9 +5,8 @@ services:
     build: .
     volumes:
       - .:/home/winner/myapp
-      - bundle_path:/home/winner/bundle
     environment:
-      - BUNDLE_PATH=/home/winner/bundle/vendor
+      - BUNDLE_PATH=/home/winner/myapp/tmp/bundle
       - BUNDLE_APP_CONFIG=/home/winner/myapp/.bundle
     user: winner
     command:
@@ -32,6 +31,10 @@ services:
 
   database:
     image: postgres
+    environment:
+      - POSTGRES_USER=adopta
+      - POSTGRES_DB=adopta
+      - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
       - db_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -39,5 +42,4 @@ services:
       - "15432:5432"
 
 volumes:
-  bundle_path:
   db_data:

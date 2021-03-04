@@ -1,8 +1,10 @@
 #!/bin/bash
 set +e
-echo '----------------------------------------------------------------------------------------'
-echo 'mkdir -p /home/winner/bundle/vendor && chown -R winner:winner /home/winner/bundle/vendor'
-docker-compose run --rm -u root web bash -c 'mkdir -p /home/winner/bundle/vendor && chown -R winner:winner /home/winner/bundle/vendor'
+
+# NOTE: /home/winner/myapp/tmp/bundle is the BUNDLE_PATH directory specified in docker-compose.yml
+echo '----------------------------------------------------------------------------------------------'
+echo 'mkdir -p /home/winner/myapp/tmp/bundle && chown -R winner:winner /home/winner/myapp/tmp/bundle'
+docker-compose run --rm -u root web bash -c 'mkdir -p /home/winner/myapp/tmp/bundle && chown -R winner:winner /home/winner/myapp/tmp/bundle'
 
 set -e
 echo '---------------------'
