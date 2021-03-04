@@ -1,4 +1,4 @@
-class AddParkQuestionsToUsers < ActiveRecord::Migration
+class AddParkQuestionsToUsers < ActiveRecord::Migration[4.2]
   def change
     add_column :users, :yob, :integer
     add_column :users, :gender, :string
