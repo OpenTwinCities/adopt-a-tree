@@ -22,6 +22,7 @@ RUN curl -sSL "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 
 # Install PhantomJS using procedure from
 # https://gist.github.com/telbiyski/ec56a92d7114b8631c906c18064ce620
+# NOTE: PhantomJS does NOT work when installed with NPM.
 RUN wget https://github.com/Medium/phantomjs/releases/download/v2.1.1/$PHANTOM_JS.tar.bz2 && \
   tar xvjf $PHANTOM_JS.tar.bz2 && \
   mv $PHANTOM_JS /usr/local/share && \
