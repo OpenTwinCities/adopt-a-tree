@@ -1,0 +1,18 @@
+#!/bin/bash
+set -e
+
+echo '--------------------------------------'
+echo 'BEGIN: bundle exec rake db:schema:load'
+echo '--------------------------------------'
+docker/run bundle exec rake db:schema:load
+echo '------------------------------------'
+echo 'END: bundle exec rake db:schema:load'
+echo '------------------------------------'
+
+echo '----------------------------------'
+echo 'BEGIN: bundle exec rake db:migrate'
+echo '----------------------------------'
+docker/run bundle exec rake db:migrate
+echo '--------------------------------'
+echo 'END: bundle exec rake db:migrate'
+echo '--------------------------------'
