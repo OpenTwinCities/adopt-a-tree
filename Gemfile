@@ -68,7 +68,7 @@ group :development, :testing do
   # gem 'bundler-audit' # Checks for vulnerable versions of gems
   # gem 'brakeman' # Checks for security vulnerabilities
   # gem 'sandi_meter' # Checks for compliance with Sandi Metz' four rules
-  gem 'gemsurance', '~> 0.9.0' # Checks for outdated and insecure gems
+  # gem 'gemsurance' # Checks for outdated and insecure gems
 end
 # END: gems used in docker/test_code script
 
