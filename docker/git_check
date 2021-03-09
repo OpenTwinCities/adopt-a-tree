@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Run this script before entering "git add" and "git commit".
+
+docker/test
+
+docker/brakeman
+
+echo '----------'
+echo 'git status'
+git status
+
+docker/outline_short
+
+echo '----------'
+echo 'git status'
+git status
