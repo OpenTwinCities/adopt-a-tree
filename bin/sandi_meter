@@ -1,0 +1,18 @@
+#!/bin/bash
+
+docker/replace_sif "# gem 'sandi_meter'" "gem 'sandi_meter'" 'Gemfile'
+
+echo '----------------------'
+echo 'bundle install --quiet'
+bundle install --quiet
+
+# Checks for compliance with Sandi Metz' four rules
+echo '-----------------------'
+echo 'bundle exec sandi_meter'
+bundle exec sandi_meter
+
+docker/replace_sif "gem 'sandi_meter'" "# gem 'sandi_meter'" 'Gemfile'
+
+echo '----------------------'
+echo 'bundle install --quiet'
+bundle install --quiet

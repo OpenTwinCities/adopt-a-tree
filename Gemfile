@@ -67,7 +67,7 @@ end
 group :development, :testing do
   gem 'bundler-audit', '~> 0.6.0'  # Checks for vulnerable versions of gems
   # gem 'brakeman' # Checks for security vulnerabilities
-  gem 'sandi_meter', '~> 1.2.0' # Checks for compliance with Sandi Metz' four rules
+  # gem 'sandi_meter' # Checks for compliance with Sandi Metz' four rules
   gem 'gemsurance', '~> 0.9.0' # Checks for outdated and insecure gems
 end
 # END: gems used in test_code.sh script
