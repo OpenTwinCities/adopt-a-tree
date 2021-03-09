@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# NOTE: Skipping docker/sandi_meter because it takes too long to execute
+
+docker/brakeman
+
+docker/audit
+
+docker/gemsurance
