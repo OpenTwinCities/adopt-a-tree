@@ -63,14 +63,14 @@ group :test do
   gem 'selenium-webdriver', '~> 3.141.0'
 end
 
-# BEGIN: gems used in test_code.sh script
+# BEGIN: gems used in docker/test_code script
 group :development, :testing do
-  gem 'bundler-audit', '~> 0.6.0'  # Checks for vulnerable versions of gems
+  # gem 'bundler-audit' # Checks for vulnerable versions of gems
   # gem 'brakeman' # Checks for security vulnerabilities
   # gem 'sandi_meter' # Checks for compliance with Sandi Metz' four rules
   gem 'gemsurance', '~> 0.9.0' # Checks for outdated and insecure gems
 end
-# END: gems used in test_code.sh script
+# END: gems used in docker/test_code script
 
 # BEGIN: test coverage
 gem 'codecov', '0.4.3', require: false, group: :test

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+docker/replace_sif "# gem 'bundler-audit'" "gem 'bundler-audit'" 'Gemfile'
+
+echo '----------------------'
+echo 'bundle install --quiet'
+bundle install --quiet
+
+# Update the local ruby-advisory-db advisory database
+echo '-------------------------------'
+echo 'bundle exec bundle-audit update'
+bundle exec bundle-audit update
+
+# Audit the gems listed in Gemfile.lock for vulnerabilities
+echo '------------------------'
+echo 'bundle exec bundle-audit'
+bundle exec bundle-audit
+
+docker/replace_sif "gem 'bundler-audit'" "# gem 'bundler-audit'" 'Gemfile'
+
+echo '----------------------'
+echo 'bundle install --quiet'
+bundle install --quiet
