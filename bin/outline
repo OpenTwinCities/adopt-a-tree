@@ -1,0 +1,49 @@
+#!/bin/bash
+
+d_mo='log/diagram-models'
+d_co='log/diagram-controllers.dot'
+d_gems='log/diagram-gems'
+
+docker/replace_sif "# gem 'railroady'" "gem 'railroady'" 'Gemfile'
+docker/replace_sif "# gem 'rails-erd'" "gem 'rails-erd'" 'Gemfile'
+
+echo '----------------------'
+echo 'bundle install --quiet'
+bundle install --quiet
+
+echo '---------------'
+echo 'Using rails-erd'
+bundle exec erd --attributes=foreign_keys,primary_keys,timestamps,inheritance,content --filetype=dot --filename=$d_mo --inheritance --notation=bachman
+echo
+echo "Models diagram is at $d_mo.dot"
+echo
+
+echo '---------------'
+echo 'Using railroady'
+bundle exec railroady -i -l TestLabel -a --all-columns  -j -m -p -z -t --engine-controllers -C | neato -Tdot > $d_co
+echo
+echo "Controllers diagram is at $d_co"
+echo
+
+echo '-------------------------'
+echo 'gem install ruby-graphviz'
+gem install ruby-graphviz
+
+echo '-----------------------------------------------------'
+echo "Drawing gem dependency diagram ($d_gems.png)"
+bundle viz --file=$d_gems --version
+
+docker/replace_sif "gem 'railroady'" "# gem 'railroady'" 'Gemfile'
+docker/replace_sif "gem 'rails-erd'" "# gem 'rails-erd'" 'Gemfile'
+
+echo '----------------------'
+echo 'bundle install --quiet'
+bundle install --quiet
+
+echo '*************************'
+echo 'bin/outline OUTPUT FILES:'
+echo $d_mo.dot
+echo $d_co
+echo $d_gems.png
+echo 'Directory trees are in the notes directory.'
+echo

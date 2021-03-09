@@ -77,10 +77,10 @@ gem 'codecov', '0.4.3', require: false, group: :test
 gem 'simplecov', '0.16.1', require: false, group: :test
 # END: test coverage
 
-# BEGIN: for outline.sh
+# BEGIN: docker/outline
 group :development do
   gem 'annotate', '~> 2.7.1' # Adds comments listing parameters and the output of "rails routes"
-  gem 'railroady', '~> 1.5.2' # Generates block diagrams
-  gem 'rails-erd', '~> 1.5.0' # Generates block diagrams
+  # gem 'railroady' # Generates block diagrams of controllers
+  # gem 'rails-erd' # Generates block diagram of models
 end
-# END: for outline.sh
+# END: docker/outline
