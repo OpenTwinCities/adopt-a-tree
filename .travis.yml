@@ -27,10 +27,7 @@ services:
   - postgresql
 
 addons:
-  postgresql: "9.3"
-  apt:
-    packages:
-    - postgresql-9.3-postgis-2.3
+  postgresql: "13.2"
 
 bundler_args: --without development production --deployment --jobs=3 --retry=3
 
