@@ -1,21 +1,31 @@
 ---
 before_install:
  - gem update --system
- - gem install bundler:1.17.3
+ - - gem install bundler:1.17.3 --no-document
  
 before_script:
   - psql -c 'create database adopta_test;' -U postgres
   - psql -U postgres -c "create extension postgis"
   - bundle exec rake db:schema:load
+  - bundle exec rake db:migrate
+
+script:
+  - bundle exec rake
 
 after_success:
   - bundle exec codeclimate-test-reporter
 
 env:
   - TEST_DATABASE_USERNAME=postgres
+  
 language: ruby
+
 rvm:
   - 2.6.3
+
+services:
+  - postgresql
+
 addons:
   postgresql: "9.3"
   apt:
