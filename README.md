@@ -29,7 +29,18 @@ kind to one another. Do not insult or put down other community members. Behave
 civilly.
 
 ## Installation (Easy Way)
-Follow the setup procedure at [Legacy Rails Apps](https://www.legacyrailsapps.com/docs/a-adoptatree.html).
+* If you have not already done so, install [Docker](https://www.docker.com/).
+* Use the "git clone" command to download this repository to your local machine.
+* Use the "cd" command to enter the root directory of this repository.
+* Enter the command "docker/build".  This script creates the Docker containers needed for this app, sets up this app, runs the test suite, seeds the database, creates block diagrams, and runs the Brakeman, Gemsurance, and Bundler-Audit tools.
+* To run the web server, enter "docker/server".  When the web server container is up and running, you'll be able to view this app in your web browser at http://localhost:3000/.
+* To run the Rails Sandbox, enter "docker/sandbox".
+* When you need to run the test suite again, enter "docker/test".
+* To run just the tests that failed, enter "docker/retest".
+* When you need to seed the database again, enter "docker/seed".  Please note that this automatically stops the Docker container containing the web app.  (You'll have to run docker/server to start it up again.)
+* When you need to draw the block diagrams, enter "dockeroutline".
+* When you need to run the Brakeman, Gemsurance, and Bundler-Audit tools, enter "docker/test_code".
+* In addition, other scripts for using Docker are in the docker directory.
 
 ## Installation (Difficult Way)
 
@@ -182,11 +193,11 @@ When starting the rails server make sure `GOOGLE_API_KEY` is set, either explici
 
 * Rails Server
 ```
-sh server.sh
+bundle exec rails server
 ```
-* Testing the App (after running build_fast.sh)
+* Testing the App
 ```
-sh test_app.sh
+bundle exec rake
 ```
 
 ## Importing More Trees
