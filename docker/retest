@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Run this script to run only the tests that failed.
+
+echo '---------------------------------'
+echo 'bundle exec rspec --only-failures'
+docker/run bundle exec rspec --only-failures

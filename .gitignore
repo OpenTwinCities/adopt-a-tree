@@ -29,3 +29,5 @@ log/*
 
 # Ignore coverage 
 coverage/*
+
+Dockerfile

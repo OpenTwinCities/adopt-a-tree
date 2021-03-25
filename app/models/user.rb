@@ -3,19 +3,19 @@
 # Table name: users
 #
 #  id                              :integer          not null, primary key
-#  username                        :string(255)      not null
-#  organization                    :string(255)
-#  voice_number                    :string(255)
-#  sms_number                      :string(255)
-#  address_1                       :string(255)
-#  address_2                       :string(255)
-#  city                            :string(255)
-#  state                           :string(255)
-#  zip                             :string(255)
+#  username                        :string           not null
+#  organization                    :string
+#  voice_number                    :string
+#  sms_number                      :string
+#  address_1                       :string
+#  address_2                       :string
+#  city                            :string
+#  state                           :string
+#  zip                             :string
 #  admin                           :boolean          default(FALSE)
-#  email                           :string(255)      default(""), not null
-#  encrypted_password              :string(255)      default(""), not null
-#  reset_password_token            :string(255)
+#  email                           :string           default(""), not null
+#  encrypted_password              :string           default(""), not null
+#  reset_password_token            :string
 #  reset_password_sent_at          :datetime
 #  remember_created_at             :datetime
 #  sign_in_count                   :integer          default(0), not null
@@ -26,17 +26,17 @@
 #  created_at                      :datetime
 #  updated_at                      :datetime
 #  yob                             :integer
-#  gender                          :string(255)
-#  ethnicity                       :string(255)      is an Array
+#  gender                          :string
+#  ethnicity                       :string           is an Array
 #  yearsInMinneapolis              :integer
-#  rentOrOwn                       :string(255)
+#  rentOrOwn                       :string
 #  previousTreeWateringExperience  :boolean
 #  previousEnvironmentalActivities :boolean
 #  valueForestryWork               :integer
-#  heardOfAdoptATreeVia            :string(255)      is an Array
-#  awareness_code                  :string(255)
-#  first_name                      :string(255)
-#  last_name                       :string(255)
+#  heardOfAdoptATreeVia            :string           is an Array
+#  awareness_code                  :string
+#  first_name                      :string
+#  last_name                       :string
 #  emailed_at                      :datetime
 #  mailed_token_at                 :datetime
 #

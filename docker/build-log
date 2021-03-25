@@ -1,0 +1,46 @@
+#!/bin/bash
+set -e
+
+# BEGIN: Get Ruby version
+mkdir -p tmp
+cp .ruby-version tmp/.ruby-version-process
+sed -i.bak "s|ruby-||g" tmp/.ruby-version-process
+rm tmp/.ruby-version-process.bak
+RUBY_VERSION_HERE=`cat tmp/.ruby-version-process`
+rm tmp/.ruby-version-process
+# END: Get Ruby version
+
+# Copy Dockerfile-template to Dockerfile
+cp Dockerfile-template Dockerfile
+
+# Fill in the Ruby version in the Dockerfile
+docker/replace_sif 'RUBY_VERSION' "$RUBY_VERSION_HERE" Dockerfile
+
+docker-compose down -v --remove-orphans
+wait
+echo '###########################'
+echo 'BEGIN: docker-compose build'
+echo '###########################'
+docker-compose build # Set up the Docker containers
+wait
+echo '##############################'
+echo 'FINISHED: docker-compose build'
+echo '##############################'
+
+docker/bundle_install
+
+echo '------------------------------------------------------------'
+echo 'BEGIN: bundle exec rake db:create db:migrate db:test:prepare'
+echo '------------------------------------------------------------'
+docker/run bundle exec rake db:create db:migrate db:test:prepare
+echo '----------------------------------------------------------'
+echo 'END: bundle exec rake db:create db:migrate db:test:prepare'
+echo '----------------------------------------------------------'
+
+echo '--------------------------------------'
+echo 'BEGIN: bundle exec rake db:schema:load'
+echo '--------------------------------------'
+docker/run bundle exec rake db:schema:load
+echo '------------------------------------'
+echo 'END: bundle exec rake db:schema:load'
+echo '------------------------------------'

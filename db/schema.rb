@@ -30,35 +30,38 @@ ActiveRecord::Schema.define(version: 2018_01_06_164112) do
     t.boolean "sent", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["from_user_id"], name: "index_reminders_on_from_user_id"
+    t.index ["thing_id"], name: "index_reminders_on_thing_id"
+    t.index ["to_user_id"], name: "index_reminders_on_to_user_id"
   end
 
   create_table "things", id: :serial, force: :cascade do |t|
-    t.string "name", limit: 255
+    t.string "name"
     t.integer "user_id"
     t.integer "mpls_id"
-    t.string "mpls_unique", limit: 255
+    t.string "mpls_unique"
     t.decimal "lat", precision: 32, scale: 29, null: false
     t.decimal "lng", precision: 32, scale: 29, null: false
-    t.string "species", limit: 255
+    t.string "species"
     t.json "properties"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
-    t.string "username", limit: 255, null: false
-    t.string "organization", limit: 255
-    t.string "voice_number", limit: 255
-    t.string "sms_number", limit: 255
-    t.string "address_1", limit: 255
-    t.string "address_2", limit: 255
-    t.string "city", limit: 255
-    t.string "state", limit: 255
-    t.string "zip", limit: 255
+    t.string "username", null: false
+    t.string "organization"
+    t.string "voice_number"
+    t.string "sms_number"
+    t.string "address_1"
+    t.string "address_2"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
     t.boolean "admin", default: false
-    t.string "email", limit: 255, default: "", null: false
-    t.string "encrypted_password", limit: 255, default: "", null: false
-    t.string "reset_password_token", limit: 255
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
@@ -69,17 +72,17 @@ ActiveRecord::Schema.define(version: 2018_01_06_164112) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "yob"
-    t.string "gender", limit: 255
-    t.string "ethnicity", limit: 255, array: true
+    t.string "gender"
+    t.string "ethnicity", array: true
     t.integer "yearsInMinneapolis"
-    t.string "rentOrOwn", limit: 255
+    t.string "rentOrOwn"
     t.boolean "previousTreeWateringExperience"
     t.boolean "previousEnvironmentalActivities"
     t.integer "valueForestryWork"
-    t.string "heardOfAdoptATreeVia", limit: 255, array: true
-    t.string "awareness_code", limit: 255
-    t.string "first_name", limit: 255
-    t.string "last_name", limit: 255
+    t.string "heardOfAdoptATreeVia", array: true
+    t.string "awareness_code"
+    t.string "first_name"
+    t.string "last_name"
     t.datetime "emailed_at"
     t.datetime "mailed_token_at"
     t.index ["email"], name: "index_users_on_email", unique: true

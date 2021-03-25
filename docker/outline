@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker/outline_short
+docker/run bin/outline

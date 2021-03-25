@@ -63,24 +63,24 @@ group :test do
   gem 'selenium-webdriver', '~> 3.141.0'
 end
 
-# BEGIN: gems used in test_code.sh script
+# BEGIN: gems used in docker/test_code script
 group :development, :testing do
-  gem 'bundler-audit', '~> 0.6.0'  # Checks for vulnerable versions of gems
-  gem 'brakeman', '~> 4.4.0' # Checks for security vulnerabilities
-  gem 'sandi_meter', '~> 1.2.0' # Checks for compliance with Sandi Metz' four rules
-  gem 'gemsurance', '~> 0.9.0' # Checks for outdated and insecure gems
+  # gem 'bundler-audit' # Checks for vulnerable versions of gems
+  # gem 'brakeman' # Checks for security vulnerabilities
+  # gem 'sandi_meter' # Checks for compliance with Sandi Metz' four rules
+  # gem 'gemsurance' # Checks for outdated and insecure gems
 end
-# END: gems used in test_code.sh script
+# END: gems used in docker/test_code script
 
 # BEGIN: test coverage
-gem 'codecov', '0.1.14', require: false, group: :test
+gem 'codecov', '0.4.3', require: false, group: :test
 gem 'simplecov', '0.16.1', require: false, group: :test
 # END: test coverage
 
-# BEGIN: for outline.sh
+# BEGIN: docker/outline
 group :development do
   gem 'annotate', '~> 2.7.1' # Adds comments listing parameters and the output of "rails routes"
-  gem 'railroady', '~> 1.5.2' # Generates block diagrams
-  gem 'rails-erd', '~> 1.5.0' # Generates block diagrams
+  # gem 'railroady' # Generates block diagrams of controllers
+  # gem 'rails-erd' # Generates block diagram of models
 end
-# END: for outline.sh
+# END: docker/outline

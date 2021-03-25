@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Checks for outdated and insecure gems
+
+docker/replace_sif "# gem 'gemsurance'" "gem 'gemsurance'" 'Gemfile'
+
+echo '----------------------'
+echo 'bundle install --quiet'
+bundle install --quiet
+
+echo '----------------------'
+echo 'bundle exec gemsurance'
+bundle exec gemsurance
+mv gemsurance_report.html log/gemsurance_report.html
+
+docker/replace_sif "gem 'gemsurance'" "# gem 'gemsurance'" 'Gemfile'
+
+echo '----------------------'
+echo 'bundle install --quiet'
+bundle install --quiet
+
+echo 'The Gemsurance Report is at log/gemsurance_report.html'

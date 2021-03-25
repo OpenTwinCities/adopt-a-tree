@@ -3,13 +3,13 @@
 # Table name: things
 #
 #  id          :integer          not null, primary key
-#  name        :string(255)
+#  name        :string
 #  user_id     :integer
 #  mpls_id     :integer
-#  mpls_unique :string(255)
+#  mpls_unique :string
 #  lat         :decimal(32, 29)  not null
 #  lng         :decimal(32, 29)  not null
-#  species     :string(255)
+#  species     :string
 #  properties  :json
 #  created_at  :datetime
 #  updated_at  :datetime

@@ -4,6 +4,7 @@
 require 'simplecov'
 SimpleCov.start :rails do
   add_filter '/test/'
+  add_filter '/tmp/'
 end
 # END: SimpleCov
 

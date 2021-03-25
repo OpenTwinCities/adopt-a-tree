@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+# This script runs sandi_meter AND logs the screen output.
+# NOTE: This takes a LONG time to run due to the large code base.
+
+DATE=`date +%Y%m%d-%H%M%S-%3N`
+docker/sandi_meter-log 2>&1 | tee log/sandi_meter-$DATE.log
