@@ -47,7 +47,7 @@ group :production do
 end
 
 group :test do
-  gem 'capybara', '~> 3.13.2'
+  gem 'capybara', '~> 3.35.3'
   gem 'capybara-slow_finder_errors', '0.1.5'
   gem 'database_cleaner', '~> 1.7.0'
   gem 'launchy', '~> 2.4.3'
