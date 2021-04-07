@@ -159,7 +159,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    haml (5.0.4)
+    haml (5.2.1)
       temple (>= 0.8.0)
       tilt
     hashie (3.6.0)
@@ -391,7 +391,7 @@ DEPENDENCIES
   faker (~> 1.9.3)
   geokit (~> 1.13.1)
   guard-rspec (~> 4.7.3)
-  haml (~> 5.0.4)
+  haml (~> 5.2.1)
   hashie (~> 3.6.0)
   jquery-rails (~> 4.3.1)
   launchy (~> 2.4.3)
