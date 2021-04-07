@@ -72,7 +72,7 @@ gem 'simplecov', '0.16.1', require: false, group: :test
 
 # BEGIN: docker/outline
 group :development do
-  gem 'annotate', '~> 2.7.1' # Adds comments listing parameters and the output of "rails routes"
+  gem 'annotate', '~> 3.1.1' # Adds comments listing parameters and the output of "rails routes"
   # gem 'railroady' # Generates block diagrams of controllers
   # gem 'rails-erd' # Generates block diagram of models
 end

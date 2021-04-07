@@ -46,9 +46,9 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
-    annotate (2.7.5)
+    annotate (3.1.1)
       activerecord (>= 3.2, < 7.0)
-      rake (>= 10.4, < 13.0)
+      rake (>= 10.4, < 14.0)
     arel (9.0.0)
     autoprefixer-rails (9.4.9)
       execjs
@@ -369,7 +369,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  annotate (~> 2.7.1)
+  annotate (~> 3.1.1)
   autoprefixer-rails (= 9.4.9)
   aws-sdk-ec2 (~> 1)
   bcrypt (~> 3.1.11)
