@@ -1,15 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
-# These gems take a long time to install.
-# Thus, the "gem install" command is used in the Docker image creation
-# process to preinstall these versions of these gems
-# Version numbers are rigidly pinned to avoid a long wait after
-# entering "bundle update".
 gem 'ffi', '1.11.1'
 gem 'nokogiri', '1.10.3'
 gem 'pg', '1.1.4'
-gem 'rails', '5.2.3'
+gem 'rails', '~> 5.2.5'
 
 gem 'autoprefixer-rails', '9.4.9'
 gem 'aws-sdk-ec2', '~> 1'
