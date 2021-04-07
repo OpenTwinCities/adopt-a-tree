@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
-gem 'ffi', '1.11.1'
-gem 'nokogiri', '1.10.3'
 gem 'pg', '1.1.4'
 gem 'rails', '~> 5.2.5'
 
