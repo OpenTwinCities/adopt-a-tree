@@ -4,7 +4,7 @@ ruby '2.6.7'
 gem 'pg', '~> 1.2.3'
 gem 'rails', '~> 5.2.5'
 
-gem 'autoprefixer-rails', '9.4.9'
+gem 'autoprefixer-rails', '~> 10.2.4.0'
 gem 'aws-sdk-ec2', '~> 1'
 gem 'bcrypt', '~> 3.1.11'
 gem 'bootstrap-sass', '~> 3.4.1'
