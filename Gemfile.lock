@@ -167,7 +167,7 @@ GEM
     haml (5.2.1)
       temple (>= 0.8.0)
       tilt
-    hashie (3.6.0)
+    hashie (4.1.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jmespath (1.4.0)
@@ -396,7 +396,7 @@ DEPENDENCIES
   geokit (~> 1.13.1)
   guard-rspec (~> 4.7.3)
   haml (~> 5.2.1)
-  hashie (~> 3.6.0)
+  hashie (~> 4.1.0)
   jquery-rails (~> 4.3.1)
   launchy (~> 2.4.3)
   libnotify
