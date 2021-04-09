@@ -14,7 +14,7 @@ gem 'haml', '~> 5.2.1'
 gem 'hashie', '~> 4.1.0'
 gem 'jquery-rails', '~> 4.4.0'
 gem 'puma', '~> 3.12.0'
-gem 'rails_admin', '~> 1.4.2'
+gem 'rails_admin', '~> 2.1.1'
 gem 'sass-rails', '~> 5.1.0'
 gem 'validates_formatting_of', '~> 0.9.0'
 
