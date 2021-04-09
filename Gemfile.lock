@@ -189,8 +189,8 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    launchy (2.4.3)
-      addressable (~> 2.3)
+    launchy (2.5.0)
+      addressable (~> 2.7)
     libnotify (0.9.4)
       ffi (>= 1.0.11)
     listen (3.5.1)
@@ -398,7 +398,7 @@ DEPENDENCIES
   haml (~> 5.2.1)
   hashie (~> 4.1.0)
   jquery-rails (~> 4.4.0)
-  launchy (~> 2.4.3)
+  launchy (~> 2.5.0)
   libnotify
   pg (~> 1.2.3)
   poltergeist (~> 1.18.0)

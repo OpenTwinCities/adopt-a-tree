@@ -50,7 +50,7 @@ group :test do
   gem 'capybara', '~> 3.35.3'
   gem 'capybara-slow_finder_errors', '0.1.5'
   gem 'database_cleaner', '~> 2.0.1'
-  gem 'launchy', '~> 2.4.3'
+  gem 'launchy', '~> 2.5.0'
   gem 'poltergeist', '~> 1.18.0'
   gem 'rails-controller-testing', '~> 1.0.2'
   gem 'selenium-webdriver', '~> 3.142.7'
