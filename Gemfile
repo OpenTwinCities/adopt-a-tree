@@ -24,7 +24,7 @@ group :development do
   gem 'growl' if /darwin/ =~ RUBY_PLATFORM
   gem 'spring', '~> 2.1.1'
   gem 'spring-commands-rspec', '~> 1.0.4'
-  gem 'byebug', '~> 10.0.2'
+  gem 'byebug', '~> 11.1.3'
 end
 
 group :development, :test do
@@ -39,7 +39,7 @@ group :development, :test do
   gem 'faker', '~> 1.9.3'
   gem 'factory_bot_rails', '~> 6.1.0'
   gem 'pry-rails', '~> 0.3.4'
-  gem 'rspec-rails', '~> 3.8.1'
+  gem 'rspec-rails', '~> 5.0.1'
 end
 
 group :production do
