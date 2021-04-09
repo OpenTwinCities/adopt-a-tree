@@ -403,7 +403,7 @@ DEPENDENCIES
   pg (~> 1.2.3)
   poltergeist (~> 1.18.0)
   pry-rails (~> 0.3.4)
-  puma (~> 3.12.0)
+  puma (~> 3.12.6)
   rails (~> 5.2.5)
   rails-controller-testing (~> 1.0.2)
   rails_12factor (~> 0.0.3)
