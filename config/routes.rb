@@ -41,7 +41,7 @@
 #                          POST   /things(.:format)                things#create
 #              rails_admin        /admin                           RailsAdmin::Engine
 #                     root GET    /                                main#index
-# 
+#
 # Routes for RailsAdmin::Engine:
 #   dashboard GET         /                                      rails_admin/main#dashboard
 #       index GET|POST    /:model_name(.:format)                 rails_admin/main#index

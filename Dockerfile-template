@@ -1,7 +1,8 @@
 # BASED ON
 # https://blog.codeminer42.com/zero-to-up-and-running-a-rails-project-only-using-docker-20467e15f1be/
 
-# Specify the Docker image to use as a base:
+# Specify the Docker image to use as a base
+# NOTE: PhantomJS needs Debian Stretch, because it does not work in Debian Buster.
 FROM ruby:RUBY_VERSION-stretch
 
 ENV DEBIAN_FRONTEND=noninteractive \
