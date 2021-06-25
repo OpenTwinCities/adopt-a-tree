@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.6.6'
 
 gem 'pg', '~> 1.2.3'
-gem 'rails', '~> 5.2.5'
+gem 'rails', '~> 6.1.4'
 
 gem 'autoprefixer-rails', '~> 10.2.4.0'
 gem 'aws-sdk-ec2', '~> 1'
