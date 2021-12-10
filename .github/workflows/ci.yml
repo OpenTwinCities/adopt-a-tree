@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify:
+    name: Build
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:latest
+        ports: ["5432:5432"]
+        env:
+          POSTGRES_DB: rubymn2_db
+          POSTGRES_USER: agent007
+          POSTGRES_PASSWORD: BondJamesBond
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install dependent libraries
+        run: |
+          # Install apt-get dependencies
+          sudo apt-get update
+          sudo apt-get install -y build-essential tree graphviz nodejs phantomjs libpq-dev
+          sudo apt-get install -y libnotify4 libgtkmm*
+          sudo apt-get install -y libffi-dev build-essential chrpath libssl-dev libxft-dev
+          sudo apt-get install -y libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
+
+      - name: Set up Ruby and run bundle install
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6.6
+          bundler-cache: true
+      - name: Show Ruby version
+        run: ruby -v
+      - name: Prepare database and run tests
+        env:
+          RAILS_ENV: test
+          POSTGRES_HOST: localhost
+          POSTGRES_DB: rubymn2_db
+          POSTGRES_USER: agent007
+          POSTGRES_PASSWORD: BondJamesBond
+        run: |
+          bundle exec rake db:create db:migrate db:test:prepare
+          bundle exec rake db:schema:load
+          bundle exec rake
